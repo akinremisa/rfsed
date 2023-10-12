@@ -1,0 +1,17 @@
+[project]
+name = "rfsed"
+version = "0.0.1"
+dependencies = [
+    'decorator', 'matplotlib>=2', 'numpy', 'scipy',
+    'obspy>=1.0.3', 'tqdm', 'OWSLib', 'cartopy', 
+    'geographiclib', 'shapely', 'seaborn', 'scipy',
+    'scikit-learn', 'h5','h5py', 'obspyh5', 'rf'
+    'importlib-metadata; python_version>">=3.6"',
+]
+
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
