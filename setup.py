@@ -6,8 +6,8 @@ with open("./README.md", "r") as fh:
 REQUIRES = ['decorator', 'matplotlib>=2', 'numpy', 'scipy',
              'obspy>=1.0.3', 'tqdm', 'OWSLib',
             'cartopy', 'geographiclib', 'shapely', 'seaborn',
-            'scipy', 'scikit-learn', 'h5','h5py', 'obspyh5',
-            'rf']
+            'scipy', 'scikit-learn', 'h5','h5py', 'obspyh5', 
+            'colorama==0.1.6', 'plotly==5.17.0', 'psutil==5.9.6']
 CLASSIFIERS = [
     'Environment :: Console',
     'Intended Audience :: Science/Research',
@@ -37,5 +37,3 @@ setuptools.setup(
     classifiers=CLASSIFIERS,
     python_requires='>=3.6',
 )
-    # dependency_links=['https://github.com/akinremisa/rffw/tarball/master#egg=rffw-0.0.1']
-# )

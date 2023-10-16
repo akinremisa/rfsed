@@ -1,0 +1,100 @@
+### Configuration file for rf package in json format
+# Comments are indicated with "#" and ignored while parsing
+
+{
+
+### Options for input and output ###
+
+# Filename of events file (QuakeML format)
+"events": "example_events.xml",
+
+# Filename of inventory of stations (StationXML format)
+"inventory": "example_inventory.xml",
+
+# Data can be
+#   1. a glob expression of files. All files are read at once. If you have
+#      a huge dataset think about using one of the other two available
+#      options.
+#   2. one of the client modules supported by ObsPy (e.g "arclink", "fdsn")
+#      for getting the data from a webservice.
+#      Option "client_options" is available.
+#   3. "plugin" for a heterogeneus dataset. You have the freedom to get your
+#       data from different locations. In this case the option "plugin" is
+#       availlable
+"data": "example_data.mseed",
+
+# Options for the webservices which are passed to Client.__init__.
+# See the documentation of the clients in ObsPy for availlable options.
+"client_options": {"user": "name@insitution.com"},
+
+# Where to find the plugin in the form "module : func"
+# 'module' has to be importable (located in current path or PYTHON_PATH
+# environment variable).
+# 'func' has to be the function which delivers the data, e.g. for a
+# FSDN client:
+#     # in module.py
+#     from obspy.fsdn import Client
+#     client = Client()
+#     def func(**kwargs):
+#         kwargs.pop('event')  # event kwarg is not needed by client
+#         return client.get_waveforms(**kwargs)
+# Kwargs passed to func are: network, station, location, channel,
+# starttime, endtime and event
+"plugin": "module : func",
+
+# File format for output of script (one of "Q", "SAC" or "H5")
+#"format": "Q",
+
+
+
+### Options for rf ###
+
+"options": {  # See documentation of util.iter_event_data and rfstream.rfstats
+    # Phase to use (e.g. "P", "PP", "S"), last letter will determine
+    # if P- or S-receiver functions are calculated.
+#    "phase": "P",
+    # Data request window around onset in seconds
+#    "request_window":  [-50, 150],
+    # Events outside this distance range (epicentral degree) will be discarded
+#    "dist_range": [30, 90],
+    # Depth of piercing points in km
+    "pp_depth": 50
+},
+
+"rf": {  # See RFStream.rf for options
+    "filter":   {"type": "bandpass", "freqmin": 0.01, "freqmax": 2.0},
+    # Trim window around P-onset
+    "trim": [-30, 100]
+    # Downsample stream to this frequency in Hz.
+#    "downsample": 10,
+    # Roate stream with this method.
+    # rotate should be one of 'ZNE->LQT', 'NE->RT'
+#    "rotate": "ZNE->LQT",
+    # Deconvolve stream with this method.
+    # deconvolve is one of 'time' or 'freq' for time or
+    # frequency domain deconvolution.
+#    "deconvolve": "time",
+    # time domain deconvolution options
+#    "spiking": 1.0,  # spiking factor for noise suppression
+    # frequency domain deconvolution options
+#    "water": 0.05,  # water level for noise suppression
+#    "gauss": 2.0,  # low pass Gauss filter with corner frequency in Hz
+    # window for source function relative to onset, (start, end, tapering)
+#    "winsrc": [-10, 30, 5]
+},
+
+
+### Options for other routines ###
+
+#"moveout": {},  # See RFStream.moveout
+
+"plot": {"fillcolors": ["black", "gray"], "trim": [-5, 22]},  # See RFStream.plot_rf
+
+# [start of profile in km, end of profile in km, number of bins],
+# if specified, these values will be passed to np.linspace to generate a
+# bin list for the boxes dictionary
+"boxbins": [0, 10, 10],
+"boxes": {"latlon0": [-21.0, -69.6], "azimuth": 90}  # See profile.get_profile_boxes
+#"profile": {}  # See profile.profile
+#"plot_profile": {}  # See RFStream.plot_profile
+}
