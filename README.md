@@ -84,7 +84,7 @@ All contributions are welcome ... e.g. report bugs, discuss or add new features.
 If you found this package useful, please consider citing it.
 
 ##### Related receiver function projects
-* [seispy](https://github.com/trichter/rf) including calculation of receiver functions
+* [rf](https://github.com/trichter/rf) including calculation of receiver functions
 * [seispy](https://github.com/xumi1993/seispy) including hk-stacking
 * [RFPy](https://github.com/paudetseis/RfPy) including hk-stacking, harmonic decomposition
 * [BayHunter](https://github.com/jenndrei/BayHunter) inversion of receiver functions and surface wave dispersion
