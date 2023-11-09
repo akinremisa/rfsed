@@ -83,10 +83,15 @@ All contributions are welcome ... e.g. report bugs, discuss or add new features.
 ## Citing rfsed
 If you found this package useful, please consider citing it.
 
+#### References
++ Yeck, W. L., Sheehan, A. F., & Schulte-Pelkum, V. (2013). Sequential h-k stacking to obtain accurate crustal thicknesses beneath sedimentary basins. Bulletin of the Seismological Society of America, 103 , 2142-2150. doi: 10.1785/0120120290
++ Yu, Y., Song, J., Liu, K. H., & Gao, S. S. (2015). Determining crustal structure beneath seismic stations overlying a low-velocity sedimentary layer using receiver functions. Journal of Geophysical Research: Solid Earth, 120 , 3208-3218. doi: 10.1002/2014JB011610
++  Zhu, L., & Kanamori, H. (2000). Moho depth variation in southern California from teleseismic receiver functions. Journal of Geophysical Research: Solid Earth, 105, 2969-2980. doi: 10.1029/1999jb900322
+
 ##### Related receiver function projects
-* [rf](https://github.com/trichter/rf) including calculation of receiver functions
-* [seispy](https://github.com/xumi1993/seispy) including hk-stacking
-* [RFPy](https://github.com/paudetseis/RfPy) including hk-stacking, harmonic decomposition
-* [BayHunter](https://github.com/jenndrei/BayHunter) inversion of receiver functions and surface wave dispersion
-* [telewavesim](https://github.com/paudetseis/Telewavesim) synthetics
-* [PyGLImER](https://github.com/PyGLImER/PyGLImER) including common conversion point imaging
++ [rf](https://github.com/trichter/rf) including calculation of receiver functions
++ [seispy](https://github.com/xumi1993/seispy) including hk-stacking
++ [RFPy](https://github.com/paudetseis/RfPy) including hk-stacking, harmonic decomposition
++ [BayHunter](https://github.com/jenndrei/BayHunter) inversion of receiver functions and surface wave dispersion
++ [telewavesim](https://github.com/paudetseis/Telewavesim) synthetics
++ [PyGLImER](https://github.com/PyGLImER/PyGLImER) including common conversion point imaging
