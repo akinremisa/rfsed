@@ -1,4 +1,5 @@
-# rfsed
+<img src="https://github.com/akinremisa/rfsed/blob/main/doc/logo/rfsed_logo_horizontal.png" alt="rfsed logo" width="600"/>
+
 ## Receiver functions analysis and dealing with sediment effects in receiver functions.
 [![python version](https://img.shields.io/pypi/pyversions/rf.svg)](https://python.org)
 
@@ -8,14 +9,15 @@
 ## A python package for receiver functions analysis and dealing with sediment effects 
 
 rfsed is developed specifically to implement different techniques of **analysing receiver functions
-from stations overlying sedimentary layers.** The package is **adaptable, efficient, and easy-to-use** for different receiver function analysis.
+from stations overlying sedimentary layers.** The package is **adaptable, efficient, and easy-to-use** for different analysis receiver functions
+obtained from stations overlying sedimentary layers.
 
 Receiver functions techniques implemented in rfsed are:
 + H-k stacking of Zhu and Kanamori (2000)
 + Sequential H-k stacking of Yeck et al., (2013)
 + Resonance filtering and modified H-k stacking of Yu et al., (2015)
 + H-k stacking and Waveform Fitting two-step method of Akinremi et al., (2024)
-+ Analysis of the synthetic reciever functions with the above mentioned methods.
++ Analysis of the synthetic reciever functions with the above-mentioned methods.
 
 
 Beside these receiver function methods, rfsed has the following features:
