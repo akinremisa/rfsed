@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header, nav, main, footer {
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        h1, h2, h3 {
+            color: #444;
+        }
+
+        footer {
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Website</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to Our Website</h2>
+        <p>This is the homepage of our website. Feel free to explore the content and learn more about us.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
