@@ -5,37 +5,3 @@ requires = [
     "cython>=0.15.1"
 ]
 build-backend = "setuptools.build_meta"
-
-[project]
-name = "rfsed"
-version = "0.0.8"
-authors = [{ name="Stephen Akinremi", email="s.akinremi@utwente.nl" }]
-description = "Package for receiver functions analysis and dealing with sediment effects in receiver functions"
-readme = "README.md"
-requires-python = ">=3.6"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent"]
-dependencies =[
-    'decorator',
-    'matplotlib',
-    'numpy',
-    'scipy',
-    'obspy>=1.0.3',
-    'tqdm',
-    'OWSLib',
-    'pytest',
-    'cartopy',
-    'geographiclib', 
-    'shapely', 
-    'seaborn',
-    'scipy', 
-    'scikit-learn', 
-    'h5',
-    'h5py', 
-    'obspyh5', 
-    'colorama==0.1.6', 
-    'plotly==5.17.0', 
-    'psutil==5.9.6'
- ]
