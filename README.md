@@ -1,4 +1,5 @@
-<img src="https://github.com/akinremisa/rfsed/blob/main/docs/logo/rfsed_logo_horizontal.png" alt="rfsed logo" width="600"/>
+<img src="docs/logo/rfsed_logo_horizontal.png" alt="rfsed logo" width="600"/>
+
 
 ## Receiver functions analysis and dealing with sediment effects in receiver functions.
 [![python version](https://img.shields.io/pypi/pyversions/rf.svg)](https://python.org)
