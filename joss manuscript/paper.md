@@ -40,17 +40,16 @@ includes methods for dealing with sediment effects.
 # Key Functionality
 ``rfsed`` contains modules to carry out H-k stacking [@Zhu2000], sequential H-k stacking [@Yeck2013], resonance 
 filtering and modified H-k stacking [@Yu2015], waveform Fitting [@Akinremi2024], synthetic analysis with the 
-above-mentioned methods. It comes with tools to create publication quality figures of these methods.
+above-mentioned methods. It comes with tools to create publication quality figures, which includes result plots for H-k stacking, sequential H-k stacking (e.g. Figure 1), resonance filtering, and waveform-fitting methods (e.g., Figure 2).
 Beside these methods, ``rfsed`` has modules for extracting earthquake waveform from local seismic record files. 
 There are multiprocessing options for waveform fitting and extracting earthquake data from local seismic record files 
 for higher efficiency.
 
-``rfsed`` is adaptable, efficient, and easy-to-use by both researchers and students. ``rf`` [@Eulenfeld2020] is added to 
-``rfsed`` as a library for calculation of receiver functions. Receiver function streams in ``rfsed`` are handled by the 
-'RFStream' class of ``rf`` [@Eulenfeld2020]. The receiver function forward calculation in ``rfsed`` is done using SynR 
-module, which is modified after SynSeis of ``seispy`` [Xu2022]. ``rfsed`` can be installed from PyPI. Online documentation 
-and tutorials are available on the project site.
+![Example of a synthetic sequential H-k stacking plot for (a) sediment layer (b) Moho layer, generated using ``rfsed``](paper_figures/Figure1.png){width="4.4015748031496065in"}
 
+``rfsed`` is adaptable, efficient, and easy-to-use by both researchers and students. ``rf`` [@Eulenfeld2020] is added to ``rfsed`` as a library for calculation of receiver functions. Receiver function streams in ``rfsed`` are handled by the 'RFStream' class of ``rf`` [@Eulenfeld2020]. The receiver function forward calculation in ``rfsed`` is done using SynR module, which is modified after SynSeis of ``seispy`` [Xu2022]. ``rfsed`` can be installed from PyPI. Online documentation and tutorials are available on the project site.
+
+![Example of a waveform-fitting result plot generated using ``rfsed``](paper_figures/Figure2.png){width="4.4015748031496065in"}
 
 
 # Availability
@@ -60,8 +59,7 @@ The software is distributed under a MIT License and is available from <https://g
 
 # Acknowledgements
 
-``rfsed`` was initiated as part of the DeepNL-DICTUM project supported by the Nederlandse Organisatie voor Wetenschappelijk Onderzoek (NWO) 
-DeepNL program grant number DEEP.NL.2020.010.
+``rfsed`` was initiated as part of the DeepNL-DICTUM project supported by the Nederlandse Organisatie voor Wetenschappelijk Onderzoek (NWO) DeepNL program grant number DEEP.NL.2020.010.
 
 
 
