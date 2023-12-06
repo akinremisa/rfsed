@@ -35,11 +35,37 @@ def catalog_example():
     catalog_dir = resource_filename('rfsed', 'data/Earthquake_Catalog/eq_events.quakeml')
     return catalog_dir
 
+def read_raw_waveform_data():
+    """
+    Return streams of raw waeform data downloaded from IRIS using read_rf().
+    """
+    fname = resource_filename('rfsed', 'examples/IRIS_Downloaded_Waveform/00_eq_data.h5')
+    stream = read_rf(fname)  
+    return stream
+
 def save_Eq_data():
     """
     Return directory to save extracted earthquake data.
     """
     savepath = resource_filename('rfsed', 'examples/earthquake_data/')
+    if not os.path.exists(savepath):
+        os.mkdir(savepath)
+    return savepath
+
+def save_IRIS_waveform():
+    """
+    Return directory to save downloaded earthquake waveform data.
+    """
+    savepath = resource_filename('rfsed', 'examples/IRIS_Downloaded_Waveform/')
+    if not os.path.exists(savepath):
+        os.mkdir(savepath)
+    return savepath
+
+def save_calculated_RF():
+    """
+    Return directory to save calculated receiver function.
+    """
+    savepath = resource_filename('rfsed', 'examples/Calculated_Receiver_Functions/')
     if not os.path.exists(savepath):
         os.mkdir(savepath)
     return savepath
