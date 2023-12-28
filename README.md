@@ -85,6 +85,7 @@ All contributions are welcome ... e.g. report bugs, discuss or add new features.
 
 ## Citing rfsed
 If you found this package useful, please consider citing it.
++ Akinremi S., van der Meijde, M., Thomas, C., Afonso, J. C., Ruigrok, E., & Fadel, I. (2024). Waveform fitting of receiver functions for enhanced retrieval of crustal structure in the presence of sediments. Journal of Geophysical Research: Solid Earth (under review)
 
 #### References
 + Yeck, W. L., Sheehan, A. F., & Schulte-Pelkum, V. (2013). Sequential h-k stacking to obtain accurate crustal thicknesses beneath sedimentary basins. Bulletin of the Seismological Society of America, 103 , 2142-2150. doi: 10.1785/0120120290
