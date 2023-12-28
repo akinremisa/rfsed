@@ -61,7 +61,7 @@ conda env create -f environment.yml
 conda activate rfsed
 
 ```
-### Test the rfsed package
+## Test the rfsed package
 You can test the package using pytest by running this command in the directory that has the '/tests/' folder
 
 ```bash
