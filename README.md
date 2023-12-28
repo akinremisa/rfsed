@@ -1,13 +1,10 @@
 <img src="docs/logo/rfsed_logo_horizontal.png" alt="rfsed logo" width="600"/>
 
 
-## Receiver functions analysis and dealing with sediment effects in receiver functions.
+## A python package for receiver functions analysis and dealing with sediment effects 
+
 [![python version](https://img.shields.io/pypi/pyversions/rf.svg)](https://python.org)
 
-
-
-
-## A python package for receiver functions analysis and dealing with sediment effects 
 
 rfsed is developed specifically to implement different techniques of **analysing receiver functions
 from stations overlying sedimentary layers.** The package is **adaptable, efficient, and easy-to-use** for different analysis receiver functions
