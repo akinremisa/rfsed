@@ -62,10 +62,10 @@ conda activate rfsed
 
 ```
 ## Test the rfsed package
-You can test the package using pytest by running this command in the directory that has the '/tests/' folder
+You can test the package using pytest by running this command in the package directory and will look for all available tests in the current directory and subdirectories recursively
 
 ```bash
-pytest -p no:logging tests
+pytest
 ```
 Or run individual tests in the '/tests/ directory
 
