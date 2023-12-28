@@ -64,7 +64,7 @@ You can test the package using pytest by running this command in the package dir
 ```bash
 pytest
 ```
-Or run individual tests in the '/tests/ directory
+Or run individual tests in the /tests/ directory
 
 ## Getting started
 Access rfsed's documentation [here](https://akinremisa.github.io/rfsed/).
