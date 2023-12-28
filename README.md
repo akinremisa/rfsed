@@ -70,7 +70,7 @@ pytest
 Or run individual tests in the '/tests/ directory
 
 ## Getting started
-Access rfsed's documentation [here](https://rfsed.github.io/rfsed/).
+Access rfsed's documentation [here](https://akinremisa.github.io/rfsed/).
 
 rfsed comes with tutorials that demonstrates all its methods. You can find those in the `examples/` directory.
 
