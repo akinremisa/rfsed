@@ -35,7 +35,7 @@ developed to investigate the average crustal thickness and Vp/Vs ratio using rec
 # Key Functionality
 ``rfsed`` contains modules to carry out H-k stacking [@Zhu2000], sequential H-k stacking [@Yeck2013], resonance filtering and modified H-k stacking [@Yu2015], and waveform Fitting [@Akinremi2024] with possible synthetic waveform generation for 1D earth models to test of the previously mentioned methods. It comes with tools to create publication quality figures, which include result plots for H-k stacking, sequential H-k stacking (e.g., Figure 1), resonance filtering, and waveform-fitting methods (e.g., Figure 2). Besides these methods, ``rfsed`` has modules for extracting earthquake waveforms from local seismic record files. There are multiprocessing options for waveform fitting and extracting earthquake data from local seismic record files for higher efficiency.
 
-![Example of a synthetic sequential H-k stacking plot for (a) sediment layer (b) Moho layer, generated using ``rfsed``](paper_figures/Figure1.png)
+![Example of a sequential H-k stacking plot for receiver functions obtained from station ROLD (Network: NL) (a) sediment layer (b) Moho layer, generated using ``rfsed``](paper_figures/Figure1.png)
 
 ``rfsed`` is adaptable, efficient, and easy-to-use by both researchers and students. ``rf`` [@Eulenfeld2020] is added to ``rfsed`` as a library for calculation of receiver functions. Receiver function streams in ``rfsed`` are handled by the 'RFStream' class of ``rf`` [@Eulenfeld2020]. The receiver function forward calculation in ``rfsed`` is done using SynR module, which is modified after SynSeis of ``seispy`` [Xu2022]. ``rfsed`` can be installed from PyPI. Online documentation and tutorials are available on the project site.
 
