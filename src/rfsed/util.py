@@ -92,7 +92,7 @@ def save_tests():
     """
     Return directory to save test plots.
     """
-    savepath = resource_filename('rfsed', 'test-plots/')
+    savepath = resource_filename('rfsed', 'tests/plots/')
     if not os.path.exists(savepath):
         os.mkdir(savepath)
     return savepath
