@@ -280,7 +280,7 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG, savepath, 
         plt.tricontourf(Solutions[:,4], Solutions[:,5], Criteria,50, cmap ="jet")
         cb=plt.colorbar(format='%.3f', orientation="vertical")
         cb.ax.set_xlabel('S', rotation=0)
-        p1,=ax1.plot(BestModel[4],BestModel[5], 'k+', color='black', mew=2, ms=10, \
+        p1,=ax1.plot(BestModel[4],BestModel[5], 'k+', mew=2, ms=10, \
         label='%s Best Model %.2f km %.2f Vp/Vs'%(staname,BestModel[4],BestModel[5]+0.001))
         props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
         plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,\
