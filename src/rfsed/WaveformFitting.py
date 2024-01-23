@@ -239,7 +239,7 @@ def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format)
         plt.tricontourf(WaveformSolutions[:,4], WaveformSolutions[:,5], Criteria,50, cmap ="jet")
         cb=plt.colorbar(format='%.3f', orientation="vertical")
         cb.ax.set_xlabel('S', rotation=0)
-        p1,=ax1.plot(BestModel[4],BestModel[5], 'k+', color='black', mew=2, ms=10, \
+        p1,=ax1.plot(BestModel[4],BestModel[5], 'k+', mew=2, ms=10, \
         label='%s Best Model %.2f km %.2f Vp/Vs'%(staname,BestModel[4],BestModel[5]+0.001))
         props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
         plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,\
@@ -289,7 +289,7 @@ def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format)
         plt.plot(synth_time, rf_synth, '--',  color = 'black', label = 'Synthetic RF')
         plt.fill_between(t, StddPlus, StddMinus, alpha = 0.3, color = 'grey', 
                          label = 'RF Data Std' )
-        # p1,=ax2.plot(BestModel[4],BestModel[5], 'k+', color='black', mew=2, ms=10, \
+        # p1,=ax2.plot(BestModel[4],BestModel[5], 'k+', mew=2, ms=10, \
         # label='%s Best Model'%(suff))
         ax2.set_title("%s Best Model" %suff)
         # Subset the Data to -5 to 25 seconds
