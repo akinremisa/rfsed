@@ -65,7 +65,7 @@ def WaveformPara(rfstream, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gaupara
     n=len(StackedData)
     # Waveform Fitting start from t = 0 to t = 25 seconds
     tzero=np.where(t==0)[0]
-    tzero=int(tzero)  
+    tzero=int(tzero[0])  
     start=tzero
     end= 25/delta
     end=tzero + int(end)
