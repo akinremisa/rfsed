@@ -17,10 +17,10 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
         gauparameter=1.25
         savepath=save_tests()
         rayp=0.04
-        KMoho= np.linspace(1.65,1.95,121)
-        HMoho=np.linspace(20,60,201)
-        # KMoho= np.linspace(1.65,1.95,5)
-        # HMoho=np.linspace(20,60,5)
+        # KMoho= np.linspace(1.65,1.95,121)
+        # HMoho=np.linspace(20,60,201)
+        KMoho= np.linspace(1.65,1.95,5)
+        HMoho=np.linspace(20,60,5)
         wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
         WaveformPara(rfstream, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gauparameter)
 
@@ -32,10 +32,8 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             gauparameter=1.25
             savepath=save_tests()
             rayp=0.04
-            # KMoho= np.linspace(1.65,1.95,121)
-            # HMoho=np.linspace(20,60,201)
-            KMoho= np.linspace(1.65,1.95,5)
-            HMoho=np.linspace(20,60,5)
+            KMoho= np.linspace(1.65,1.95,121)
+            HMoho=np.linspace(20,60,201)
             nproc=25
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
             ModelParams=WaveformPara(rfstream, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gauparameter)
@@ -49,10 +47,8 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             gauparameter=1.25
             savepath=save_tests()
             rayp=0.04
-            # KMoho= np.linspace(1.65,1.95,121)
-            # HMoho=np.linspace(20,60,201)
-            KMoho= np.linspace(1.65,1.95,5)
-            HMoho=np.linspace(20,60,5)
+            KMoho= np.linspace(1.65,1.95,121)
+            HMoho=np.linspace(20,60,201)
             nproc=25
             format='pdf'
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
