@@ -34,13 +34,13 @@ The receiver function technique is a well-established technique to image velocit
 
 ![Example of a sequential H-k stacking plot for receiver functions obtained from station ROLD (Network: NL) (a) sediment layer (b) Moho layer, generated using ``rfsed``](paper_figures/Figure1.png)
 
-``rfsed`` is adaptable, efficient, and easy-to-use by both researchers and students. ``rf`` [@Eulenfeld2020] is added to ``rfsed`` as a library for the calculation of receiver functions. Receiver function streams in ``rfsed`` are handled by the 'RFStream' class of ``rf`` [@Eulenfeld2020]. The receiver function forward calculation in ``rfsed`` is done using SynR module, which is modified after SynSeis of ``seispy`` [Xu2022]. ``rfsed`` can be installed from PyPI. Online documentation and tutorials are available on the project site.
+``rfsed`` is adaptable, efficient, and easy-to-use by both researchers and students. ``rf`` [@Eulenfeld2020] is added to ``rfsed`` as a library for the calculation of receiver functions. Receiver function streams in ``rfsed`` are handled by the 'RFStream' class of ``rf`` [@Eulenfeld2020]. The receiver function forward calculation in ``rfsed`` is done using SynRF module, which is modified after SynSeis of ``seispy`` [Xu2022]. ``rfsed`` can be installed from PyPI. Online documentation and tutorials are available on the project site.
 
 ![Example of a waveform-fitting result plot generated using ``rfsed``](paper_figures/Figure2.png)
 
 # Availability
 
-The software is distributed under a MIT License and is available from <https://github.com/akinremisa/rfsed}>.
+The software is distributed under a BSD License and is available from <https://github.com/akinremisa/rfsed}>.
 
 
 # Acknowledgements
