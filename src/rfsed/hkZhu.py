@@ -30,13 +30,15 @@ def getamp(rfdata, tarray, t):
     return amp
 #----------------------------------------------------------
 
-def hk(rfstream, H=np.linspace(20,60,201), K=np.linspace(1.65,1.95,121), Vp=6.9, 
+def hk(rfstream, preonset, H=np.linspace(20,60,201), K=np.linspace(1.65,1.95,121), Vp=6.9, 
               w1=0.6, w2=0.3, w3=0.1, layer = None, stack=False):
     """
     Calculate the H-K stacking for a receiver function after Zhu and Kanamori (2000)
 
     :param rfstream: receiver function stream
     :type rfstream: obspy.core.stream.Stream
+    :param preonset: time in seconds before the P-arrival
+    :type preonset: integer
     :param H: array of Depth values
     :type H: numpy array
     :param K: array of Vp/Vs values
@@ -74,7 +76,7 @@ def hk(rfstream, H=np.linspace(20,60,201), K=np.linspace(1.65,1.95,121), Vp=6.9,
     delta = rfstream[0].stats.delta
     l = len(rfdata)
     t = np.arange(0, l)
-    t = (delta *  t) - 10 
+    t = (delta *  t) - preonset 
     stk = np.zeros((len(K)*len(H),3))
     dbgvalues = np.zeros((len(K)*len(H)*len(rfstream),9))
     z = 0 ; q =0

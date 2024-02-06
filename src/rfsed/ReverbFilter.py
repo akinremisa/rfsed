@@ -33,12 +33,14 @@ def getamp(rfdata, tarray, t):
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
-def Resonance_Filt(rfstream):
+def Resonance_Filt(rfstream, preonset):
     """
     Resonance Filter for receiver function data (Removes sediment reverberation effect)
 
     :param rfstream: receiver function data
     :type rfstream: obspy stream
+    :param preonset: time in seconds before the P-arrival
+    :type preonset: integer
 
     :return: A dictionary of stacked receiver function, Filtered receiver function, 
             autocorrelation of the data, resonance filter, time lag (2 way travel time of the sediment reverbration), 
@@ -47,8 +49,9 @@ def Resonance_Filt(rfstream):
     delta = rfstream[0].stats.delta
     staname=rfstream[0].stats.station
     comp =  rfstream[0].stats.channel
-    b = rfstream[0].stats.starttime - rfstream[0].stats.onset
-    t = (np.arange(0, len(rfstream[0]), 1) * delta) + b
+    l = len(rfstream[0].data)
+    t = np.arange(0, l)
+    t = (delta *  t) - preonset 
     Dt=rfstream[0].stats.delta
     StackedRF=rfstream.stack()
     StackedData=StackedRF[0].data

@@ -23,12 +23,14 @@ import multiprocessing
 import itertools
 
 #----------------------------------------------------------
-def WaveformPara(rfstream, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gauparameter):
+def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gauparameter):
     """
     Calculate the Model Parameters for the Waveform Fitting
 
     :param rfstream: Stream of Receiver Functions
     :type rfstream: obspy Stream
+    :param preonset: time in seconds before the P-arrival
+    :type preonset: integer
     :param Sedthick: Sediment Layer Thickness
     :type Sedthick: float
     :param VpSed: P-wave velocity in the Sediment
@@ -52,8 +54,9 @@ def WaveformPara(rfstream, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gaupara
     #----------------------------------------------------------
     # RF Stream 
     delta = rfstream[0].stats.delta
-    b = rfstream[0].stats.starttime - rfstream[0].stats.onset
-    t = (np.arange(0, len(rfstream[0].data), 1) * delta) + b
+    l = len(rfstream[0].data)
+    t = np.arange(0, l)
+    t = (delta *  t) - preonset 
     staname = rfstream[0].stats.station
     Stacked=rfstream.select(component='R').stack()
     StackedRF=Stacked[0]

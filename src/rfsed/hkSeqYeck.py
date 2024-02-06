@@ -31,7 +31,7 @@ def getamp(rfdata, tarray, t):
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
-def hkSeq(rfstreamSed, rfstreamMoho, HSed=np.linspace(0,10,201), KSed=np.linspace(1.65,2.25,201), VpSed=3.0,
+def hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed=np.linspace(0,10,201), KSed=np.linspace(1.65,2.25,201), VpSed=3.0,
                  w1Sed=0.6, w2Sed=0.3, w3Sed=0.1, HMoho=np.linspace(20,60,201), KMoho=np.linspace(1.65,1.95,121), VpMoho=6.9, 
                  w1Moho=0.6, w2Moho=0.3, w3Moho=0.1, g = [75.,10., 15., 2.5], stack=None):
     """
@@ -41,6 +41,8 @@ def hkSeq(rfstreamSed, rfstreamMoho, HSed=np.linspace(0,10,201), KSed=np.linspac
     :type rfstreamSed: obspy.core.stream.Stream
     :param rfstreamMoho: Stream object of receiver function for Moho layer (lower frequency)
     :type rfstreamMoho: obspy.core.stream.Stream
+    :param preonset: time in seconds before the P-arrival
+    :type preonset: integer
     :param HSed: Depth range for sediment layer
     :type HSed: numpy.ndarray
     :param KSed: Vp/Vs range for sediment layer
@@ -90,7 +92,7 @@ def hkSeq(rfstreamSed, rfstreamMoho, HSed=np.linspace(0,10,201), KSed=np.linspac
     delta = rfstreamSed[0].stats.delta
     l = len(rfdata)
     t = np.arange(0, l)
-    t = (delta *  t) - 10 
+    t = (delta *  t) - preonset
     #----------------------------------------------------------
     # Stack for Sediment Layer
     #----------------------------------------------------------

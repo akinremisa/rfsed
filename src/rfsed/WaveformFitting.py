@@ -14,7 +14,7 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.gridspec as gridspec
 import matplotlib.transforms as mtransforms
 
-def WaveformFitting(rfstream, HSed, VpSed, VpCrust, rayp, KMoho, HMoho, gaussian, wtCorr, wtRMSE, wtPG, savepath, format):
+def WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho, HMoho, gaussian, wtCorr, wtRMSE, wtPG, savepath, format):
     """
     This function performs waveform fitting for the Moho depth and Vp/Vs ratio
     Returns the best model based on the Correlation Coefficient(CC), Root-mean-squared error(RMSE), 
@@ -24,6 +24,8 @@ def WaveformFitting(rfstream, HSed, VpSed, VpCrust, rayp, KMoho, HMoho, gaussian
 
     :param rfstream: Obspy RFStream object containing the receiver functions
     :type rfstream: Obspy RFStream object
+    :param preonset: time in seconds before the P-arrival
+    :type preonset: integer
     :param HSed: Sediment thickness in km
     :type HSed: float
     :param VpSed: Sediment Vp in km/s
@@ -58,8 +60,9 @@ def WaveformFitting(rfstream, HSed, VpSed, VpCrust, rayp, KMoho, HMoho, gaussian
     # RF Stream 
     delta = rfstream[0].stats.delta
     # print('Data delta is', delta)
-    b = rfstream[0].stats.starttime - rfstream[0].stats.onset
-    t = (np.arange(0, len(rfstream[0].data), 1) * delta) + b
+    l = len(rfstream[0].data)
+    t = np.arange(0, l)
+    t = (delta *  t) - preonset 
     staname = rfstream[0].stats.station
     Stacked=rfstream.select(component='R').stack()
     StackedRF=Stacked[0]
