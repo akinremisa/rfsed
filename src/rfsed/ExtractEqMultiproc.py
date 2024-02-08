@@ -47,7 +47,7 @@ def Eq_times(catalog):
     stalat = catalog.stalat
     stalon = catalog.stalon
     Request_window = [catalog.Request_start, catalog.Request_end]       
-    onsettime = catalog.origins[0].time
+    eqtime = catalog.origins[0].time
     eqlat = catalog.origins[0].latitude
     eqlon = catalog.origins[0].longitude
     eqmag = catalog.magnitudes[0].mag
@@ -57,12 +57,13 @@ def Eq_times(catalog):
     distdeg = locations2degrees(stalat, stalon, eqlat, eqlon)    
     model = TauPyModel(model="iasp91")   
     arrivals = model.get_travel_times(source_depth_in_km=eqdepth, distance_in_degree=distdeg)
-    P = arrivals[0].time   
+    P = arrivals[0].time 
+    onset=eqtime + P  
     rayparam = kilometer2degrees(1) * arrivals[0].ray_param_sec_degree
     incidangle = arrivals[0].incident_angle
-    eqstart = (onsettime + P) - abs(Request_window[0])
-    eqend = (onsettime + P) + abs(Request_window[1])
-    timewindow=[{'eqstart':eqstart, 'eqend':eqend}]
+    eqstart = (eqtime + P) - abs(Request_window[0])
+    eqend = (eqtime + P) + abs(Request_window[1])
+    timewindow=[{'eqstart':eqstart, 'eqend':eqend, 'onset':onset}]
     return timewindow
 #----------------------------------------------
 # Run Parallel processing
@@ -98,8 +99,10 @@ def Get_EqStream_multiproc(inputparams):
     for i in timewindow:
         eqstart=(i[0]['eqstart'])
         eqend=(i[0]['eqend'])
+        onset=(i[0]['onset'])
         Eqdata=read(datafiles, starttime=eqstart, endtime = eqend)
         for i in Eqdata:
+            i.stats.onset=onset
             Datast.append(i)
     return Datast
 # ---------------------------------------------- 

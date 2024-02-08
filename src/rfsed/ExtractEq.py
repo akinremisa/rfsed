@@ -47,7 +47,7 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
         # print(len_catalog, ' events in Catalog')    
         time_window = []
         for i in catalog:
-                onsettime = i.origins[0].time
+                eqtime = i.origins[0].time
                 eqlat = i.origins[0].latitude
                 eqlon = i.origins[0].longitude
                 eqmag = i.magnitudes[0].mag
@@ -59,11 +59,12 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
                 traveltime = model.get_travel_times(source_depth_in_km=eqdepth, distance_in_degree=distdeg)
                 arrivals=traveltime
                 P = traveltime[0].time   
+                onset=eqtime+P
                 rayparam = kilometer2degrees(1) * traveltime[0].ray_param_sec_degree
                 incidangle = traveltime[0].incident_angle
-                eqstart = (onsettime + P) - abs(Request_window[0])
-                eqend = (onsettime + P) + abs(Request_window[1])
-                time_window.append([eqstart, eqend])
+                eqstart = (eqtime + P) - abs(Request_window[0])
+                eqend = (eqtime + P) + abs(Request_window[1])
+                time_window.append([eqstart, eqend, onset])
         #------------------------------------------------------------------------------------
         # Read part of the data with chosen Earthquakes and save to a new file
         Datast = Stream()
@@ -74,6 +75,7 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
                 for t in time_window:
                         if UTC(t[0]) >= filestart and UTC(t[1]) <= fileend:
                                 Eqdata=read(i, starttime=UTC(t[0]), endtime = UTC(t[1]))
+                                Eqdata.stats.onset=t[2]
                                 Datast += Eqdata
         Datast.write(filename)  
 #--------------------------------------------------------------------------------
