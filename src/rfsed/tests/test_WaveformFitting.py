@@ -12,6 +12,7 @@ class TestWaveformFitting(unittest.TestCase):
     def test_WaveformFitting(self):
         savepath=save_tests()
         rfstream= rfMoho_example()
+        preonset=10
         VpSed=2.2
         HSed=0.1
         VpCrust = 6.9
@@ -21,12 +22,13 @@ class TestWaveformFitting(unittest.TestCase):
         HMoho=np.linspace(20,60,201)
         format='pdf'
         wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
-        WaveformFitting(rfstream=rfstream, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, rayp=rayp, KMoho=KMoho, HMoho=HMoho, 
+        WaveformFitting(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, rayp=rayp, KMoho=KMoho, HMoho=HMoho, 
                      gaussian=gaussian, wtCorr=wtCorr, wtRMSE=wtRMSE, wtPG=wtPG, savepath=savepath, format=format)
 
     def test_PlotWaveformFitting(self):
             savepath=save_tests()
             rfstream= rfMoho_example()
+            preonset=10
             VpSed=2.2
             HSed=0.1
             VpCrust = 6.9
@@ -36,7 +38,7 @@ class TestWaveformFitting(unittest.TestCase):
             HMoho=np.linspace(20,60,201)
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
             format='pdf'
-            FittingResult=WaveformFitting(rfstream=rfstream, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, rayp=rayp, KMoho=KMoho, HMoho=HMoho, 
+            FittingResult=WaveformFitting(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, rayp=rayp, KMoho=KMoho, HMoho=HMoho, 
                      gaussian=gaussian, wtCorr=wtCorr, wtRMSE=wtRMSE, wtPG=wtPG, savepath=savepath, format=format)
             PlotWaveformFitting(FittingResult, wtCorr, wtRMSE, wtPG, savepath, format)
     
