@@ -75,6 +75,7 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
                 for t in time_window:
                         if UTC(t[0]) >= filestart and UTC(t[1]) <= fileend:
                                 Eqdata=read(i, starttime=UTC(t[0]), endtime = UTC(t[1]))
+                                onset=t[2]
                                 Eqdata.stats.onset=onset
                                 Datast += Eqdata
         Datast.write(filename)  
