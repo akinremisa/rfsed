@@ -23,7 +23,7 @@ import multiprocessing
 import itertools
 
 #----------------------------------------------------------
-def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gauparameter):
+def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoho, gaussian):
     """
     Calculate the Model Parameters for the Waveform Fitting
 
@@ -43,8 +43,8 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoh
     :type KMoho: numpy array    
     :param HMoho: numpy array of Moho depths
     :type HMoho: numpy array
-    :param gauparameter: Gaussian Parameter used in the receiver function calculation (e.g. 1.25)
-    :type gauparameter: float
+    :param gaussian: Gaussian Parameter used in the receiver function calculation (e.g. 1.25)
+    :type gaussian: float
     :return: Dictionary of Model Parameters
     """
     VsSed=0.7858 - 1.2344*VpSed + 0.7949*VpSed**2 - 0.1238*VpSed**3 + 0.0064*VpSed**4
@@ -73,7 +73,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho, HMoh
     end= 25/delta
     end=tzero + int(end)
     #----------------------------------------------------------
-    parameters=[{'rfstream':rfstream, 'rayp': rayp, 'gauparameter':gauparameter, 'Sedthick':Sedthick,  'VpSed':VpSed, 'VpCrust':VpCrust, 'VsSed':VsSed, 'SedDen':SedDen, 'VsCrust':VsCrust,\
+    parameters=[{'rfstream':rfstream, 'rayp': rayp, 'gaussian':gaussian, 'Sedthick':Sedthick,  'VpSed':VpSed, 'VpCrust':VpCrust, 'VsSed':VsSed, 'SedDen':SedDen, 'VsCrust':VsCrust,\
             'CrustDen':CrustDen, 'HMoho': HMoho, 'KMoho': KMoho, 'delta':delta, 'time':t, 'staname':staname, 'StackedData':StackedData, 'Stdd':Stdd, \
             'StddPlus':StddPlus, 'StddMinus':StddMinus, 'delay': delay, 'n':n, 'tstart': start, 'tend':end}]
     return parameters
@@ -105,7 +105,7 @@ def WaveformFit_multiproc(inputparams):
     end=OtherParams['tend']
     n=OtherParams['n']
     StackedData=OtherParams['StackedData']
-    gaussian=OtherParams['gauparameter']
+    gaussian=OtherParams['gaussian']
     MohoSol=[]
     for i in range(len(KMoho)):
         Ktemp = KMoho[i]
@@ -211,7 +211,7 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG, savepath, 
     delta=ModelParams[0]['delta']
     delay=ModelParams[0]['delay']
     staname=ModelParams[0]['staname']
-    gaussian=ModelParams[0]['gauparameter']
+    gaussian=ModelParams[0]['gaussian']
     rfstream=ModelParams[0]['rfstream']
     if wtCorr==None: wtCorr=0.4
     if wtRMSE==None: wtRMSE=0.4
