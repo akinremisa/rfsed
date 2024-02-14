@@ -330,7 +330,7 @@ def ResonanceFilt(Synthrf, time):
     filtered_rf = np.real(ifft(fft(D) * resonanceflt))
     # filtered_rf = filtered_rf / np.max(filtered_rf)
     #------------------------------------------------------------------------------
-    FltResults={'rf':Synthrf, 'filteredrf': filtered_rf, 'resonancefilter':resonanceflt, 'time':time, 'autoc':ac, 'r':r0, 'tlag':tlag, 'staname':staname, 'delta':delta}
+    FltResults={'rf':Synthrf, 'filteredrf': filtered_rf, 'resonancefilter':resonanceflt, 'time':time, 'autoc':ac, 'r':r0, 'tlag':tlag, 'delta':delta}
     return FltResults
 
 def plothkSynth(HKResultSynth, savepath, g = [75.,10., 15., 2.5], rmneg = None, format = 'jpg'): 
