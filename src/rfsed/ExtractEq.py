@@ -59,7 +59,7 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
                 traveltime = model.get_travel_times(source_depth_in_km=eqdepth, distance_in_degree=distdeg)
                 arrivals=traveltime
                 P = traveltime[0].time   
-                onset=eqtime+P
+                onset=eqtime + P  
                 rayparam = kilometer2degrees(1) * traveltime[0].ray_param_sec_degree
                 incidangle = traveltime[0].incident_angle
                 eqstart = (eqtime + P) - abs(Request_window[0])
@@ -75,7 +75,7 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
                 for t in time_window:
                         if UTC(t[0]) >= filestart and UTC(t[1]) <= fileend:
                                 Eqdata=read(i, starttime=UTC(t[0]), endtime = UTC(t[1]))
-                                Eqdata.stats.onset=t[2]
+                                Eqdata.stats.onset=onset
                                 Datast += Eqdata
         Datast.write(filename)  
 #--------------------------------------------------------------------------------
