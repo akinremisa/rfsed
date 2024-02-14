@@ -19,6 +19,7 @@ class TestWaveformFitting(unittest.TestCase):
         rayp=0.04
         KMoho= np.linspace(1.65,1.95,121)
         HMoho=np.linspace(20,60,201)
+        format='pdf'
         wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
         WaveformFitting(rfstream, HSed, VpSed, VpCrust, rayp, KMoho, HMoho, 
                      gaussian, wtCorr, wtRMSE, wtPG, savepath, format)
