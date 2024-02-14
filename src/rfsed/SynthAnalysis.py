@@ -1,11 +1,14 @@
 """
-.. module:: SynthRF
+.. module:: SynthAnalysis
         :synopsis: Create synthetic reciever function data and analyse the data for hk, sequential hk, 
         and resonance filtering
 .. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
 """
 
 import numpy as np
+from scipy.signal import detrend
+from scipy.fft import fft, ifft
+from scipy.signal import find_peaks
 import matplotlib.pyplot as plt
 from rfsed.SynRF.FwdRF import SynRF
 import matplotlib.gridspec as gridspec
@@ -17,7 +20,6 @@ from scipy import signal
 from scipy.signal import argrelextrema, argrelmin, argrelmax
 import math
 import cmath
-from scipy.fftpack import fft, ifft
 #----------------------------------------------------------
 def getamp(rfdata, tarray, t):
     """
@@ -292,64 +294,43 @@ def ResonanceFilt(Synthrf, time):
     """
     t = time
     delta=t[1]-t[0]
-    Dt=delta
-    tzero=np.where(t==0)[0]
-    tzero=int(tzero)  
-    start=tzero
-    rf=Synthrf[start::]
-    t = t[start::]
-    Dt=delta
-    N=len(rf)
-    fmax=1/(2*Dt)
-    df=fmax/(N/2)
+    dt=delta
     #---------------------------------------------
     # Build the frequency vector
-    N2=N/2
     #---------------------------------------------
-    column1=np.arange(0,N2+1)    
-    column2=np.arange(-N2+1,-1) 
-    #---------------------------------------------
-    # Join the two vectors
-    full_column = np.concatenate((column1,column2))
-    #---------------------------------------------
-    f=df*full_column
-    Nf = N/2+1
-    dw=2*np.pi*df
-    w=dw*full_column
-    #----------------------------------------------------------------------------------------------------------------------
-    # Do Auto-correlation
-    #----------------------------------------------------------------------------------------------------------------------
-    D=rf
-    D=D-np.mean(D)
-    D=signal.detrend(D, axis=-1, type='linear')
-    #------------------------
-    autoc=signal.correlate(D,D,mode='full')#,method='auto')
-    autoc=autoc/max(autoc)
-    autoc=autoc[N-1:2*N-1]
-    #----------------------------------------------------------------------------------------------------------------------
-    # Find time lag and amplitude of the autocorrelation
-    #----------------------------------------------------------
-    local_min=argrelmin(autoc)
-    index=(local_min[0][0])
-    r=(autoc[index])
-    r=math.sqrt(r**2)
-    tlag= t[index]
+    n = len(Synthrf)
+    fmax = 1 / (2.0 * dt)
+    df = fmax / (n / 2)
+    f = np.hstack((df * np.arange(0, n//2), df * np.arange(-n//2 + 1, 0)))
+    nf = n // 2 + 1
+    dw = 2.0 * np.pi * df
+    w = dw * np.hstack((np.arange(0, n//2), np.arange(-n//2 + 1, 0)))
+    filtered_rf = np.zeros_like(Synthrf)
+    D = Synthrf
+    D = D - np.mean(D)
+    D = detrend(D)
+    #-----------------------------------------------
+    # Calculate the autocorrelation
+    ac = np.correlate(D, D, mode='full')
+    ac = ac / np.max(ac)
+    ac = ac[n-1:2*n-1]
+
+    rac = -ac
+    locs, _ = find_peaks(rac)
+    if len(locs) == 0:
+        r0 = 0
+        tlag = 0
+        print('No reverberation detected')
+    else:
+        r0 = np.abs(rac[locs[0]])
+        tlag = locs[0] * dt
+
+    resonanceflt = (1 + r0 * np.exp(-1j * w * tlag))
+    resonanceflt = np.hstack((resonanceflt, np.zeros(n - len(resonanceflt))))  # Pad filter to match length of FFT result
+    filtered_rf = np.real(ifft(fft(D) * resonanceflt))
+    # filtered_rf = filtered_rf / np.max(filtered_rf)
     #------------------------------------------------------------------------------
-    # Build Filter
-    #------------------------------------------------------------------------------
-    resonanceflt = []
-    for i in range(0, len(w)):
-        flt= (1 + (r)*cmath.exp((-1j)*(w[i])*tlag))
-        resonanceflt.append(flt)
-    #------------------------------------------------------------------------------
-    # Filter the Data with a Resonance Filter (Fourier Transform)
-    F_trans=fft(rf)
-    Filtered=F_trans*resonanceflt
-    F_inv=ifft(Filtered)
-    #Use Real Part of the Inverse Fourier Transform
-    filtered_rf=np.real(F_inv)  #real part of the inverse fourier transform
-    #------------------------------------------------------------------------------
-    FltResults={'rf':rf, 'filteredrf': filtered_rf, 'resonancefilter':resonanceflt, 'time':t, 'autoc':autoc, 'r':r, 'tlag':tlag, 'delta':delta}
+    FltResults={'rf':Synthrf, 'filteredrf': filtered_rf, 'resonancefilter':resonanceflt, 'time':time, 'autoc':ac, 'r':r0, 'tlag':tlag, 'staname':staname, 'delta':delta}
     return FltResults
 
 def plothkSynth(HKResultSynth, savepath, g = [75.,10., 15., 2.5], rmneg = None, format = 'jpg'): 
