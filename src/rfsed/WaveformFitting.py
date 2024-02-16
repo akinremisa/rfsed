@@ -212,7 +212,7 @@ def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format)
     #----------------------------------------------------------
     labels=['Correlation Coefficient', 'Root-mean-square Error', 'Phase Goodness of Fit', 'Overall Goodness of Fit']
     model_criteria=zip(Corr, RMSE, PG, GoF)
-    print(model_criteria)
+    # print(model_criteria)
     for i in model_criteria:
         print(i)
     for i in range(len(labels)):
