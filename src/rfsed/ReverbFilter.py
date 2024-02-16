@@ -109,6 +109,7 @@ def plotfiltrf(FilteredRF, savepath, format = 'jpg'):
     rf=FilteredRF['rf']
     filtered_rf=FilteredRF['filteredrf']
     resonanceflt=FilteredRF['resonancefilter']
+    resonanceflt=np.real(resonanceflt)
     time=FilteredRF['time']
     autoc=FilteredRF['autoc']
     staname=FilteredRF['staname']
