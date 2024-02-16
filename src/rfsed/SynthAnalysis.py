@@ -301,10 +301,10 @@ def ResonanceFilt(Synthrf, time):
     n = len(Synthrf)
     fmax = 1 / (2.0 * dt)
     df = fmax / (n / 2)
-    f = np.hstack((df * np.arange(0, n//2), df * np.arange(-n//2 + 1, 0)))
+    f = np.hstack((df * np.arange(0, n//2+1), df * np.arange(-n//2 + 1, 0)))
     nf = n // 2 + 1
     dw = 2.0 * np.pi * df
-    w = dw * np.hstack((np.arange(0, n//2), np.arange(-n//2 + 1, 0)))
+    w = dw * np.hstack((np.arange(0, n//2+1), np.arange(-n//2 + 1, 0)))
     filtered_rf = np.zeros_like(Synthrf)
     D = Synthrf
     D = D - np.mean(D)
@@ -326,7 +326,6 @@ def ResonanceFilt(Synthrf, time):
         tlag = locs[0] * dt
 
     resonanceflt = (1 + r0 * np.exp(-1j * w * tlag))
-    resonanceflt = np.hstack((resonanceflt, np.zeros(n - len(resonanceflt))))  # Pad filter to match length of FFT result
     filtered_rf = np.real(ifft(fft(D) * resonanceflt))
     # filtered_rf = filtered_rf / np.max(filtered_rf)
     #------------------------------------------------------------------------------
