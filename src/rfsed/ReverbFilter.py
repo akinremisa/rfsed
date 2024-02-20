@@ -16,8 +16,6 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import matplotlib.transforms as mtransforms
 from matplotlib.legend_handler import HandlerLine2D as HL
-import seaborn
-seaborn.set_style("darkgrid", {"axes.facecolor": ".85"})
 
 #----------------------------------------------------------
 def getamp(rfdata, tarray, t):
