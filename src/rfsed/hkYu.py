@@ -227,84 +227,84 @@ def plothkYu(hkYuResult, savepath, g = [75.,10., 15., 2.5], rmneg = None, format
     KSed=hkYuResult['KSed']
     HMoho=hkYuResult['HMoho']
     KMoho=hkYuResult['KMoho']
-    bmodSed = hkYuResult['bestmodelSed']
-    H1 = bmodSed[0]
-    K1 = bmodSed[1]
-    stkSed=hkYuResult['stackvaluesSed']
-    bmodSubSed = hkYuResult['bestmodelSubSed']
-    H2 = bmodSubSed[0]
-    K2 = bmodSubSed[1]
-    stkSubSed=hkYuResult['stackvaluesSubSed']
-    #----------------------------------------------------------
-    # Plot for Sediment Layer
     rfdata=hkYuResult['FltRF']
     rp = hkYuResult['rayp']
     t=hkYuResult['time']
-    #--------------------------------------
-    # Calculate tps for Sediment phase
-    term3= ((K1/VpSed)**2 - rp**2)**0.5
-    term4= ((1/VpSed)**2 - rp**2)**0.5
-    tpsSed = H1 * (term3 - term4)
-    #--------------------------------------
-    # tpps and tpsps are fixed based on the best subsediment model
-    term5= ((K2 /VpMoho)**2 - rp**2)**0.5
-    term6= ((1/VpMoho)**2 - rp**2)**0.5
-    tpppsSubSed = H2 * (term5 + term6)
-    tpspsSubSed = H2 * 2 * (term5)  
-    #----------------------------------------------------------
-    # plot H-K results
-    #----------------------------------------------------------
-    plt.figure(figsize=(18, 6)) 
-    gs = gridspec.GridSpec(1, 3, width_ratios=[6,4,4])
-    #-----Remove the stack values that is lower than zero------
-    if rmneg == True:
-        for i in range(len(stkSed)):
-            if stkSed[i,2] <= 0:
-                stkSed[i,2] = 0
-    #----------------------------------------------------------
-    ax1 = plt.subplot(gs[0, 0])
-    plt.tricontourf(stkSed[:,0], stkSed[:,1], stkSed[:,2],50, cmap ="jet")
-    #----------------------------------------------------------
-    cb=plt.colorbar(format='%.3f', orientation="vertical")
-    p1,=ax1.plot(bmodSed[0],bmodSed[1], 'k+', mew=2, ms=10, \
-    label='Best Model Sediment %.2f km %.2f Vp/Vs'%(bmodSed[0],bmodSed[1]+0.001))
-    props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-    plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,ncol=2, mode="expand", borderaxespad=0, handler_map={p1:HL(numpoints=1)})
-    ax1.set_ylabel('Vp/Vs')
-    ax1.set_xlabel('Depth km')
-    ax1.set_xlim(min(HSed), max(HSed))
-    ax1.set_ylim(min(KSed), max(KSed))
-    #----------------------------------------------------------
-    # Plot the receiver function witht the estimated times
-    #----------------------------------------------------------
-    ax2 = plt.subplot(gs[0, 1]) 
-    baz=180
-    rfdata = ((rfdata) * (g[0]/2)) + baz
-    major_ticks_x = np.arange(-10, 41, 5)                                              
-    minor_ticks_x = np.arange(-10, 41, 5) 
-    major_ticks_y = np.arange(0, 361, 45)                                              
-    minor_ticks_y = np.arange(-30, 390, 5)
-    ax2.set_xticks(major_ticks_x)                                                       
-    ax2.set_xticks(minor_ticks_x, minor=True)                                           
-    ax2.set_yticks(major_ticks_y)                                                       
-    ax2.set_yticks(minor_ticks_y, minor=True)                                          
-    ax2.set_xlim(-5, 30)
-    ax2.set_ylim(-29, 390)
-    ax2.set_xlabel("Time (sec)")
-    ax2.set_ylabel("Back-Azimuth (deg)")  
-    ax2.plot(t, rfdata, "k-", lw=0.5)
-    ax2.fill_between(t, baz, rfdata, where=rfdata > baz, facecolor='red', alpha = 0.25)
-    ax2.fill_between(t, baz, rfdata, where=rfdata <= baz, facecolor='blue', alpha = 0.25)
-    mtransforms.blended_transform_factory(ax2.transData, ax2.transAxes)
-    ampgain = g[1]
-    ax2.plot([tpsSed, tpsSed], [baz+ampgain, baz-ampgain], 'g-', lw=1.5, label="Moho")
-    ax2.plot([tpppsSubSed, tpppsSubSed], [baz+ampgain, baz-ampgain], 'g-', lw=1.5)
-    ax2.plot([tpspsSubSed, tpspsSubSed], [baz+ampgain, baz-ampgain], 'g-', lw=1.5)
-    filename = "%s/%s_%s.%s"%(savepath, staname, "Sediment", format)
-    plt.savefig(filename , format=format, transparent=False,\
-        dpi=250, bbox_inches = 'tight', pad_inches=0.1)
-    plt.show()
-    plt.close('all')
+    # bmodSed = hkYuResult['bestmodelSed']
+    # H1 = bmodSed[0]
+    # K1 = bmodSed[1]
+    # stkSed=hkYuResult['stackvaluesSed']
+    # bmodSubSed = hkYuResult['bestmodelSubSed']
+    # H2 = bmodSubSed[0]
+    # K2 = bmodSubSed[1]
+    # stkSubSed=hkYuResult['stackvaluesSubSed']
+    # #----------------------------------------------------------
+    # # Plot for Sediment Layer
+    # #--------------------------------------
+    # # Calculate tps for Sediment phase
+    # term3= ((K1/VpSed)**2 - rp**2)**0.5
+    # term4= ((1/VpSed)**2 - rp**2)**0.5
+    # tpsSed = H1 * (term3 - term4)
+    # #--------------------------------------
+    # # tpps and tpsps are fixed based on the best subsediment model
+    # term5= ((K2 /VpMoho)**2 - rp**2)**0.5
+    # term6= ((1/VpMoho)**2 - rp**2)**0.5
+    # tpppsSubSed = H2 * (term5 + term6)
+    # tpspsSubSed = H2 * 2 * (term5)  
+    # #----------------------------------------------------------
+    # # plot H-K results
+    # #----------------------------------------------------------
+    # plt.figure(figsize=(18, 6)) 
+    # gs = gridspec.GridSpec(1, 3, width_ratios=[6,4,4])
+    # #-----Remove the stack values that is lower than zero------
+    # if rmneg == True:
+    #     for i in range(len(stkSed)):
+    #         if stkSed[i,2] <= 0:
+    #             stkSed[i,2] = 0
+    # #----------------------------------------------------------
+    # ax1 = plt.subplot(gs[0, 0])
+    # plt.tricontourf(stkSed[:,0], stkSed[:,1], stkSed[:,2],50, cmap ="jet")
+    # #----------------------------------------------------------
+    # cb=plt.colorbar(format='%.3f', orientation="vertical")
+    # p1,=ax1.plot(bmodSed[0],bmodSed[1], 'k+', mew=2, ms=10, \
+    # label='Best Model Sediment %.2f km %.2f Vp/Vs'%(bmodSed[0],bmodSed[1]+0.001))
+    # props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+    # plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,ncol=2, mode="expand", borderaxespad=0, handler_map={p1:HL(numpoints=1)})
+    # ax1.set_ylabel('Vp/Vs')
+    # ax1.set_xlabel('Depth km')
+    # ax1.set_xlim(min(HSed), max(HSed))
+    # ax1.set_ylim(min(KSed), max(KSed))
+    # #----------------------------------------------------------
+    # # Plot the receiver function witht the estimated times
+    # #----------------------------------------------------------
+    # ax2 = plt.subplot(gs[0, 1]) 
+    # baz=180
+    # rfdata = ((rfdata) * (g[0]/2)) + baz
+    # major_ticks_x = np.arange(-10, 41, 5)                                              
+    # minor_ticks_x = np.arange(-10, 41, 5) 
+    # major_ticks_y = np.arange(0, 361, 45)                                              
+    # minor_ticks_y = np.arange(-30, 390, 5)
+    # ax2.set_xticks(major_ticks_x)                                                       
+    # ax2.set_xticks(minor_ticks_x, minor=True)                                           
+    # ax2.set_yticks(major_ticks_y)                                                       
+    # ax2.set_yticks(minor_ticks_y, minor=True)                                          
+    # ax2.set_xlim(-5, 30)
+    # ax2.set_ylim(-29, 390)
+    # ax2.set_xlabel("Time (sec)")
+    # ax2.set_ylabel("Back-Azimuth (deg)")  
+    # ax2.plot(t, rfdata, "k-", lw=0.5)
+    # ax2.fill_between(t, baz, rfdata, where=rfdata > baz, facecolor='red', alpha = 0.25)
+    # ax2.fill_between(t, baz, rfdata, where=rfdata <= baz, facecolor='blue', alpha = 0.25)
+    # mtransforms.blended_transform_factory(ax2.transData, ax2.transAxes)
+    # ampgain = g[1]
+    # ax2.plot([tpsSed, tpsSed], [baz+ampgain, baz-ampgain], 'g-', lw=1.5, label="Moho")
+    # ax2.plot([tpppsSubSed, tpppsSubSed], [baz+ampgain, baz-ampgain], 'g-', lw=1.5)
+    # ax2.plot([tpspsSubSed, tpspsSubSed], [baz+ampgain, baz-ampgain], 'g-', lw=1.5)
+    # filename = "%s/%s_%s.%s"%(savepath, staname, "Sediment", format)
+    # plt.savefig(filename , format=format, transparent=False,\
+    #     dpi=250, bbox_inches = 'tight', pad_inches=0.1)
+    # plt.show()
+    # plt.close('all')
     #----------------------------------------------------------
     # Plot SubSediment Stack
     #----------------------------------------------------------
