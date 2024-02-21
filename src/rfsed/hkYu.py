@@ -138,57 +138,57 @@ def hkYu(FltResult, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspa
     print("Best Subsediment thickness: ", HSubSedbm, "Best Subsediment Vp/Vs:", KSubSedbm, "Max stack: ", SSubSedbm)
     #----------------------------------------------------------
     # Stack for Sediment Layer
-    stkSed = np.zeros((len(KSed)*len(HSed),3))
-    z = 0 
-    for i in range(len(KSed)):
-        Ktemp = KSed[i]
-        for j in range(len(HSed)):
-            Htemp = HSed[j]
-            s = 0.0
-            trdata = rfdata
-            #--------------------------------------
-            # Calculate tps for Sediment phase
-            term3= ((Ktemp/VpSed)**2 - rp**2)**0.5
-            term4= ((1/VpSed)**2 - rp**2)**0.5
-            tpsSed = Htemp * (term3 - term4)
-            #--------------------------------------
-            # tpps and tpsps are fixed based on the best subsediment model
-            term5= ((KSubSedbm /VpMoho)**2 - rp**2)**0.5
-            term6= ((1/VpMoho)**2 - rp**2)**0.5
-            tpppsSubSed = HSubSedbm * (term5 + term6)
-            tpspsSubSed = HSubSedbm * 2 * (term5)  
-            #--------------------------------------
-            ampps = getamp(trdata, t, tpsSed)
-            ampppps = getamp(trdata,t, tpppsSubSed)
-            amppsps = getamp(trdata, t, tpspsSubSed)
-            #--------------------------------------
-            stemp = (w1SubSed * ampps) + (w2SubSed * ampppps) - (w3SubSed * amppsps)
-            s = stemp + s
-            stkSed[z,:] = [Htemp, Ktemp, s]
-            z = z + 1
-    bmodSed = stkSed[np.argmax(stkSed[:,2]),:]
-    #Show the best model
-    plt.tricontourf(stkSed[:,0], stkSed[:,1], stkSed[:,2],60, cmap='jet')
-    cb=plt.colorbar(format='%.3f', orientation="vertical")
-    p1,=plt.plot(bmodSed[0],bmodSed[1], 'k+', mew=5, ms=15,\
-        label='Best Model %s km %s Vp/Vs'%(bmodSed[0], bmodSed[1]))
-    plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,\
-        ncol=2, mode="expand", borderaxespad=0, \
-        handler_map={p1:HL(numpoints=1)}) 
-    plt.ylabel('Vp/Vs')
-    plt.xlabel('Depth km')
-    plt.xlim(min(HSed),max(HSed))
-    plt.ylim(min(KSed),max(KSed))
-    # plt.savefig(savepath , format=format, dpi=250) 
-    plt.show()
-    plt.close("all")  
-    HSedbm = bmodSed[0]
-    KSedbm = bmodSed[1]
-    SSedbm = bmodSed[2]
-    print("Best Sediment thickness: ", HSedbm, " km", "Best Sediment Vp/Vs:", KSedbm, "Max stack: ", SSedbm)
-    print("Best Subsediment thickness: ", HSubSedbm, " km", "Best Subsediment Vp/Vs:", KSubSedbm, "Max stack: ", SSubSedbm)
-    HMohobm=HSubSedbm + HSedbm
-    print("Best Moho thickness: ", HMohobm, " km")
+    # stkSed = np.zeros((len(KSed)*len(HSed),3))
+    # z = 0 
+    # for i in range(len(KSed)):
+    #     Ktemp = KSed[i]
+    #     for j in range(len(HSed)):
+    #         Htemp = HSed[j]
+    #         s = 0.0
+    #         trdata = rfdata
+    #         #--------------------------------------
+    #         # Calculate tps for Sediment phase
+    #         term3= ((Ktemp/VpSed)**2 - rp**2)**0.5
+    #         term4= ((1/VpSed)**2 - rp**2)**0.5
+    #         tpsSed = Htemp * (term3 - term4)
+    #         #--------------------------------------
+    #         # tpps and tpsps are fixed based on the best subsediment model
+    #         term5= ((KSubSedbm /VpMoho)**2 - rp**2)**0.5
+    #         term6= ((1/VpMoho)**2 - rp**2)**0.5
+    #         tpppsSubSed = HSubSedbm * (term5 + term6)
+    #         tpspsSubSed = HSubSedbm * 2 * (term5)  
+    #         #--------------------------------------
+    #         ampps = getamp(trdata, t, tpsSed)
+    #         ampppps = getamp(trdata,t, tpppsSubSed)
+    #         amppsps = getamp(trdata, t, tpspsSubSed)
+    #         #--------------------------------------
+    #         stemp = (w1SubSed * ampps) + (w2SubSed * ampppps) - (w3SubSed * amppsps)
+    #         s = stemp + s
+    #         stkSed[z,:] = [Htemp, Ktemp, s]
+    #         z = z + 1
+    # bmodSed = stkSed[np.argmax(stkSed[:,2]),:]
+    # #Show the best model
+    # plt.tricontourf(stkSed[:,0], stkSed[:,1], stkSed[:,2],60, cmap='jet')
+    # cb=plt.colorbar(format='%.3f', orientation="vertical")
+    # p1,=plt.plot(bmodSed[0],bmodSed[1], 'k+', mew=5, ms=15,\
+    #     label='Best Model %s km %s Vp/Vs'%(bmodSed[0], bmodSed[1]))
+    # plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,\
+    #     ncol=2, mode="expand", borderaxespad=0, \
+    #     handler_map={p1:HL(numpoints=1)}) 
+    # plt.ylabel('Vp/Vs')
+    # plt.xlabel('Depth km')
+    # plt.xlim(min(HSed),max(HSed))
+    # plt.ylim(min(KSed),max(KSed))
+    # # plt.savefig(savepath , format=format, dpi=250) 
+    # plt.show()
+    # plt.close("all")  
+    # HSedbm = bmodSed[0]
+    # KSedbm = bmodSed[1]
+    # SSedbm = bmodSed[2]
+    # print("Best Sediment thickness: ", HSedbm, " km", "Best Sediment Vp/Vs:", KSedbm, "Max stack: ", SSedbm)
+    # print("Best Subsediment thickness: ", HSubSedbm, " km", "Best Subsediment Vp/Vs:", KSubSedbm, "Max stack: ", SSubSedbm)
+    # HMohobm=HSubSedbm + HSedbm
+    # print("Best Moho thickness: ", HMohobm, " km")
     HKYuResult = {'FltRF': Fltrf, 'time':t, 'tlag':tlag, 'Pdelay':Pdelay, 'rayp':rayp, 'BestMohoDepth': HMohobm, 
                   'bestmodelSubSed':bmodSubSed, 'VpMoho':VpMoho, 'VpSed':VpSed, 'stackvaluesSubSed':stkSubSed, 
                   'bestmodelSed':bmodSed, 'stackvaluesSed':stkSed,'HMoho':HSubSed, 'KMoho':KSubSed,'HSed':HSed, 

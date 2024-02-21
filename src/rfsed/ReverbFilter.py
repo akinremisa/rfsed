@@ -33,7 +33,7 @@ def getamp(rfdata, tarray, t):
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
-def Resonance_Filt(rfstream, preonset):
+def ResonanceFilt(rfstream, preonset):
     """
     Resonance Filter for receiver function data (Removes sediment reverberation effect)
 
