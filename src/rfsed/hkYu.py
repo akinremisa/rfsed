@@ -38,7 +38,7 @@ def getamp(rfdata, tarray, t):
     return amp
 #----------------------------------------------------------
 def hkYu(FltResult, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspace(1.65,1.95,121), 
-               HSed=np.linspace(0,10,201), KSed=np.linspace(1.65,2.25,201), VpMoho=6.9, VpSed= 2.5,  
+               HSed=np.linspace(0,10,201), KSed=np.linspace(1.65,2.25,201), VpMoho=6.9, VpSed= 2.5, VsSed=1.4, 
                w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1, w1Sed=0.6, w2Sed=0.3, w3Sed=0.1):
     """
     Modified H-K stacking method of Yu et al. (2015)
@@ -83,8 +83,9 @@ def hkYu(FltResult, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspa
     rfdata = Fltrf
     t = FltResult['time']
     tlag=FltResult['tlag']
-    VsSed=0.7858 - 1.2344*VpSed + 0.7949*VpSed**2 - 0.1238*VpSed**3 + 0.0064*VpSed**4
+    # VsSed=0.7858 - 1.2344*VpSed + 0.7949*VpSed**2 - 0.1238*VpSed**3 + 0.0064*VpSed**4
     SedH=tlag*VsSed/2
+    print('Sediment thickness based on the layer 2-way travel time is',  SedH, 'km' )
     Pdelay=SedH/VsSed - SedH/VpSed
     #----------------------------------------------------------
     # Stack for SubSediment Layer
@@ -136,6 +137,9 @@ def hkYu(FltResult, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspa
     KSubSedbm = bmodSubSed[1]
     SSubSedbm = bmodSubSed[2]
     print("Best Subsediment thickness: ", HSubSedbm, "Best Subsediment Vp/Vs:", KSubSedbm, "Max stack: ", SSubSedbm)
+    HKYuResult = {'FltRF': Fltrf, 'time':t, 'tlag':tlag, 'Pdelay':Pdelay, 'rayp':rayp,'bestmodelSubSed':bmodSubSed, 
+                  'VpMoho':VpMoho, 'VpSed':VpSed, 'stackvaluesSubSed':stkSubSed, 'HMoho':HSubSed, 'KMoho':KSubSed,
+                  'SubSedThick':HSubSedbm, 'SubSedVpVs':KSubSedbm,'SedThick':SedH}
     #----------------------------------------------------------
     # Stack for Sediment Layer
     # stkSed = np.zeros((len(KSed)*len(HSed),3))
@@ -189,10 +193,11 @@ def hkYu(FltResult, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspa
     # print("Best Subsediment thickness: ", HSubSedbm, " km", "Best Subsediment Vp/Vs:", KSubSedbm, "Max stack: ", SSubSedbm)
     # HMohobm=HSubSedbm + HSedbm
     # print("Best Moho thickness: ", HMohobm, " km")
-    HKYuResult = {'FltRF': Fltrf, 'time':t, 'tlag':tlag, 'Pdelay':Pdelay, 'rayp':rayp, 'BestMohoDepth': HMohobm, 
-                  'bestmodelSubSed':bmodSubSed, 'VpMoho':VpMoho, 'VpSed':VpSed, 'stackvaluesSubSed':stkSubSed, 
-                  'bestmodelSed':bmodSed, 'stackvaluesSed':stkSed,'HMoho':HSubSed, 'KMoho':KSubSed,'HSed':HSed, 
-                  'KSed':KSed,'SubSedThick':HSubSedbm, 'SubSedVpVs':KSubSedbm, 'SedThick':HSedbm, 'SedVpVs':KSedbm}
+    # HKYuResult = {'FltRF': Fltrf, 'time':t, 'tlag':tlag, 'Pdelay':Pdelay, 'rayp':rayp, 'BestMohoDepth': HMohobm, 
+    #               'bestmodelSubSed':bmodSubSed, 'VpMoho':VpMoho, 'VpSed':VpSed, 'stackvaluesSubSed':stkSubSed, 
+    #               'bestmodelSed':bmodSed, 'stackvaluesSed':stkSed,'HMoho':HSubSed, 'KMoho':KSubSed,'HSed':HSed, 
+    #               'KSed':KSed,'SubSedThick':HSubSedbm, 'SubSedVpVs':KSubSedbm, 'SedThick':HSedbm, 'SedVpVs':KSedbm}
+    
     return HKYuResult
 #----------------------------------------------------------
 def plothkYu(hkYuResult, savepath, g = [75.,10., 15., 2.5], rmneg = None, format = 'jpg'): 
