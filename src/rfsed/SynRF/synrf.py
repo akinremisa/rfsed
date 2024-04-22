@@ -1,3 +1,5 @@
+# modified after seisfwd of seispy [Xu and He, 2022]
+
 import numpy as np
 import obspy
 from obspy.io.sac import SACTrace
@@ -47,7 +49,7 @@ def phaseshift(x, nfft, dt, tshift):
     x = x.real
     return x
 
-def deconit(uin, win, dt, nt=None, tshift=10, gaussian=2.0, itmax=400, minderr=0.001, phase='P'):
+def deconv_iterative(uin, win, dt, nt=None, tshift=10, gaussian=2.0, itmax=400, minderr=0.001, phase='P'):
     """
     Created on Wed Sep 10 14:21:38 2014
 
@@ -133,7 +135,7 @@ def deconit(uin, win, dt, nt=None, tshift=10, gaussian=2.0, itmax=400, minderr=0
     return RFI, rms, it 
     
 
-def deconwater(uin, win, dt, tshift=10., wlevel=0.05, gaussian=2.0, normalize=False, phase='P'):
+def deconv_waterlevel(uin, win, dt, tshift=10., wlevel=0.05, gaussian=2.0, normalize=False, phase='P'):
     """
     Frequency-domain deconvolution using waterlevel method.
 
@@ -212,11 +214,11 @@ def deconwater(uin, win, dt, tshift=10., wlevel=0.05, gaussian=2.0, normalize=Fa
 
     return rft, rms
 
-def deconvolute(uin, win, dt, method='iter', **kwargs):
+def deconvolve(uin, win, dt, method='iter', **kwargs):
     if method.lower() == 'iter':
-        return deconit(uin, win, dt, **kwargs)
+        return deconv_iterative(uin, win, dt, **kwargs)
     elif method.lower() == 'water':
-        return deconwater(uin, win, dt, **kwargs)
+        return deconv_waterlevel(uin, win, dt, **kwargs)
     else:
         raise ValueError('method must be \'iter\' or \'water\'')
 
@@ -225,16 +227,16 @@ class RFTrace(obspy.Trace):
         super().__init__(data=data, header=header)
 
     @classmethod
-    def deconvolute(cls, utr, wtr, method='iter', **kwargs):
+    def deconvolve(cls, utr, wtr, method='iter', **kwargs):
         header = utr.stats.__getstate__()
         for key, value in kwargs.items():
             header[key] = value
         if method.lower() == 'iter':
-            rf, rms, it = deconit(utr.data, wtr.data, utr.stats.delta, **kwargs)
+            rf, rms, it = deconv_iterative(utr.data, wtr.data, utr.stats.delta, **kwargs)
             header['rms'] = rms
             header['iter'] = it
         elif method.lower() == 'water':
-            rf, rms = deconwater(utr.data, wtr.data, utr.stats.delta, **kwargs)
+            rf, rms = deconv_waterlevel(utr.data, wtr.data, utr.stats.delta, **kwargs)
             header['rms'] = rms
             header['iter'] = np.nan
         else:
@@ -375,7 +377,7 @@ def fwd_seis(rayp, dt, npts, ipha, alpha, beta, rho, h):
     return ur[0:npts], uz[0:npts]
 
 
-class SynRF():
+class synrf():
     def __init__(self, depth, vp, vs, rho, rayp, dt, npts=2500, ipha=1, filter=None) -> None:
         """_summary_
 
@@ -405,30 +407,14 @@ class SynRF():
         self.dt = dt
         self.npts = npts
         self.thickness=[]
+        # convert depths in the model to layer thicknesses
         for i in range(len(self.depth)):
             if i == 0:
                 thick=self.depth[i]
                 self.thickness.append(thick)
             else:
-                if i==1:
-                    thick=self.depth[i]-self.depth[i-1]
-                    self.thickness.append(thick)
-                else:
-                    if i==2:
-                        thick=self.depth[i]-self.depth[i-1]
-                        self.thickness.append(thick)
-                    else:
-                        if i==3:
-                            thick=self.depth[i]-self.depth[i-1]
-                            self.thickness.append(thick)
-                        else:
-                            if i==4:
-                                thick=self.depth[i]-self.depth[i-1]
-                                self.thickness.append(thick)
-                            else:
-                                if i==5:
-                                    thick=self.depth[i]-self.depth[i-1]
-                                    self.thickness.append(thick)
+                thick=self.depth[i]-self.depth[i-1]
+                self.thickness.append(thick)
         self.thickness=np.array(self.thickness)
         if not isinstance(rayp, (float, list, np.ndarray)):
             raise TypeError('The rayp should be in float, list and np.ndarray')
@@ -480,7 +466,7 @@ class SynRF():
             self.filter(*pre_filt)
         rfstream = Stream()
         for i, _ in enumerate(self.rayp):
-            rftr = RFTrace.deconvolute(self.rstream[i], self.zstream[i], tshift=shift,
+            rftr = RFTrace.deconvolve(self.rstream[i], self.zstream[i], tshift=shift,
                                        gaussian=gaussian, **kwargs)
             rfstream.append(rftr)
         return rfstream
