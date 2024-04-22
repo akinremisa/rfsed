@@ -1,4 +1,5 @@
 # modified after seisfwd of seispy [Xu and He, 2022]
+# Under the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 
 import numpy as np
 import obspy
