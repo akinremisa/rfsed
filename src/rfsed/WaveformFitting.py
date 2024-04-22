@@ -5,7 +5,7 @@
 """
 
 import numpy as np
-from rfsed.SynRF.FwdRF import SynRF
+from rfsed.synrf import synrf
 import math
 from obspy.signal.tf_misfit import pg
 import matplotlib.pyplot as plt

@@ -11,7 +11,7 @@ from os import mkdir
 from glob import glob
 from rfsed.rf import read_rf, RFStream
 import matplotlib.pyplot as plt
-from rfsed.SynRF.FwdRF import SynRF
+from rfsed.synrf import synrf
 import math
 from obspy.signal.tf_misfit import pg
 import matplotlib.pyplot as plt

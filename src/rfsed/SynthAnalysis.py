@@ -10,7 +10,7 @@ from scipy.signal import detrend
 from scipy.fft import fft, ifft
 from scipy.signal import find_peaks
 import matplotlib.pyplot as plt
-from rfsed.SynRF.FwdRF import SynRF
+from rfsed.synrf import synrf
 import matplotlib.gridspec as gridspec
 import matplotlib.transforms as mtransforms
 from matplotlib.legend_handler import HandlerLine2D as HL
