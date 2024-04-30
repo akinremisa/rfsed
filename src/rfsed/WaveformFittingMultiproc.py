@@ -9,7 +9,7 @@ import os
 from os.path import exists
 from os import mkdir
 from glob import glob
-from rfsed.rf import read_rf, RFStream
+from rf import read_rf, RFStream
 import matplotlib.pyplot as plt
 from rfsed.synrf import synrf
 import math
@@ -117,7 +117,7 @@ def WaveformFit_multiproc(inputparams):
         vp = np.array([VpSed, VpCrust, 8.045])
         vs = np.array([VsSed, (VpCrust/Ktemp), 4.49])
         rho = np.array([SedDen, CrustDen, 3.299])
-        Synth=SynRF(depth, vp, vs, rho, rayp, dt=delta, npts=n, ipha=1)
+        Synth=synrf(depth, vp, vs, rho, rayp, dt=delta, npts=n, ipha=1)
         Synth.run_fwd()
         Synth.filter(freqmin=0.05, freqmax=1.25, order=2, zerophase=True)
         rf_synth=Synth.run_deconvolution(pre_filt=[0.05, 1.25], shift=delay, gaussian=gaussian)
@@ -314,7 +314,7 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG, savepath, 
         vp = np.array([VpSed, VpCrust, 8.045])
         vs = np.array([VsSed, (VpCrust/K), 4.49])
         rho = np.array([SedDen, CrustDen, 3.299])
-        Synth=SynRF(depth, vp, vs, rho, rayp, dt=delta, npts=n, ipha=1)
+        Synth=synrf(depth, vp, vs, rho, rayp, dt=delta, npts=n, ipha=1)
         Synth.run_fwd()
         Synth.filter(freqmin=0.05, freqmax=1.25, order=2, zerophase=True)
         rf_synth=Synth.run_deconvolution(pre_filt=[0.05, 1.25], shift=delay, gaussian=gaussian)

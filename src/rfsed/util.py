@@ -1,4 +1,4 @@
-from rfsed.rf.rfstream import read_rf, rfstats
+from rf.rfstream import read_rf, rfstats
 import numpy as np
 import os
 current_directory = os.path.dirname(os.path.abspath(__file__))
