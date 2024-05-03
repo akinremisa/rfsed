@@ -52,7 +52,6 @@ def phaseshift(x, nfft, dt, tshift):
 
 def deconv_iterative(uin, win, dt, nt=None, tshift=10, gaussian=2.0, itmax=400, minderr=0.001, phase='P'):
     """
-    Created on Wed Sep 10 14:21:38 2014
 
     In:
     uin = numerator (radial for PdS)
@@ -68,7 +67,6 @@ def deconv_iterative(uin, win, dt, nt=None, tshift=10, gaussian=2.0, itmax=400, 
     RFI = receiver function
     rms = Root mean square error for predicting numerator after each iteration
 
-    @author: Mijian Xu @ NJU
     """
     # print('Iterative Decon (Ligorria & Ammon):\n')
     if len(uin) != len(win):
@@ -428,7 +426,6 @@ class synrf():
     def run_fwd(self):
         """Forward modelling synthetic seismograms.
 
-        ``SynSeis.rstream`` and ``SynSeis.zstream`` are generated as 
         radial and vertical Seismograms in ``Obspy.Stream`` type.
         """
         self.rstream = Stream()
