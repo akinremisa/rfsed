@@ -44,14 +44,16 @@ pip install rfsed
 ### Installation development version from source code
 To obtain the latest updates, you can install rfsed from the source code, available on GitHub.
 
+Clone the rfsed repository from GitHub
 ```bash
-# Clone the rfsed repository from GitHub
 git clone https://github.com/akinremisa/rfsed.git
-
-# Change directory to the same directory that this repo is in
-cd rfsed  # That's the standard name the folder should have
-
-# installing using pip
+```
+Change directory to the same directory that this repo is in
+```bash
+cd rfsed 
+``` 
+Installing using pip
+```bash
 pip install .
 ```
 ### Test the rfsed package
