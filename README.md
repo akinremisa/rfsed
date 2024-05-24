@@ -35,30 +35,26 @@ The receiver function forward calculation in rfsed is done using SynR, which is 
 ## Installation and testing of this package
 
 ### Installation from PyPi
-The easiest way to install rfsed is via `pip`_::
+The easiest way to install rfsed is via `pip`::
 
 ```bash
 pip install rfsed
 ```
 
-### Installation from source code using environment.yml
+### Installation development version from source code
 To obtain the latest updates, you can install rfsed from the source code, available on GitHub.
 
 ```bash
 # Clone the rfsed repository from GitHub
 git clone https://github.com/akinremisa/rfsed.git
 
-# Change directory to the same directory that this repo is in (i.e., same directory as setup.py and environment.yml)
+# Change directory to the same directory that this repo is in
 cd rfsed  # That's the standard name the folder should have
 
-# Create the conda environment, install dependencies, and install the rfsed package using environment.yml
-conda env create -f environment.yml
-
-# Activate the conda environment
-conda activate rfsed
-
+# installing using pip
+pip install .
 ```
-## Test the rfsed package
+### Test the rfsed package
 You can test the package using pytest by running this command in the package directory and will look for all available tests in the current directory and subdirectories recursively
 
 ```bash
