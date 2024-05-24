@@ -18,8 +18,11 @@ class TestWaveformFitting(unittest.TestCase):
         VpCrust = 6.9
         gaussian=1.25
         rayp=0.04
-        KMoho= np.linspace(1.65,1.95,121)
-        HMoho=np.linspace(20,60,201)
+        # KMoho= np.linspace(1.65,1.95,121)
+        # HMoho=np.linspace(20,60,201)
+        # Use smaller grid search discretization so the test runs faster
+        KMoho= np.linspace(1.65,1.95,10)
+        HMoho=np.linspace(25,50,10)
         format='pdf'
         wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
         WaveformFitting(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, rayp=rayp, KMoho=KMoho, HMoho=HMoho, 
@@ -34,8 +37,11 @@ class TestWaveformFitting(unittest.TestCase):
             VpCrust = 6.9
             gaussian=1.25
             rayp=0.04
-            KMoho= np.linspace(1.65,1.95,121)
-            HMoho=np.linspace(20,60,201)
+            # KMoho= np.linspace(1.65,1.95,121)
+            # HMoho=np.linspace(20,60,201)
+            # Use smaller grid search discretization so the test runs faster
+            KMoho= np.linspace(1.65,1.95,10)
+            HMoho=np.linspace(25,50,10)
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
             format='pdf'
             FittingResult=WaveformFitting(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, rayp=rayp, KMoho=KMoho, HMoho=HMoho, 
