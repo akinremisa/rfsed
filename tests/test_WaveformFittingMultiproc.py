@@ -21,8 +21,8 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
         # KMoho= np.linspace(1.65,1.95,121)
         # HMoho=np.linspace(20,60,201)
         # Use smaller grid search discretization so the test runs faster
-        KMoho= np.linspace(1.65,1.95,10)
-        HMoho=np.linspace(25,50,10)
+        KMoho= np.linspace(1.65,1.95,5)
+        HMoho=np.linspace(25,50,5)
         wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
         WaveformPara(rfstream=rfstream, preonset=preonset, Sedthick=Sedthick, VpSed=VpSed, VpCrust=VpCrust, 
                                      rayp=rayp, KMoho=KMoho, HMoho=HMoho, gaussian=gaussian)
@@ -39,8 +39,8 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             # KMoho= np.linspace(1.65,1.95,121)
             # HMoho=np.linspace(20,60,201)
             # Use smaller grid search discretization so the test runs faster
-            KMoho= np.linspace(1.65,1.95,10)
-            HMoho=np.linspace(25,50,10)
+            KMoho= np.linspace(1.65,1.95,5)
+            HMoho=np.linspace(25,50,5)
             nproc=25
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
             ModelParams=WaveformPara(rfstream=rfstream, preonset=preonset, Sedthick=Sedthick, VpSed=VpSed, VpCrust=VpCrust, 
@@ -59,8 +59,8 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             # KMoho= np.linspace(1.65,1.95,121)
             # HMoho=np.linspace(20,60,201)
             # Use smaller grid search discretization so the test runs faster
-            KMoho= np.linspace(1.65,1.95,10)
-            HMoho=np.linspace(25,50,10)
+            KMoho= np.linspace(1.65,1.95,150)
+            HMoho=np.linspace(25,50,5)
             nproc=25
             format='pdf'
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
