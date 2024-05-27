@@ -1,3 +1,4 @@
+# Intall 'pytest' command to run tests available in anywhere in the current directory or in the subdirectories.
 import setuptools
 from setuptools import setup
 from setuptools.command.test import test as testcommand
