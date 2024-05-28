@@ -2,6 +2,8 @@ from rf.rfstream import read_rf, rfstats
 from pkg_resources import resource_filename
 import numpy as np
 import os
+import pkg_resources as _pkg_resources
+from distutils import dir_util as _dir_util
 
 
 def rfMoho_example():
@@ -96,3 +98,40 @@ def save_tests():
     if not os.path.exists(savepath):
         os.mkdir(savepath)
     return savepath
+
+def install_examples(path="./rfsed_examples"):
+    """
+    Install the examples notebooks and data files for rfsed in the given location.
+
+    WARNING: If the path exists, the files will be written into the path
+    and will overwrite any existing files with which they collide.
+
+    """
+    subpath_example = os.path.join(path, "examples")
+
+    examples_path = _pkg_resources.resource_filename(
+        "rfsed", "examples")
+
+    _dir_util.copy_tree(
+        examples_path,
+        subpath_example,
+        preserve_mode=1,
+        preserve_times=1,
+        preserve_symlinks=1,
+        update=0,
+        verbose=1,
+        dry_run=0)
+    
+    subpath_data = os.path.join(path, "data")
+    data_path = _pkg_resources.resource_filename(
+        "rfsed", "data")
+
+    _dir_util.copy_tree(
+        data_path,
+        subpath_data,
+        preserve_mode=1,
+        preserve_times=1,
+        preserve_symlinks=1,
+        update=0,
+        verbose=1,
+        dry_run=0)
