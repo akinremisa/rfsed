@@ -1,5 +1,5 @@
 .. rfsed documentation master file, created by
-   sphinx-quickstart on Wed May 29 21:56:34 2024.
+   sphinx-quickstart on Thu May 30 15:22:08 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
