@@ -66,14 +66,12 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
         Example
         -------
         >>> from rfsed.ExtractEq import ExtractEq
-        Define all the necessary parameters
         >>> datapath = 'path/to/datafiles/'
         >>> filename = 'path/to/newfile'
         >>> catalog = 'path/to/catalog'
         >>> stalat = 52.22
         >>> stalon = 6.89
         >>> Request_window = [-50, 150]
-        Call the ExtractEq function
         >>> ExtractEq(datapath, filename, catalog, stalat, stalon, 
                        Request_window)
 
