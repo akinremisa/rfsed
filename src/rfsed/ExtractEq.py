@@ -42,83 +42,98 @@ from obspy.geodetics import kilometer2degrees
 from obspy.taup import TauPyModel
 #------------------------------------------------------------------------------
 def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
-        """
-        Extract the earthquake waveform data from the local data files
-        Writes the extracted data to a new file
+    """
+    Extract the earthquake waveform data from the local data files
+    Writes the extracted data to a new file
 
-        Returns: 
-        Extracted earthquake data in a new file
+    :param datapath: Path to the local data files directory
+    :type datapath:str
+    :param filename: Path to the new file
+    :type filename:str
+    :param catalog: Path to the catalog file
+    :type catalog:str
+    :param stalat: Latitude of the station
+    :type stalat:float
+    :param stalon: Longitude of the station
+    :type stalon:float
+    :param Request_window: Time window relative to first P arrival (in seconds)
+    :type Request_window:list[start, end]
 
-        Example
-        -------
-        >>> from rfsed.ExtractEq import ExtractEq
-        >>> datapath = 'path/to/datafiles/'
-        >>> filename = 'path/to/newfile'
-        >>> catalog = 'path/to/catalog'
-        >>> stalat = 52.22
-        >>> stalon = 6.89
-        >>> Request_window = [-50, 150]
-        >>> ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window)
+     Returns: 
+     Extracted earthquake data in a new file
 
-        """
-        datafiles = sorted(glob("%s*.dat"%(datapath)))
-        len_datafiles = len(datafiles)
-        firstfile = read(datafiles[0])
-        lastfile = read(datafiles[len_datafiles - 1])
-        recordstarttime = firstfile[0].stats.starttime 
-        recordendtime = lastfile[0].stats.endtime
-        # staname=firstfile[0].stats.station
-        # print('Start of all data record = ', recordstarttime)
-        # print('End of all data record = ', recordendtime)
-        #----------------------------------------------
-        # Get the requested UTC time window for each earthquake
-        catalog = read_events(catalog)
-        len_catalog=len(catalog)
-        # print(len_catalog, ' events in Catalog')    
-        time_window = []
-        for i in catalog:
-                eqtime = i.origins[0].time
-                eqlat = i.origins[0].latitude
-                eqlon = i.origins[0].longitude
-                eqmag = i.magnitudes[0].mag
-                eqdepth = (i.origins[0].depth)/1000
-                distm,baz,az  = gps2dist_azimuth(stalat, stalon, 
-                                                 eqlat, eqlon)
-                distkm = distm/1000
-                distdeg = locations2degrees(stalat, stalon, eqlat, eqlon)  
-                model = TauPyModel(model="iasp91")   
-                traveltime = model.get_travel_times(source_depth_in_km=eqdepth,
-                                                    distance_in_degree=distdeg)
-                arrivals=traveltime
-                P = traveltime[0].time   
-                onset=eqtime + P  
-                rayparam = kilometer2degrees(1) * traveltime[0].ray_param_sec_degree
-                incidangle = traveltime[0].incident_angle
-                eqstart = (eqtime + P) - abs(Request_window[0])
-                eqend = (eqtime + P) + abs(Request_window[1])
-                time_window.append([eqstart, eqend, onset])
-        #----------------------------------------------------------------------
-        # Read part of the data with chosen Earthquakes and save to a new file
-        Datast = Stream()
-        for i in datafiles:
-                st = read(i)
-                filestart=st[0].stats.starttime
-                fileend = st[0].stats.endtime
-                for t in time_window:
-                        onset = t[2]
-                        if UTC(t[0]) >= filestart and UTC(t[1]) <= fileend:
-                                Eqdata=read(i, starttime=UTC(t[0]), 
-                                            endtime = UTC(t[1]))
-                                tr=len(Eqdata)
-                                Eqdata[0].stats.onset=onset
-                                try:
-                                        Eqdata[1].stats.onset=onset
-                                        Eqdata[2].stats.onset=onset
-                                        Eqdata[3].stats.onset=onset
-                                        Eqdata[4].stats.onset=onset
-                                        Eqdata[5].stats.onset=onset
-                                except:
-                                        continue
-                                Datast += Eqdata
-        Datast.write(filename)  
+     Example
+     -------
+
+     Initialize the ExtractEq module:
+     >>> from rfsed.ExtractEq import ExtractEq
+     Define all the necessary parameters
+     >>> datapath = 'path/to/datafiles/'
+     >>> filename = 'path/to/newfile'
+     >>> catalog = 'path/to/catalog'
+     >>> stalat = 52.22
+     >>> stalon = 6.89
+     >>> Request_window = [-50, 150]
+     Call the ExtractEq function
+     >>> ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window)
+
+     """
+    datafiles = sorted(glob("%s*.dat"%(datapath)))
+    len_datafiles = len(datafiles)
+    firstfile = read(datafiles[0])
+    lastfile = read(datafiles[len_datafiles - 1])
+    recordstarttime = firstfile[0].stats.starttime 
+    recordendtime = lastfile[0].stats.endtime
+    # staname=firstfile[0].stats.station
+    # print('Start of all data record = ', recordstarttime)
+    # print('End of all data record = ', recordendtime)
+    #----------------------------------------------
+    # Get the requested UTC time window for each earthquake
+    catalog = read_events(catalog)
+    len_catalog=len(catalog)
+    # print(len_catalog, ' events in Catalog')    
+    time_window = []
+    for i in catalog:
+        eqtime = i.origins[0].time
+        eqlat = i.origins[0].latitude
+        eqlon = i.origins[0].longitude
+        eqmag = i.magnitudes[0].mag
+        eqdepth = (i.origins[0].depth)/1000
+        distm,baz,az  = gps2dist_azimuth(stalat, stalon, eqlat, eqlon)
+        distkm = distm/1000
+        distdeg = locations2degrees(stalat, stalon, eqlat, eqlon)  
+        model = TauPyModel(model="iasp91")  
+        traveltime = model.get_travel_times(source_depth_in_km=eqdepth, distance_in_degree=distdeg)
+        arrivals=traveltime
+        P = traveltime[0].time  
+        onset=eqtime + P 
+        rayparam = kilometer2degrees(1) * traveltime[0].ray_param_sec_degree
+        incidangle = traveltime[0].incident_angle
+        eqstart = (eqtime + P) - abs(Request_window[0])
+        eqend = (eqtime + P) + abs(Request_window[1])
+        time_window.append([eqstart, eqend, onset])
+    #----------------------------------------------------------------------
+    # Read part of the data with chosen Earthquakes and save to a new file
+    Datast = Stream()
+    for i in datafiles:
+        st = read(i)
+        filestart=st[0].stats.starttime
+        fileend = st[0].stats.endtime
+        for t in time_window:
+                onset = t[2]
+                if UTC(t[0]) >= filestart and UTC(t[1]) <= fileend:
+                        Eqdata=read(i, starttime=UTC(t[0]), 
+                                        endtime = UTC(t[1]))
+                        tr=len(Eqdata)
+                        Eqdata[0].stats.onset=onset
+                        try:
+                                Eqdata[1].stats.onset=onset
+                                Eqdata[2].stats.onset=onset
+                                Eqdata[3].stats.onset=onset
+                                Eqdata[4].stats.onset=onset
+                                Eqdata[5].stats.onset=onset
+                        except:
+                                continue
+                        Datast += Eqdata
+    Datast.write(filename)  
 #--------------------------------------------------------------------------------
