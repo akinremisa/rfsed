@@ -46,20 +46,6 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
         Extract the earthquake waveform data from the local data files
         Writes the extracted data to a new file
 
-        :param datapath: Path to the local data files directory
-        :type datapath:str
-        :param filename: Path to the new file
-        :type filename:str
-        :param catalog: Path to the catalog file
-        :type catalog:str
-        :param stalat: Latitude of the station
-        :type stalat:float
-        :param stalon: Longitude of the station
-        :type stalon:float
-        :param Request_window: Time window relative to first P arrival 
-                               (in seconds)
-        :type Request_window:list[start, end]
-
         Returns: 
         Extracted earthquake data in a new file
 
@@ -72,8 +58,7 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
         >>> stalat = 52.22
         >>> stalon = 6.89
         >>> Request_window = [-50, 150]
-        >>> ExtractEq(datapath, filename, catalog, stalat, stalon, 
-                       Request_window)
+        >>> ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window)
 
         """
         datafiles = sorted(glob("%s*.dat"%(datapath)))
