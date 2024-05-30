@@ -65,8 +65,6 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
 
         Example
         -------
-
-        Initialize the ExtractEq module:
         >>> from rfsed.ExtractEq import ExtractEq
         Define all the necessary parameters
         >>> datapath = 'path/to/datafiles/'
