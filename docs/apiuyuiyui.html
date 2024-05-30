@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rfsed Documentation &mdash; rfsed  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            rfsed
+              <img src="_static/rfsed_logo_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="links.html">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Module</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEq.html">Module ExtractEq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEqMultiproc.html">Module ExtractEqMultiproc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkSeqYeck.html">Module hkSeqYeck</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">rfsed</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">rfsed Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/apiuyuiyui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <figure class="align-center">
+<img alt="_images/rfsed_logo_name.png" src="_images/rfsed_logo_name.png" />
+</figure>
+<section id="rfsed-documentation">
+<span id="module-rfsed"></span><h1>rfsed Documentation<a class="headerlink" href="#rfsed-documentation" title="Link to this heading"></a></h1>
+<p>rfsed is a Python framework for analysizing receiver functions.
+It is developed specifically to implement different techniques of analysing receiver functions
+from stations overlying sedimentary layers. Receiver functions techniques implemented in rfsed are:
+1. H-k stacking of Zhu and Kanamori (2000)
+2. Sequential H-k stacking of Yeck et al., (2013)
+3. Resonance filtering and modified H-k stacking of Yu et al., (2015)
+4. H-k stacking and Waveform Fitting two-step method of Akinremi et al., (2024)
+6. Analysis of the synthetic reciever functions with the above-mentioned methods.</p>
+<p>Beside these receiver function methods, rfsed has the following features:
+1. Creating publication quality figures for the results of the analysis.
+2. Extracting earthquake data from local seismic record files.
+3. Multiprocessing options for waveform fitting and extracting earthquake data from local seismic record files.</p>
+<p>Receiver functions streams are handled by the ‘RFStream’ class of the rf open software, and it inherits a lot of useful methods from the Obspy class ‘Stream’.
+It is supported via the obspyh5 package. For more information on class “RFStream”, see documentation on rf (<a class="reference external" href="https://rf.readthedocs.io/en/latest/">https://rf.readthedocs.io/en/latest/</a>).
+The rf framework is included in the rfsed package for completness under The MIT License (MIT) Copyright (c) 2013-2019 Tom Eulenfeld.
+In the module to extract earthquake data from local seismic records, read and write support for necessary metadata is provided
+for SAC, SeismicHanlder and HDF5 formats based on ObsPy.</p>
+<p>The forward receiver function calculation is done using SynR, which is modified after the SynSeis module of Mijian Xu’s seispy project (under the GNU GENERAL PUBLIC LICENSE).</p>
+<section id="method">
+<h2>Method<a class="headerlink" href="#method" title="Link to this heading"></a></h2>
+<p>The receiver function technique is a well-established technique to image velocity contrasts in the subsurface by using isolated P–to-S wave
+conversions (P-receiver functions) and the reverberations generated at such discontinuities. The velocity contrast at the crust-mantle
+boundary (Moho) represents a major discontinuity that receiver functions are highly sensitive to, making them useful to constrain average
+crustal thickness and Vp/Vs. Several methods such as H-k stacking, has been developed to investigate the crustal thickness and Vp/Vs ratio
+using receiver functions. However, the presence of near-surface low-velocity sedimentary layer can obscure Moho signals due to the additional
+P-to-S wave conversions and  associated reverberated phases created at the sediment-basement discontinuity. These additional intra-crustal phases
+can have large amplitudes and similar arrival times to Moho signals, which makes it difficult to retrieve Moho information using standard RF techniques.
+Several other methods have been developed to deal with the complex RF in sedimentary basins and recover crustal strucures (crustal thickness and Vp/Vs).
+These methods include: Iterative trial and error fitting of observed receiver functions with synthetic ones,  wavefield continuation and decomposition technique,
+application of band-pass or resonance filters to remove the sediment signals in the receiver functions, sequential H-k stacking, and combination of H-k stacking
+and waveform fitting.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt>Dependencies of rfsed are</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="http://www.obspy.org/">ObsPy</a> and some of its dependencies,</p></li>
+<li><p>cartopy, geographiclib, shapely,</p></li>
+<li><p><a class="reference external" href="https://github.com/krischer/mtspec">mtspec</a> for multitaper deconvolution,</p></li>
+<li><p><a class="reference external" href="https://github.com/trichter/toeplitz/">toeplitz</a> for faster time domain deconvolution (optional),</p></li>
+<li><p><a class="reference external" href="https://github.com/trichter/obspyh5/">obspyh5</a> for hdf5 file support,</p></li>
+<li><p>tqdm for progress bar in batch processing (optional).</p></li>
+</ul>
+</dd>
+</dl>
+<p>The easiest way to install rfsed is via <a class="reference external" href="http://www.pip-installer.org/">pip</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">rfsed</span>
+</pre></div>
+</div>
+<p>Here are some instructions to install rfsed into a fresh conda environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">rfsed</span> <span class="n">python</span><span class="o">==</span><span class="mf">3.9</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">rfsed</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">akinremisa</span><span class="o">/</span><span class="n">rfsed</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">rfsed</span> <span class="c1">#Change directory to the same directory that this repo is in</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>Alternatively, the environment can be created and the package installed using the environment.yml file in the root directory of this repo:</p>
+<p>1. Clone the rffw repository
+git clone <a class="reference external" href="https://github.com/akinremisa/rfsed.git">https://github.com/akinremisa/rfsed.git</a>
+2. Change directory to the same directory that this repo is cloned (i.e., same directory as environment.yml)
+cd rfsed
+3. Create the evniroment and install the rfsed package using the environment.yml file
+conda env create -f environment.yml
+4. Activate the environement
+conda activate rfsed</p>
+</section>
+<section id="using-the-python-module-tutorial">
+<h2>Using the Python module/Tutorial<a class="headerlink" href="#using-the-python-module-tutorial" title="Link to this heading"></a></h2>
+<p>Examples of how to use the methods in this Python module can be found in the <cite>examples</cite> directory.</p>
+</section>
+<section id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading"></a></h2>
+<p>Please feel free to request features, report bugs or contribute code on
+<a class="reference external" href="https://github.com/akinremisa/rfsed/">GitHub</a>. The code is continuously tested by Github Actions.</p>
+</section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading"></a></h2>
+<section id="if-you-found-this-package-useful-please-consider-citing-it">
+<h3>If you found this package useful, please consider citing it.<a class="headerlink" href="#if-you-found-this-package-useful-please-consider-citing-it" title="Link to this heading"></a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stephen Akinremi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
