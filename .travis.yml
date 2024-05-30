@@ -1,6 +1,3 @@
-language: minimal
-
-
 deploy:
   provider: pages
   skip_cleanup: true
