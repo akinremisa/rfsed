@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module WaveformFitting &mdash; rfsed  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module WaveformFittingMultiproc" href="WaveformFittingMultiproc.html" />
+    <link rel="prev" title="Module ReverbFilter" href="ReverbFilter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            rfsed
+              <img src="_static/rfsed_logo_name.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="links.html">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html#usage">Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Module</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ExtractEq.html">Module ExtractEq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEqMultiproc.html">Module ExtractEqMultiproc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkSeqYeck.html">Module hkSeqYeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkYu.html">Module hkYu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkZhu.html">Module hkZhu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReverbFilter.html">Module ReverbFilter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module WaveformFitting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.WaveformFitting.WaveformFitting"><code class="docutils literal notranslate"><span class="pre">WaveformFitting()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.WaveformFitting.PlotWaveformFitting"><code class="docutils literal notranslate"><span class="pre">PlotWaveformFitting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WaveformFittingMultiproc.html">Module WaveformFittingMultiproc</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">rfsed</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module WaveformFitting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/WaveformFitting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <figure class="align-center">
+<img alt="_images/rfsed_logo_horizontal.png" src="_images/rfsed_logo_horizontal.png" />
+</figure>
+<section id="module-rfsed.WaveformFitting">
+<span id="module-waveformfitting"></span><h1>Module WaveformFitting<a class="headerlink" href="#module-rfsed.WaveformFitting" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.WaveformFitting.WaveformFitting">
+<span class="sig-prename descclassname"><span class="pre">rfsed.WaveformFitting.</span></span><span class="sig-name descname"><span class="pre">WaveformFitting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfstream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preonset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HSed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VpSed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VpCrust</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rayp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">KMoho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HMoho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gaussian</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtCorr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtRMSE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtPG</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.WaveformFitting.WaveformFitting" title="Link to this definition"></a></dt>
+<dd><p>This function performs waveform fitting for the Moho depth and Vp/Vs ratio
+Returns the best model based on the Correlation Coefficient(CC),
+Root-mean-squared error(RMSE), Phase-goodness-of-fit(PG) and
+Overall Goodness-of-fit that combines CC, RMSE, and PG.
+Weights of CC, RMSE and PG (wtCorr,wtRMSE, wtPG) are given as input and can
+be modified before plotting.
+At all times, wtCorr + wtRMSE + wtPG = 1.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rfstream</strong> (<em>Obspy RFStream object</em>) – Obspy RFStream object containing the receiver functions</p></li>
+<li><p><strong>preonset</strong> (<em>integer</em>) – time in seconds before the P-arrival</p></li>
+<li><p><strong>HSed</strong> (<em>float</em>) – Sediment thickness in km</p></li>
+<li><p><strong>VpSed</strong> – Sediment Vp in km/s</p></li>
+<li><p><strong>VpSed</strong> – float</p></li>
+<li><p><strong>VpCrust</strong> – Crustal Vp in km/s</p></li>
+<li><p><strong>VpCrust</strong> – float</p></li>
+<li><p><strong>rayp</strong> – Ray parameter in s/km</p></li>
+<li><p><strong>rayp</strong> – float</p></li>
+<li><p><strong>KMoho</strong> (<em>numpy array</em>) – Vp/Vs ratio range for Moho</p></li>
+<li><p><strong>HMoho</strong> (<em>numpy array</em>) – Moho depth range in km</p></li>
+<li><p><strong>gaussian</strong> (<em>float</em>) – Gaussian filter parameter (a)</p></li>
+<li><p><strong>wtCorr</strong> (<em>float</em>) – Weight of Correlation Coefficient</p></li>
+<li><p><strong>wtRMSE</strong> (<em>float</em>) – Weight of Root-mean-squared error</p></li>
+<li><p><strong>wtPG</strong> (<em>float</em>) – Weight of Phase Goodness of Fit</p></li>
+<li><p><strong>savepath</strong> (<em>str</em>) – Path to save the plots</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – Format of the plots</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:
+Dictionary containing the Waveform Fitting Results</p>
+<p class="rubric">Example</p>
+<p>Initialise the Waveform Fitting module
+&gt;&gt;&gt; from rfsed.WaveformFitting import WaveformFitting
+Define all the necessary parameters
+&gt;&gt;&gt; import numpy as np
+rfstream is a RFStream object containing the receiver functions
+(based on rf)
+&gt;&gt;&gt; rfstream = rfstream
+&gt;&gt;&gt; preonset = 10
+&gt;&gt;&gt; HSed = 1.5
+&gt;&gt;&gt; VpSed = 2.5
+&gt;&gt;&gt; VpCrust = 6.5
+&gt;&gt;&gt; rayp = 0.06
+&gt;&gt;&gt; KMoho = np.arange(1.6, 1.9, 0.01)
+&gt;&gt;&gt; HMoho = np.arange(20, 50, 201)
+&gt;&gt;&gt; gaussian = 1.25
+&gt;&gt;&gt; wtCorr, wtRMSE, wtPG = [0.4, 0.4, 0.2]
+&gt;&gt;&gt; savepath = ‘path/to/saveplots’
+&gt;&gt;&gt; format = ‘png’
+Call the WaveformFitting function
+&gt;&gt;&gt; WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho,</p>
+<blockquote>
+<div><p>HMoho, gaussian, wtCorr, wtRMSE, wtPG, savepath, format)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.WaveformFitting.PlotWaveformFitting">
+<span class="sig-prename descclassname"><span class="pre">rfsed.WaveformFitting.</span></span><span class="sig-name descname"><span class="pre">PlotWaveformFitting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WaveformFitting</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtCorr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtRMSE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wtPG</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.WaveformFitting.PlotWaveformFitting" title="Link to this definition"></a></dt>
+<dd><p>This function plots the waveform fitting results for the Moho depth and
+Vp/Vs ratio
+Plots the Waveform Fitting Results for CC, RMSE, PG and GoF
+Weights of CC, RMSE and PG are given as input and can be modified before plotting
+At all times, wtCorr + wtRMSE + wtPG = 1.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>WaveformFitting</strong> (<em>dict</em>) – Dictionary containing the Waveform Fitting Results
+from the function WaveformFitting</p></li>
+<li><p><strong>wtCorr</strong> (<em>float</em>) – Weight of Correlation Coefficient</p></li>
+<li><p><strong>wtRMSE</strong> (<em>float</em>) – Weight of Root-mean-squared error</p></li>
+<li><p><strong>wtPG</strong> (<em>float</em>) – Weight of Phase Goodness of Fit</p></li>
+<li><p><strong>savepath</strong> (<em>str</em>) – Path to save the plots</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – Format of the plots</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:
+Plots the Waveform Fitting Results for CC, RMSE, PG and GoF</p>
+<p class="rubric">Example</p>
+<p>Initialise the PlotWaveformFitting module
+&gt;&gt;&gt; from rfsed.WaveformFitting import PlotWaveformFitting
+Define all the necessary parameters
+&gt;&gt;&gt; import numpy as np
+WaveformFitting parameter is an output from the WaveformFitting function,
+a dictionary containing the Waveform Fitting Results
+(see WaveformFitting function for details)
+&gt;&gt;&gt; WaveformFitting = WaveformFitting(rfstream, preonset, HSed, VpSed,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>VpCrust, rayp, KMoho, HMoho, gaussian,</dt><dd><p>wtCorr, wtRMSE, wtPG, savepath,
+format)</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">wtCorr</span><span class="p">,</span> <span class="n">wtRMSE</span><span class="p">,</span> <span class="n">wtPG</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">savepath</span> <span class="o">=</span> <span class="s1">&#39;path/to/saveplots&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;png&#39;</span>
+<span class="go">Call the PlotWaveformFitting function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PlotWaveformFitting</span><span class="p">(</span><span class="n">WaveformFitting</span><span class="p">,</span> <span class="n">wtCorr</span><span class="p">,</span> <span class="n">wtRMSE</span><span class="p">,</span> <span class="n">wtPG</span><span class="p">,</span> <span class="n">savepath</span><span class="p">,</span>
+<span class="go">                        format)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ReverbFilter.html" class="btn btn-neutral float-left" title="Module ReverbFilter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="WaveformFittingMultiproc.html" class="btn btn-neutral float-right" title="Module WaveformFittingMultiproc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stephen Akinremi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
