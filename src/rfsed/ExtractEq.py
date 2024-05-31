@@ -25,13 +25,13 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: ExtractEq
-        :synopsis: Extract the earthquake waveform data  from the local data 
-                   files
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+# 
+# module:: ExtractEq
+#        :synopsis: Extract the earthquake waveform data  from the local data 
+#                    files
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
+# 
 
 from obspy import read, read_inventory, Stream, read_events, UTCDateTime as UTC
 import numpy as np
@@ -43,8 +43,7 @@ from obspy.taup import TauPyModel
 #------------------------------------------------------------------------------
 def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
     """
-    Extract the earthquake waveform data from the local data files
-    Writes the extracted data to a new file
+    Extract the earthquake waveform data from the local data files and writes the extracted data to a new file
 
     :param datapath: Path to the local data files directory
     :type datapath:str

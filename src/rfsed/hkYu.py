@@ -25,17 +25,17 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: hkYu
-        :synopsis: Modified H-K stacking method of Yu et al. (2015) for 
-        receiver functions filtered with the resonance filter
-        Yu, Y., Song, J., Liu, K. H., & Gao, S. S. (2015). Determining crustal 
-        structure beneath seismic stations overlying a low-velocity sedimentary 
-        layer using receiver functions. Journal of Geophysical Research: Solid 
-        Earth, 120 , 3208-3218. doi:10.1002/2014JB011610
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+#
+# module:: hkYu
+#      :synopsis: Modified H-K stacking method of Yu et al. (2015) for 
+#      receiver functions filtered with the resonance filter
+#      Yu, Y., Song, J., Liu, K. H., & Gao, S. S. (2015). Determining crustal 
+#      structure beneath seismic stations overlying a low-velocity sedimentary 
+#      layer using receiver functions. Journal of Geophysical Research: Solid 
+#      Earth, 120 , 3208-3218. doi:10.1002/2014JB011610
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
+#
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -64,10 +64,8 @@ def getamp(rfdata, tarray, t):
     return amp
 #----------------------------------------------------------
 
-def hkYu(FltResult, rayp=0.04, HSubSed=np.linspace(20,60,201), 
-         KSubSed=np.linspace(1.65,1.95,121), HSed=np.linspace(0,10,201), 
-         KSed=np.linspace(1.65,2.25,201), VpMoho=6.9, VpSed= 2.5, VsSed=1.4, 
-         w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1):
+def hkYu(FltResult, rayp, HSubSed, KSubSed, HSed, KSed, VpMoho, VpSed, VsSed, 
+         w1SubSed, w2SubSed, w3SubSed):
     """
     Modified H-K stacking method of Yu et al. (2015)
 

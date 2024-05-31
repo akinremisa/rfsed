@@ -25,13 +25,13 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: ExtractEqMultiproc
-        :synopsis: Extract the data for each earthquake from the local 
-                   data files in parallel
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+# 
+# module:: ExtractEqMultiproc
+#      :synopsis: Extract the data for each earthquake from the local 
+#                    data files in parallel
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                   Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
+#
 
 from obspy import read, read_events, Stream
 import numpy as np

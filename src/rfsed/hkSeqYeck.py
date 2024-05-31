@@ -25,17 +25,15 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: hkSeqYeck
-        :synopsis: Sequential H-K stacking method for receiver function 
-        analysis after Yeck et al., 2013: 
-        Yeck, W. L., Sheehan, A. F., & Schulte-Pelkum, V. (2013, 6).
-        Sequential h-k stacking to obtain accurate crustal thicknesses beneath
-        sedimentary basins. Bulletin of the Seismological Society of America,
-        103, 2142-2150. doi: 10.1785/0120120290
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+# module:: hkSeqYeck
+#       :synopsis: Sequential H-K stacking method for receiver function 
+#        analysis after Yeck et al., 2013: 
+#        Yeck, W. L., Sheehan, A. F., & Schulte-Pelkum, V. (2013, 6).
+#        Sequential h-k stacking to obtain accurate crustal thicknesses beneath
+#        sedimentary basins. Bulletin of the Seismological Society of America,
+#        103, 2142-2150. doi: 10.1785/0120120290
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -64,10 +62,9 @@ def getamp(rfdata, tarray, t):
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
-def hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed=np.linspace(0,10,201),
-          KSed=np.linspace(1.65,2.25,201), VpSed=3.0, w1Sed=0.6, w2Sed=0.3, 
-          w3Sed=0.1, HMoho=np.linspace(20,60,201), KMoho=np.linspace(1.65,1.95,121), 
-          VpMoho=6.9, w1Moho=0.6, w2Moho=0.3, w3Moho=0.1,
+
+def hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed, KSed, VpSed, w1Sed, 
+          w2Sed, w3Sed, HMoho, KMoho, VpMoho, w1Moho, w2Moho, w3Moho,
           g = [75.,10., 15., 2.5], stack=None):
     """
     Sequential H-K stacking method for receiver function analysis 
