@@ -29,7 +29,7 @@ data from local seismic record files.
 Receiver functions streams in the **rfsed** are handled by the `RFStream` class of the 
 [rf](https://github.com/trichter/rf) open software, and it inherits a lot of useful 
 methods from the Obspy class `Stream`. It is supported via the obspyh5 package. 
-For more information on class "RFStream", see documentation on 
+For more information on class `RFStream`, see documentation on 
 [rf](https://rf.readthedocs.io/en/latest/). In the **rfsed** modules to extract earthquake 
 data from local seismic records, read and write support for necessary metadata is 
 provided for SAC, SeismicHanlder and HDF5 formats based on 
