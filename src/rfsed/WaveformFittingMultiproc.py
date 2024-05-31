@@ -283,26 +283,27 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG,
     :type format: str
 
     Returns:
-    Plot of the best model from the Waveform Fitting Results
+        Plot of the best model from the Waveform Fitting Results
 
     Example
     -------
 
-    Initialize the plotbestmodel module:
+    >>> # Initialize the plotbestmodel module:
+
     >>> from rfsed.WaveformFittingMultiproc import plotbestmodel
-    Define all the necessary parameters
-    WaveformResults is a list of Waveform Fitting Results, which is an output 
-    of the run_waveformfitting function (see run_waveformfitting function for 
-    more details)
+    >>> # Define all the necessary parameters
+    >>> # WaveformResults is a list of Waveform Fitting Results, which is 
+    >>> # an output of the run_waveformfitting function 
+    >>> # (see run_waveformfitting function for more details)
     >>> WaveformResults = run_waveformfitting(nproc, HMoho, ModelParams)
-    ModelParams is a dictionary of model parameters which is an output from 
-    the WaveformPara function (see WaveformPara function for more details)
-    >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, 
-                                    VpCrust, rayp, KMoho, HMoho, gaussian)
+    >>> ModelParams is a dictionary of model parameters which is an output from 
+    >>> # the WaveformPara function (see WaveformPara function for more details)
+    >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, 
+                                    rayp, KMoho, HMoho, gaussian)
     >>> wtCorr, wtRMSE, wtPG = [0.4, 0.4, 0.2]
     >>> savepath = 'path/to/save/plot'
     >>> format = 'png'
-    Call the plotbestmodel function
+    >>> #Call the plotbestmodel function
     >>> plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG, 
                       savepath, format)
     """
