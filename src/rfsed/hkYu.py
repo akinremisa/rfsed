@@ -64,8 +64,8 @@ def getamp(rfdata, tarray, t):
     return amp
 #----------------------------------------------------------
 
-def hkYu(FltResult, rayp, HSubSed, KSubSed, HSed, KSed, VpMoho, VpSed, VsSed, 
-         w1SubSed, w2SubSed, w3SubSed):
+def hkYu(FltResult, rayp, HSubSed, KSubSed, VpMoho, VpSed, VsSed, w1SubSed, 
+         w2SubSed, w3SubSed):
     """
     Modified H-K stacking method of Yu et al. (2015)
 
@@ -78,10 +78,6 @@ def hkYu(FltResult, rayp, HSubSed, KSubSed, HSed, KSed, VpMoho, VpSed, VsSed,
     :type HSubSed: numpy array
     :param KSubSed: Subsediment layer Vp/Vs array
     :type KSubSed: numpy array
-    :param HSed: Sediment layer thickness array
-    :type HSed: numpy array
-    :param KSed: Sediment layer Vp/Vs array
-    :type KSed: numpy array
     :param VpMoho: Moho Vp
     :type VpMoho: float
     :param VpSed: Sediment Vp
@@ -112,15 +108,13 @@ def hkYu(FltResult, rayp, HSubSed, KSubSed, HSed, KSed, VpMoho, VpSed, VsSed,
     >>> rayp = 0.04
     >>> HSubSed = np.linspace(20,60,201)
     >>> KSubSed = np.linspace(1.65,1.95,121)
-    >>> HSed = np.linspace(0,10,201)
-    >>> KSed = np.linspace(1.65,2.25,201)
     >>> VpMoho = 6.9
     >>> VpSed = 2.5
     >>> VsSed = 1.4
     >>> w1SubSed, w2SubSed, w3SubSed = [0.6, 0.3, 0.2]
     Call the hkYu function
-    >>> hkYuResult = hkYu(FltResult, rayp, HSubSed, KSubSed, HSed, KSed,
-                        VpMoho, VpSed, VsSed, w1SubSed, w2SubSed, w3SubSed)
+    >>> hkYuResult = hkYu(FltResult, rayp, HSubSed, KSubSed, VpMoho, VpSed, 
+                            VsSed, w1SubSed, w2SubSed, w3SubSed)
 
     """
 
