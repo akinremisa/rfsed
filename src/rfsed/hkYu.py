@@ -196,7 +196,7 @@ def hkYu(FltResult, rayp, HSubSed, KSubSed, VpMoho, VpSed, VsSed, w1SubSed,
     return HKYuResult
 #----------------------------------------------------------
 
-def plothkYu(hkYuResult, savepath, g = [75.,10., 15., 2.5], rmneg = None, 
+def plothkYu(hkYuResult, savepath, g = [75.,10., 15., 2.5], rmneg = True, 
              format = 'jpg'): 
     """
     Plot the results of the Modified H-K stacking method of Yu et al. (2015)

@@ -25,16 +25,16 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: hkZhu
-        :synopsis: H-K stacking for receiver functions after 
-        Zhu and Kanamori (2000)
-        Zhu, L., & Kanamori, H. (2000). Moho depth variation in southern 
-        california from teleseismic receiver functions. Journal of Geophysical 
-        Research: Solid Earth, 105, 2969-2980. doi: 10.1029/1999jb900322
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+# 
+# module:: hkZhu
+#      :synopsis: H-K stacking for receiver functions after 
+#      Zhu and Kanamori (2000)
+#      Zhu, L., & Kanamori, H. (2000). Moho depth variation in southern 
+#      california from teleseismic receiver functions. Journal of Geophysical 
+#      Research: Solid Earth, 105, 2969-2980. doi: 10.1029/1999jb900322
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
+# 
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -62,9 +62,7 @@ def getamp(rfdata, tarray, t):
     return amp
 #----------------------------------------------------------
 
-def hk(rfstream, preonset, H=np.linspace(20,60,201), 
-       K=np.linspace(1.65,1.95,121), Vp=6.9, w1=0.6, w2=0.3, w3=0.1, 
-       layer = None, stack=False):
+def hk(rfstream, preonset, H, K, Vp, w1, w2, w3, layer, stack=False):
     """
     Calculate the H-K stacking for a receiver function after 
     Zhu and Kanamori (2000)
@@ -195,7 +193,7 @@ def hk(rfstream, preonset, H=np.linspace(20,60,201),
                 'AvgSlow':AvgSlow, 'H':H, 'K':K}
     return HKResult
 #----------------------------------------------------------
-def plothk(HKResult, savepath, g = [75.,10., 15., 2.5], rmneg = None, 
+def plothk(HKResult, savepath, g = [75.,10., 15., 2.5], rmneg = True, 
            format = 'jpg'): 
     """
     Plot the H-K stacking results

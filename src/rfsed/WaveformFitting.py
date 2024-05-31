@@ -25,12 +25,12 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: WaveformFitting
-        :synopsis: Waveform Fitting for Moho depth and Vp/Vs ratio
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+# 
+# module:: WaveformFitting
+#      :synopsis: Waveform Fitting for Moho depth and Vp/Vs ratio
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
+# """
 
 import numpy as np
 from rfsed.synrf import synrf

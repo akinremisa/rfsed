@@ -25,13 +25,13 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""
-.. module:: ReverbFilter
-        :synopsis: Resonance Filter for receiver function data 
-                   (Removes sediment reverberation effect)
-.. moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
-                  Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
-"""
+# 
+# module:: ReverbFilter
+#      :synopsis: Resonance Filter for receiver function data 
+#                 (Removes sediment reverberation effect)
+# moduleauthor:: Stephen Akinremi <s.akinremi@utwente.nl> 
+#                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
+# 
 
 import numpy as np
 from scipy.signal import detrend
