@@ -1,13 +1,13 @@
 <img src="docs/logo/rfsed_logo_horizontal.png" alt="rfsed logo" width="600"/>
 
 
-## A python package for receiver functions analysis and dealing with sediment effects 
+## A software for receiver functions analysis and dealing with sediment effects 
 
 [![python version](https://img.shields.io/pypi/pyversions/rf.svg)](https://python.org)
 
 
 rfsed is developed specifically to implement different techniques of **analysing receiver functions
-from stations overlying sedimentary layers.** The package is **adaptable, efficient, and easy-to-use** for different analysis receiver functions
+from stations overlying sedimentary layers.** The software is **adaptable, efficient, and easy-to-use** for different analysis receiver functions
 obtained from stations overlying sedimentary layers.
 
 Receiver functions techniques implemented in rfsed are:
@@ -24,13 +24,12 @@ Beside these receiver function methods, rfsed has the following features:
 + Multiprocessing options for waveform fitting and extracting earthquake data from local seismic record files.
 
 
-Receiver functions streams in the rfsed are handled by the 'RFStream' class of the [rf](https://github.com/trichter/rf) open software, and it inherits a lot of useful methods from the Obspy class 'Stream'. It is supported via the obspyh5 package. For more information on class "RFStream", see documentation on [rf](https://rf.readthedocs.io/en/latest/). 
-The rf framework is included in the rfsed package for completness under The MIT License (MIT) Copyright (c) 2013-2019 Tom Eulenfeld. In the rfsed modules to extract earthquake data from local seismic records, read and write support for necessary metadata is provided for SAC, SeismicHanlder and HDF5 formats based on [ObsPy](https://github.com/obspy/obspy).
+Receiver functions streams in the rfsed are handled by the 'RFStream' class of the [rf](https://github.com/trichter/rf) open software, and it inherits a lot of useful methods from the Obspy class 'Stream'. It is supported via the obspyh5 package. For more information on class "RFStream", see documentation on [rf](https://rf.readthedocs.io/en/latest/). In the rfsed modules to extract earthquake data from local seismic records, read and write support for necessary metadata is provided for SAC, SeismicHanlder and HDF5 formats based on [ObsPy](https://github.com/obspy/obspy).
 
 
 
 
-## Installation and testing of this package
+## Installation and testing of this software
 
 ### Installation from PyPi
 The easiest way to install rfsed is via `pip`::
@@ -54,8 +53,8 @@ Installing using pip
 ```bash
 pip install .
 ```
-### Test the rfsed package
-You can test the package using pytest by running this command in the package directory and will look for all available tests in the current directory and subdirectories recursively
+### Test the rfsed software
+You can test the software using pytest by running this command in the software directory and will look for all available tests in the current directory and subdirectories recursively
 
 ```bash
 pytest
@@ -71,7 +70,7 @@ rfsed comes with tutorials that demonstrates all its methods. You can find those
 This version is an early release of rfsed. If you encounter any issues or unexpected behaviour, please [open an issue](https://github.com/akinremisa/rfsed/issues/new) on GitHub.
 
 ## Questions?
-If you have any questions about the package, please use the [discussions feature](https://github.com/akinremisa/rfsed/discussions/new/choose)
+If you have any questions about the software, please use the [discussions feature](https://github.com/akinremisa/rfsed/discussions/new/choose)
 
 ## Contributing
 All contributions are welcome ... e.g. report bugs, discuss or add new features.
