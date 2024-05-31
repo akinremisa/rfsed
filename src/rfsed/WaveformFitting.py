@@ -81,18 +81,18 @@ def WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho,
     :param format: Format of the plots
     :type format: str
 
+    
     Returns: 
-    Dictionary containing the Waveform Fitting Results
+        Dictionary containing the Waveform Fitting Results
 
     Example
     -------
 
-    Initialise the Waveform Fitting module
+    >>> # Initialise the Waveform Fitting module
     >>> from rfsed.WaveformFitting import WaveformFitting
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> import numpy as np
-    rfstream is a RFStream object containing the receiver functions 
-    (based on rf)
+    >>> # rfstream is a RFStream object containing the receiver functions (based on rf)
     >>> rfstream = rfstream
     >>> preonset = 10
     >>> HSed = 1.5
@@ -105,7 +105,7 @@ def WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho,
     >>> wtCorr, wtRMSE, wtPG = [0.4, 0.4, 0.2]
     >>> savepath = 'path/to/saveplots'
     >>> format = 'png'
-    Call the WaveformFitting function
+    >>> # Call the WaveformFitting function
     >>> WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho,
                        HMoho, gaussian, wtCorr, wtRMSE, wtPG, savepath, format)
     """
@@ -263,19 +263,20 @@ def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format)
     :param format: Format of the plots
     :type format: str
 
+    
     Returns:
-    Plots the Waveform Fitting Results for CC, RMSE, PG and GoF
+        Plots the Waveform Fitting Results for CC, RMSE, PG and GoF
 
     Example
     -------
 
-    Initialise the PlotWaveformFitting module
+    >>> # Initialise the PlotWaveformFitting module
     >>> from rfsed.WaveformFitting import PlotWaveformFitting
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> import numpy as np
-    WaveformFitting parameter is an output from the WaveformFitting function, 
-    a dictionary containing the Waveform Fitting Results 
-    (see WaveformFitting function for details)
+    >>> # WaveformFitting parameter is an output from the WaveformFitting function, 
+    >>> # a dictionary containing the Waveform Fitting Results 
+    >>> # (see WaveformFitting function for details)
     >>> WaveformFitting = WaveformFitting(rfstream, preonset, HSed, VpSed, 
                                          VpCrust, rayp, KMoho, HMoho, gaussian,
                                           wtCorr, wtRMSE, wtPG, savepath, 
@@ -283,7 +284,7 @@ def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format)
     >>> wtCorr, wtRMSE, wtPG = [0.4, 0.4, 0.2]
     >>> savepath = 'path/to/saveplots'
     >>> format = 'png'
-    Call the PlotWaveformFitting function
+    >>> # Call the PlotWaveformFitting function
     >>> PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, 
                             format)
     """

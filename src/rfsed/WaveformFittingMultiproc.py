@@ -70,17 +70,18 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
                      function calculation (e.g. 1.25)
     :type gaussian: float
 
+    
     Returns:
-    Dictionary of Model Parameters
+        Dictionary of Model Parameters
 
+        
     Example
     -------
-
-    Initialize the WaveformPara module:
+    
+    >>> # Initialize the WaveformPara module:
     >>> from rfsed.WaveformFittingMultiproc import WaveformPara
-    Define all the necessary parameters
-    rfstream is a RFStream object containing the receiver functions 
-    (based on rf)
+    >>> # Define all the necessary parameters
+    >>> # rfstream is a RFStream object containing the receiver functions (based on rf)
     >>> rfstream = rfstream
     >>> preonset = 10
     >>> Sedthick = 0.8
@@ -90,7 +91,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     >>> KMoho = np.arange(1.65, 1.95, 201)
     >>> HMoho = np.arange(20, 50, 201)
     >>> gaussian = 1.25
-    Call the WaveformPara function
+    >>> # Call the WaveformPara function
     >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, 
                                     VpCrust, rayp, KMoho, HMoho, gaussian)
     """
@@ -140,8 +141,9 @@ def WaveformFit_multiproc(inputparams):
     :param inputparams: List of input parameters (HMoho, OtherParams)
     :type inputparams: list
 
+    
     Returns: 
-    List of Waveform Fitting Results
+        List of Waveform Fitting Results
     """
     HMoho, OtherParams = inputparams
     HMoho=HMoho[0]
@@ -231,23 +233,25 @@ def run_waveformfitting(nproc, HMoho, ModelParams):
                         WaveformPara
     :type ModelParams: dict
 
+    
     Returns: 
-    List of Waveform Fitting Results
+        List of Waveform Fitting Results
 
+        
     Example
     -------
 
-    Initialize the run_waveformfitting module:
+    >>> # Initialize the run_waveformfitting module:
     >>> from rfsed.WaveformFittingMultiproc import run_waveformfitting
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> import numpy as np
     >>> nproc = 20
     >>> HMoho = np.arange(20, 50, 201)
-    ModelParams is a dictionary of model parameters which is an output from the 
-    WaveformPara function (see WaveformPara function for more details)
+    >>> # ModelParams is a dictionary of model parameters which is an output from the 
+    >>> # WaveformPara function (see WaveformPara function for more details)
     >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, 
                                     VpCrust, rayp, KMoho, HMoho, gaussian)
-    Call the run_waveformfitting function
+    >>> # Call the run_waveformfitting function
     >>> WaveformFitResults = run_waveformfitting(nproc, HMoho, ModelParams)
     """
 
@@ -282,28 +286,28 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG,
     :param format: Format to save the plot
     :type format: str
 
+    
     Returns:
         Plot of the best model from the Waveform Fitting Results
 
+        
     Example
     -------
 
     >>> # Initialize the plotbestmodel module:
-
     >>> from rfsed.WaveformFittingMultiproc import plotbestmodel
     >>> # Define all the necessary parameters
-    >>> # WaveformResults is a list of Waveform Fitting Results, which is 
-    >>> # an output of the run_waveformfitting function 
+    >>> # WaveformResults is a list of Waveform Fitting Results, which is an output of the run_waveformfitting function 
     >>> # (see run_waveformfitting function for more details)
     >>> WaveformResults = run_waveformfitting(nproc, HMoho, ModelParams)
-    >>> ModelParams is a dictionary of model parameters which is an output from 
+    >>> # ModelParams is a dictionary of model parameters which is an output from 
     >>> # the WaveformPara function (see WaveformPara function for more details)
     >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, 
                                     rayp, KMoho, HMoho, gaussian)
     >>> wtCorr, wtRMSE, wtPG = [0.4, 0.4, 0.2]
     >>> savepath = 'path/to/save/plot'
     >>> format = 'png'
-    >>> #Call the plotbestmodel function
+    >>> # Call the plotbestmodel function
     >>> plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG, 
                       savepath, format)
     """
