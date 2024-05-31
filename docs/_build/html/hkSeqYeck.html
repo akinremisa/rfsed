@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module hkSeqYeck &mdash; rfsed  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module ExtractEqMultiproc" href="ExtractEqMultiproc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            rfsed
+              <img src="_static/rfsed_logo_horizontal.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="links.html">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">rfsed Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Module</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ExtractEq.html">Module ExtractEq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEqMultiproc.html">Module ExtractEqMultiproc</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module hkSeqYeck</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.hkSeqYeck.getamp"><code class="docutils literal notranslate"><span class="pre">getamp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.hkSeqYeck.hkSeq"><code class="docutils literal notranslate"><span class="pre">hkSeq()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.hkSeqYeck.plotSeqhk"><code class="docutils literal notranslate"><span class="pre">plotSeqhk()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">rfsed</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module hkSeqYeck</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/hkSeqYeck.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <figure class="align-center">
+<img alt="_images/rfsed_logo_horizontal.png" src="_images/rfsed_logo_horizontal.png" />
+</figure>
+<section id="module-hkseqyeck">
+<h1>Module hkSeqYeck<a class="headerlink" href="#module-hkseqyeck" title="Link to this heading"></a></h1>
+<span class="target" id="module-rfsed.hkSeqYeck"></span><dl class="py function">
+<dt class="sig sig-object py" id="rfsed.hkSeqYeck.getamp">
+<span class="sig-prename descclassname"><span class="pre">rfsed.hkSeqYeck.</span></span><span class="sig-name descname"><span class="pre">getamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.hkSeqYeck.getamp" title="Link to this definition"></a></dt>
+<dd><p>Get the amplitude of the receiver function at a specific time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rfdata</strong> (<em>numpy.ndarray</em>) – receiver function data</p></li>
+<li><p><strong>tarray</strong> (<em>numpy.ndarray</em>) – time array</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to get the amplitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>amplitude of the receiver function at time t</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.hkSeqYeck.hkSeq">
+<span class="sig-prename descclassname"><span class="pre">rfsed.hkSeqYeck.</span></span><span class="sig-name descname"><span class="pre">hkSeq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfstreamSed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rfstreamMoho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HSed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([0.,</span> <span class="pre">0.05,</span> <span class="pre">0.1,</span> <span class="pre">0.15,</span> <span class="pre">0.2,</span> <span class="pre">0.25,</span> <span class="pre">0.3,</span> <span class="pre">0.35,</span> <span class="pre">0.4,</span> <span class="pre">0.45,</span> <span class="pre">0.5,</span> <span class="pre">0.55,</span> <span class="pre">0.6,</span> <span class="pre">0.65,</span> <span class="pre">0.7,</span> <span class="pre">0.75,</span> <span class="pre">0.8,</span> <span class="pre">0.85,</span> <span class="pre">0.9,</span> <span class="pre">0.95,</span> <span class="pre">1.,</span> <span class="pre">1.05,</span> <span class="pre">1.1,</span> <span class="pre">1.15,</span> <span class="pre">1.2,</span> <span class="pre">1.25,</span> <span class="pre">1.3,</span> <span class="pre">1.35,</span> <span class="pre">1.4,</span> <span class="pre">1.45,</span> <span class="pre">1.5,</span> <span class="pre">1.55,</span> <span class="pre">1.6,</span> <span class="pre">1.65,</span> <span class="pre">1.7,</span> <span class="pre">1.75,</span> <span class="pre">1.8,</span> <span class="pre">1.85,</span> <span class="pre">1.9,</span> <span class="pre">1.95,</span> <span class="pre">2.,</span> <span class="pre">2.05,</span> <span class="pre">2.1,</span> <span class="pre">2.15,</span> <span class="pre">2.2,</span> <span class="pre">2.25,</span> <span class="pre">2.3,</span> <span class="pre">2.35,</span> <span class="pre">2.4,</span> <span class="pre">2.45,</span> <span class="pre">2.5,</span> <span class="pre">2.55,</span> <span class="pre">2.6,</span> <span class="pre">2.65,</span> <span class="pre">2.7,</span> <span class="pre">2.75,</span> <span class="pre">2.8,</span> <span class="pre">2.85,</span> <span class="pre">2.9,</span> <span class="pre">2.95,</span> <span class="pre">3.,</span> <span class="pre">3.05,</span> <span class="pre">3.1,</span> <span class="pre">3.15,</span> <span class="pre">3.2,</span> <span class="pre">3.25,</span> <span class="pre">3.3,</span> <span class="pre">3.35,</span> <span class="pre">3.4,</span> <span class="pre">3.45,</span> <span class="pre">3.5,</span> <span class="pre">3.55,</span> <span class="pre">3.6,</span> <span class="pre">3.65,</span> <span class="pre">3.7,</span> <span class="pre">3.75,</span> <span class="pre">3.8,</span> <span class="pre">3.85,</span> <span class="pre">3.9,</span> <span class="pre">3.95,</span> <span class="pre">4.,</span> <span class="pre">4.05,</span> <span class="pre">4.1,</span> <span class="pre">4.15,</span> <span class="pre">4.2,</span> <span class="pre">4.25,</span> <span class="pre">4.3,</span> <span class="pre">4.35,</span> <span class="pre">4.4,</span> <span class="pre">4.45,</span> <span class="pre">4.5,</span> <span class="pre">4.55,</span> <span class="pre">4.6,</span> <span class="pre">4.65,</span> <span class="pre">4.7,</span> <span class="pre">4.75,</span> <span class="pre">4.8,</span> <span class="pre">4.85,</span> <span class="pre">4.9,</span> <span class="pre">4.95,</span> <span class="pre">5.,</span> <span class="pre">5.05,</span> <span class="pre">5.1,</span> <span class="pre">5.15,</span> <span class="pre">5.2,</span> <span class="pre">5.25,</span> <span class="pre">5.3,</span> <span class="pre">5.35,</span> <span class="pre">5.4,</span> <span class="pre">5.45,</span> <span class="pre">5.5,</span> <span class="pre">5.55,</span> <span class="pre">5.6,</span> <span class="pre">5.65,</span> <span class="pre">5.7,</span> <span class="pre">5.75,</span> <span class="pre">5.8,</span> <span class="pre">5.85,</span> <span class="pre">5.9,</span> <span class="pre">5.95,</span> <span class="pre">6.,</span> <span class="pre">6.05,</span> <span class="pre">6.1,</span> <span class="pre">6.15,</span> <span class="pre">6.2,</span> <span class="pre">6.25,</span> <span class="pre">6.3,</span> <span class="pre">6.35,</span> <span class="pre">6.4,</span> <span class="pre">6.45,</span> <span class="pre">6.5,</span> <span class="pre">6.55,</span> <span class="pre">6.6,</span> <span class="pre">6.65,</span> <span class="pre">6.7,</span> <span class="pre">6.75,</span> <span class="pre">6.8,</span> <span class="pre">6.85,</span> <span class="pre">6.9,</span> <span class="pre">6.95,</span> <span class="pre">7.,</span> <span class="pre">7.05,</span> <span class="pre">7.1,</span> <span class="pre">7.15,</span> <span class="pre">7.2,</span> <span class="pre">7.25,</span> <span class="pre">7.3,</span> <span class="pre">7.35,</span> <span class="pre">7.4,</span> <span class="pre">7.45,</span> <span class="pre">7.5,</span> <span class="pre">7.55,</span> <span class="pre">7.6,</span> <span class="pre">7.65,</span> <span class="pre">7.7,</span> <span class="pre">7.75,</span> <span class="pre">7.8,</span> <span class="pre">7.85,</span> <span class="pre">7.9,</span> <span class="pre">7.95,</span> <span class="pre">8.,</span> <span class="pre">8.05,</span> <span class="pre">8.1,</span> <span class="pre">8.15,</span> <span class="pre">8.2,</span> <span class="pre">8.25,</span> <span class="pre">8.3,</span> <span class="pre">8.35,</span> <span class="pre">8.4,</span> <span class="pre">8.45,</span> <span class="pre">8.5,</span> <span class="pre">8.55,</span> <span class="pre">8.6,</span> <span class="pre">8.65,</span> <span class="pre">8.7,</span> <span class="pre">8.75,</span> <span class="pre">8.8,</span> <span class="pre">8.85,</span> <span class="pre">8.9,</span> <span class="pre">8.95,</span> <span class="pre">9.,</span> <span class="pre">9.05,</span> <span class="pre">9.1,</span> <span class="pre">9.15,</span> <span class="pre">9.2,</span> <span class="pre">9.25,</span> <span class="pre">9.3,</span> <span class="pre">9.35,</span> <span class="pre">9.4,</span> <span class="pre">9.45,</span> <span class="pre">9.5,</span> <span class="pre">9.55,</span> <span class="pre">9.6,</span> <span class="pre">9.65,</span> <span class="pre">9.7,</span> <span class="pre">9.75,</span> <span class="pre">9.8,</span> <span class="pre">9.85,</span> <span class="pre">9.9,</span> <span class="pre">9.95,</span> <span class="pre">10.])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">KSed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([1.65,</span> <span class="pre">1.653,</span> <span class="pre">1.656,</span> <span class="pre">1.659,</span> <span class="pre">1.662,</span> <span class="pre">1.665,</span> <span class="pre">1.668,</span> <span class="pre">1.671,</span> <span class="pre">1.674,</span> <span class="pre">1.677,</span> <span class="pre">1.68,</span> <span class="pre">1.683,</span> <span class="pre">1.686,</span> <span class="pre">1.689,</span> <span class="pre">1.692,</span> <span class="pre">1.695,</span> <span class="pre">1.698,</span> <span class="pre">1.701,</span> <span class="pre">1.704,</span> <span class="pre">1.707,</span> <span class="pre">1.71,</span> <span class="pre">1.713,</span> <span class="pre">1.716,</span> <span class="pre">1.719,</span> <span class="pre">1.722,</span> <span class="pre">1.725,</span> <span class="pre">1.728,</span> <span class="pre">1.731,</span> <span class="pre">1.734,</span> <span class="pre">1.737,</span> <span class="pre">1.74,</span> <span class="pre">1.743,</span> <span class="pre">1.746,</span> <span class="pre">1.749,</span> <span class="pre">1.752,</span> <span class="pre">1.755,</span> <span class="pre">1.758,</span> <span class="pre">1.761,</span> <span class="pre">1.764,</span> <span class="pre">1.767,</span> <span class="pre">1.77,</span> <span class="pre">1.773,</span> <span class="pre">1.776,</span> <span class="pre">1.779,</span> <span class="pre">1.782,</span> <span class="pre">1.785,</span> <span class="pre">1.788,</span> <span class="pre">1.791,</span> <span class="pre">1.794,</span> <span class="pre">1.797,</span> <span class="pre">1.8,</span> <span class="pre">1.803,</span> <span class="pre">1.806,</span> <span class="pre">1.809,</span> <span class="pre">1.812,</span> <span class="pre">1.815,</span> <span class="pre">1.818,</span> <span class="pre">1.821,</span> <span class="pre">1.824,</span> <span class="pre">1.827,</span> <span class="pre">1.83,</span> <span class="pre">1.833,</span> <span class="pre">1.836,</span> <span class="pre">1.839,</span> <span class="pre">1.842,</span> <span class="pre">1.845,</span> <span class="pre">1.848,</span> <span class="pre">1.851,</span> <span class="pre">1.854,</span> <span class="pre">1.857,</span> <span class="pre">1.86,</span> <span class="pre">1.863,</span> <span class="pre">1.866,</span> <span class="pre">1.869,</span> <span class="pre">1.872,</span> <span class="pre">1.875,</span> <span class="pre">1.878,</span> <span class="pre">1.881,</span> <span class="pre">1.884,</span> <span class="pre">1.887,</span> <span class="pre">1.89,</span> <span class="pre">1.893,</span> <span class="pre">1.896,</span> <span class="pre">1.899,</span> <span class="pre">1.902,</span> <span class="pre">1.905,</span> <span class="pre">1.908,</span> <span class="pre">1.911,</span> <span class="pre">1.914,</span> <span class="pre">1.917,</span> <span class="pre">1.92,</span> <span class="pre">1.923,</span> <span class="pre">1.926,</span> <span class="pre">1.929,</span> <span class="pre">1.932,</span> <span class="pre">1.935,</span> <span class="pre">1.938,</span> <span class="pre">1.941,</span> <span class="pre">1.944,</span> <span class="pre">1.947,</span> <span class="pre">1.95,</span> <span class="pre">1.953,</span> <span class="pre">1.956,</span> <span class="pre">1.959,</span> <span class="pre">1.962,</span> <span class="pre">1.965,</span> <span class="pre">1.968,</span> <span class="pre">1.971,</span> <span class="pre">1.974,</span> <span class="pre">1.977,</span> <span class="pre">1.98,</span> <span class="pre">1.983,</span> <span class="pre">1.986,</span> <span class="pre">1.989,</span> <span class="pre">1.992,</span> <span class="pre">1.995,</span> <span class="pre">1.998,</span> <span class="pre">2.001,</span> <span class="pre">2.004,</span> <span class="pre">2.007,</span> <span class="pre">2.01,</span> <span class="pre">2.013,</span> <span class="pre">2.016,</span> <span class="pre">2.019,</span> <span class="pre">2.022,</span> <span class="pre">2.025,</span> <span class="pre">2.028,</span> <span class="pre">2.031,</span> <span class="pre">2.034,</span> <span class="pre">2.037,</span> <span class="pre">2.04,</span> <span class="pre">2.043,</span> <span class="pre">2.046,</span> <span class="pre">2.049,</span> <span class="pre">2.052,</span> <span class="pre">2.055,</span> <span class="pre">2.058,</span> <span class="pre">2.061,</span> <span class="pre">2.064,</span> <span class="pre">2.067,</span> <span class="pre">2.07,</span> <span class="pre">2.073,</span> <span class="pre">2.076,</span> <span class="pre">2.079,</span> <span class="pre">2.082,</span> <span class="pre">2.085,</span> <span class="pre">2.088,</span> <span class="pre">2.091,</span> <span class="pre">2.094,</span> <span class="pre">2.097,</span> <span class="pre">2.1,</span> <span class="pre">2.103,</span> <span class="pre">2.106,</span> <span class="pre">2.109,</span> <span class="pre">2.112,</span> <span class="pre">2.115,</span> <span class="pre">2.118,</span> <span class="pre">2.121,</span> <span class="pre">2.124,</span> <span class="pre">2.127,</span> <span class="pre">2.13,</span> <span class="pre">2.133,</span> <span class="pre">2.136,</span> <span class="pre">2.139,</span> <span class="pre">2.142,</span> <span class="pre">2.145,</span> <span class="pre">2.148,</span> <span class="pre">2.151,</span> <span class="pre">2.154,</span> <span class="pre">2.157,</span> <span class="pre">2.16,</span> <span class="pre">2.163,</span> <span class="pre">2.166,</span> <span class="pre">2.169,</span> <span class="pre">2.172,</span> <span class="pre">2.175,</span> <span class="pre">2.178,</span> <span class="pre">2.181,</span> <span class="pre">2.184,</span> <span class="pre">2.187,</span> <span class="pre">2.19,</span> <span class="pre">2.193,</span> <span class="pre">2.196,</span> <span class="pre">2.199,</span> <span class="pre">2.202,</span> <span class="pre">2.205,</span> <span class="pre">2.208,</span> <span class="pre">2.211,</span> <span class="pre">2.214,</span> <span class="pre">2.217,</span> <span class="pre">2.22,</span> <span class="pre">2.223,</span> <span class="pre">2.226,</span> <span class="pre">2.229,</span> <span class="pre">2.232,</span> <span class="pre">2.235,</span> <span class="pre">2.238,</span> <span class="pre">2.241,</span> <span class="pre">2.244,</span> <span class="pre">2.247,</span> <span class="pre">2.25])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VpSed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w1Sed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w2Sed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w3Sed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HMoho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([20.,</span> <span class="pre">20.2,</span> <span class="pre">20.4,</span> <span class="pre">20.6,</span> <span class="pre">20.8,</span> <span class="pre">21.,</span> <span class="pre">21.2,</span> <span class="pre">21.4,</span> <span class="pre">21.6,</span> <span class="pre">21.8,</span> <span class="pre">22.,</span> <span class="pre">22.2,</span> <span class="pre">22.4,</span> <span class="pre">22.6,</span> <span class="pre">22.8,</span> <span class="pre">23.,</span> <span class="pre">23.2,</span> <span class="pre">23.4,</span> <span class="pre">23.6,</span> <span class="pre">23.8,</span> <span class="pre">24.,</span> <span class="pre">24.2,</span> <span class="pre">24.4,</span> <span class="pre">24.6,</span> <span class="pre">24.8,</span> <span class="pre">25.,</span> <span class="pre">25.2,</span> <span class="pre">25.4,</span> <span class="pre">25.6,</span> <span class="pre">25.8,</span> <span class="pre">26.,</span> <span class="pre">26.2,</span> <span class="pre">26.4,</span> <span class="pre">26.6,</span> <span class="pre">26.8,</span> <span class="pre">27.,</span> <span class="pre">27.2,</span> <span class="pre">27.4,</span> <span class="pre">27.6,</span> <span class="pre">27.8,</span> <span class="pre">28.,</span> <span class="pre">28.2,</span> <span class="pre">28.4,</span> <span class="pre">28.6,</span> <span class="pre">28.8,</span> <span class="pre">29.,</span> <span class="pre">29.2,</span> <span class="pre">29.4,</span> <span class="pre">29.6,</span> <span class="pre">29.8,</span> <span class="pre">30.,</span> <span class="pre">30.2,</span> <span class="pre">30.4,</span> <span class="pre">30.6,</span> <span class="pre">30.8,</span> <span class="pre">31.,</span> <span class="pre">31.2,</span> <span class="pre">31.4,</span> <span class="pre">31.6,</span> <span class="pre">31.8,</span> <span class="pre">32.,</span> <span class="pre">32.2,</span> <span class="pre">32.4,</span> <span class="pre">32.6,</span> <span class="pre">32.8,</span> <span class="pre">33.,</span> <span class="pre">33.2,</span> <span class="pre">33.4,</span> <span class="pre">33.6,</span> <span class="pre">33.8,</span> <span class="pre">34.,</span> <span class="pre">34.2,</span> <span class="pre">34.4,</span> <span class="pre">34.6,</span> <span class="pre">34.8,</span> <span class="pre">35.,</span> <span class="pre">35.2,</span> <span class="pre">35.4,</span> <span class="pre">35.6,</span> <span class="pre">35.8,</span> <span class="pre">36.,</span> <span class="pre">36.2,</span> <span class="pre">36.4,</span> <span class="pre">36.6,</span> <span class="pre">36.8,</span> <span class="pre">37.,</span> <span class="pre">37.2,</span> <span class="pre">37.4,</span> <span class="pre">37.6,</span> <span class="pre">37.8,</span> <span class="pre">38.,</span> <span class="pre">38.2,</span> <span class="pre">38.4,</span> <span class="pre">38.6,</span> <span class="pre">38.8,</span> <span class="pre">39.,</span> <span class="pre">39.2,</span> <span class="pre">39.4,</span> <span class="pre">39.6,</span> <span class="pre">39.8,</span> <span class="pre">40.,</span> <span class="pre">40.2,</span> <span class="pre">40.4,</span> <span class="pre">40.6,</span> <span class="pre">40.8,</span> <span class="pre">41.,</span> <span class="pre">41.2,</span> <span class="pre">41.4,</span> <span class="pre">41.6,</span> <span class="pre">41.8,</span> <span class="pre">42.,</span> <span class="pre">42.2,</span> <span class="pre">42.4,</span> <span class="pre">42.6,</span> <span class="pre">42.8,</span> <span class="pre">43.,</span> <span class="pre">43.2,</span> <span class="pre">43.4,</span> <span class="pre">43.6,</span> <span class="pre">43.8,</span> <span class="pre">44.,</span> <span class="pre">44.2,</span> <span class="pre">44.4,</span> <span class="pre">44.6,</span> <span class="pre">44.8,</span> <span class="pre">45.,</span> <span class="pre">45.2,</span> <span class="pre">45.4,</span> <span class="pre">45.6,</span> <span class="pre">45.8,</span> <span class="pre">46.,</span> <span class="pre">46.2,</span> <span class="pre">46.4,</span> <span class="pre">46.6,</span> <span class="pre">46.8,</span> <span class="pre">47.,</span> <span class="pre">47.2,</span> <span class="pre">47.4,</span> <span class="pre">47.6,</span> <span class="pre">47.8,</span> <span class="pre">48.,</span> <span class="pre">48.2,</span> <span class="pre">48.4,</span> <span class="pre">48.6,</span> <span class="pre">48.8,</span> <span class="pre">49.,</span> <span class="pre">49.2,</span> <span class="pre">49.4,</span> <span class="pre">49.6,</span> <span class="pre">49.8,</span> <span class="pre">50.,</span> <span class="pre">50.2,</span> <span class="pre">50.4,</span> <span class="pre">50.6,</span> <span class="pre">50.8,</span> <span class="pre">51.,</span> <span class="pre">51.2,</span> <span class="pre">51.4,</span> <span class="pre">51.6,</span> <span class="pre">51.8,</span> <span class="pre">52.,</span> <span class="pre">52.2,</span> <span class="pre">52.4,</span> <span class="pre">52.6,</span> <span class="pre">52.8,</span> <span class="pre">53.,</span> <span class="pre">53.2,</span> <span class="pre">53.4,</span> <span class="pre">53.6,</span> <span class="pre">53.8,</span> <span class="pre">54.,</span> <span class="pre">54.2,</span> <span class="pre">54.4,</span> <span class="pre">54.6,</span> <span class="pre">54.8,</span> <span class="pre">55.,</span> <span class="pre">55.2,</span> <span class="pre">55.4,</span> <span class="pre">55.6,</span> <span class="pre">55.8,</span> <span class="pre">56.,</span> <span class="pre">56.2,</span> <span class="pre">56.4,</span> <span class="pre">56.6,</span> <span class="pre">56.8,</span> <span class="pre">57.,</span> <span class="pre">57.2,</span> <span class="pre">57.4,</span> <span class="pre">57.6,</span> <span class="pre">57.8,</span> <span class="pre">58.,</span> <span class="pre">58.2,</span> <span class="pre">58.4,</span> <span class="pre">58.6,</span> <span class="pre">58.8,</span> <span class="pre">59.,</span> <span class="pre">59.2,</span> <span class="pre">59.4,</span> <span class="pre">59.6,</span> <span class="pre">59.8,</span> <span class="pre">60.])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">KMoho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([1.65,</span> <span class="pre">1.6525,</span> <span class="pre">1.655,</span> <span class="pre">1.6575,</span> <span class="pre">1.66,</span> <span class="pre">1.6625,</span> <span class="pre">1.665,</span> <span class="pre">1.6675,</span> <span class="pre">1.67,</span> <span class="pre">1.6725,</span> <span class="pre">1.675,</span> <span class="pre">1.6775,</span> <span class="pre">1.68,</span> <span class="pre">1.6825,</span> <span class="pre">1.685,</span> <span class="pre">1.6875,</span> <span class="pre">1.69,</span> <span class="pre">1.6925,</span> <span class="pre">1.695,</span> <span class="pre">1.6975,</span> <span class="pre">1.7,</span> <span class="pre">1.7025,</span> <span class="pre">1.705,</span> <span class="pre">1.7075,</span> <span class="pre">1.71,</span> <span class="pre">1.7125,</span> <span class="pre">1.715,</span> <span class="pre">1.7175,</span> <span class="pre">1.72,</span> <span class="pre">1.7225,</span> <span class="pre">1.725,</span> <span class="pre">1.7275,</span> <span class="pre">1.73,</span> <span class="pre">1.7325,</span> <span class="pre">1.735,</span> <span class="pre">1.7375,</span> <span class="pre">1.74,</span> <span class="pre">1.7425,</span> <span class="pre">1.745,</span> <span class="pre">1.7475,</span> <span class="pre">1.75,</span> <span class="pre">1.7525,</span> <span class="pre">1.755,</span> <span class="pre">1.7575,</span> <span class="pre">1.76,</span> <span class="pre">1.7625,</span> <span class="pre">1.765,</span> <span class="pre">1.7675,</span> <span class="pre">1.77,</span> <span class="pre">1.7725,</span> <span class="pre">1.775,</span> <span class="pre">1.7775,</span> <span class="pre">1.78,</span> <span class="pre">1.7825,</span> <span class="pre">1.785,</span> <span class="pre">1.7875,</span> <span class="pre">1.79,</span> <span class="pre">1.7925,</span> <span class="pre">1.795,</span> <span class="pre">1.7975,</span> <span class="pre">1.8,</span> <span class="pre">1.8025,</span> <span class="pre">1.805,</span> <span class="pre">1.8075,</span> <span class="pre">1.81,</span> <span class="pre">1.8125,</span> <span class="pre">1.815,</span> <span class="pre">1.8175,</span> <span class="pre">1.82,</span> <span class="pre">1.8225,</span> <span class="pre">1.825,</span> <span class="pre">1.8275,</span> <span class="pre">1.83,</span> <span class="pre">1.8325,</span> <span class="pre">1.835,</span> <span class="pre">1.8375,</span> <span class="pre">1.84,</span> <span class="pre">1.8425,</span> <span class="pre">1.845,</span> <span class="pre">1.8475,</span> <span class="pre">1.85,</span> <span class="pre">1.8525,</span> <span class="pre">1.855,</span> <span class="pre">1.8575,</span> <span class="pre">1.86,</span> <span class="pre">1.8625,</span> <span class="pre">1.865,</span> <span class="pre">1.8675,</span> <span class="pre">1.87,</span> <span class="pre">1.8725,</span> <span class="pre">1.875,</span> <span class="pre">1.8775,</span> <span class="pre">1.88,</span> <span class="pre">1.8825,</span> <span class="pre">1.885,</span> <span class="pre">1.8875,</span> <span class="pre">1.89,</span> <span class="pre">1.8925,</span> <span class="pre">1.895,</span> <span class="pre">1.8975,</span> <span class="pre">1.9,</span> <span class="pre">1.9025,</span> <span class="pre">1.905,</span> <span class="pre">1.9075,</span> <span class="pre">1.91,</span> <span class="pre">1.9125,</span> <span class="pre">1.915,</span> <span class="pre">1.9175,</span> <span class="pre">1.92,</span> <span class="pre">1.9225,</span> <span class="pre">1.925,</span> <span class="pre">1.9275,</span> <span class="pre">1.93,</span> <span class="pre">1.9325,</span> <span class="pre">1.935,</span> <span class="pre">1.9375,</span> <span class="pre">1.94,</span> <span class="pre">1.9425,</span> <span class="pre">1.945,</span> <span class="pre">1.9475,</span> <span class="pre">1.95])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">VpMoho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w1Moho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w2Moho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w3Moho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[75.0,</span> <span class="pre">10.0,</span> <span class="pre">15.0,</span> <span class="pre">2.5]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.hkSeqYeck.hkSeq" title="Link to this definition"></a></dt>
+<dd><p>Sequential H-K stacking method for receiver function analysis after Yeck et al., 2013</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rfstreamSed</strong> (<em>obspy.core.stream.Stream</em>) – Stream object of receiver function for sediment layer (high frequency)</p></li>
+<li><p><strong>rfstreamMoho</strong> (<em>obspy.core.stream.Stream</em>) – Stream object of receiver function for Moho layer (lower frequency)</p></li>
+<li><p><strong>HSed</strong> (<em>numpy.ndarray</em>) – Depth range for sediment layer</p></li>
+<li><p><strong>KSed</strong> (<em>numpy.ndarray</em>) – Vp/Vs range for sediment layer</p></li>
+<li><p><strong>VpSed</strong> (<em>float</em>) – Vp for sediment layer</p></li>
+<li><p><strong>w1Sed</strong> – Weight for Ps arrival</p></li>
+<li><p><strong>w2Sed</strong> – Weight for PpPs arrival</p></li>
+<li><p><strong>w3Sed</strong> – Weight for PsPs arrival</p></li>
+<li><p><strong>HMoho</strong> (<em>numpy.ndarray</em>) – Depth range for Moho layer</p></li>
+<li><p><strong>KMoho</strong> (<em>numpy.ndarray</em>) – Vp/Vs range for Moho layer</p></li>
+<li><p><strong>VpMoho</strong> (<em>float</em>) – Vp for Moho layer</p></li>
+<li><p><strong>w1Moho</strong> – Weight for Ps arrival</p></li>
+<li><p><strong>w2Moho</strong> – Weight for PpPs arrival</p></li>
+<li><p><strong>w3Moho</strong> – Weight for PpSs+PsPs arrival</p></li>
+<li><p><strong>g</strong> (<em>list</em>) – Gain for plotting</p></li>
+<li><p><strong>rmneg</strong> (<em>bool</em>) – Remove negative values in the stacking results</p></li>
+<li><p><strong>stack</strong> (<em>bool</em>) – Stack the receiver functions traces into one before hk stacking</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>SequentialHKResult: Dictionary of results from the Sequential H-K stacking method</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.hkSeqYeck.plotSeqhk">
+<span class="sig-prename descclassname"><span class="pre">rfsed.hkSeqYeck.</span></span><span class="sig-name descname"><span class="pre">plotSeqhk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SequentialHKResult</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[75.0,</span> <span class="pre">10.0,</span> <span class="pre">15.0,</span> <span class="pre">2.5]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmneg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.hkSeqYeck.plotSeqhk" title="Link to this definition"></a></dt>
+<dd><p>Plot the results from the Sequential H-K stacking method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>SequentialHKResult</strong> (<em>dict</em>) – Dictionary of results from the Sequential H-K stacking method (function: hkSequential)</p></li>
+<li><p><strong>g</strong> (<em>list</em>) – Gain for plotting</p></li>
+<li><p><strong>rmneg</strong> (<em>bool</em>) – Remove negative values in the stacking results</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – Format of the figure</p></li>
+<li><p><strong>savepath</strong> (<em>str</em>) – Path to save the figure</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ExtractEqMultiproc.html" class="btn btn-neutral float-left" title="Module ExtractEqMultiproc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stephen Akinremi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
