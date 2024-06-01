@@ -459,9 +459,9 @@ class synrf():
     
     Example
     -------
-    Initialize the synrf module:
+    >>> # Initialize the synrf module:
     >>> from rfsed.synrf import synrf
-    Define the Earth model parameters
+    >>> # Define the Earth model parameters
     >>> import numpy as np
     >>> depth = np.array([2, 35, 77.5])
     >>> vp = np.array([2.0, 6.5, 8.045])
@@ -472,7 +472,7 @@ class synrf():
     >>> rayp=0.04
     >>> gaussian=1.25
     >>> delta=0.025
-    Call the synrf class
+    >>> # Call the synrf class
     >>> Synth=synrf(depth, vp, vs, rho, rayp, dt=delta, npts=n, ipha=1)
     >>> Synth.run_fwd()
     >>> Synth.filter(freqmin=0.05, freqmax=1.25, order=2, zerophase=True)
@@ -514,6 +514,7 @@ class synrf():
         """
         Forward modelling synthetic seismograms.
 
+        
         Returns:
             Radial and vertical Seismograms in ``Obspy.Stream`` type.
         """
@@ -565,8 +566,9 @@ class synrf():
         :param gaussian: width of gaussian filter, defaults to 2.0
         :type gaussian: float
 
+        
         Returns:
-        Deconvolved receiver function in ``Obspy.Stream`` type.
+            Deconvolved receiver function in ``Obspy.Stream`` type.
 
         """	
         if pre_filt is not None:

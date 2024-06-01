@@ -56,9 +56,11 @@ def getamp(rfdata, tarray, t):
     :param t: time to get the amplitude
     :type t: float
 
+    
     Returns: 
-    Amplitude of the receiver function at time t
+        Amplitude of the receiver function at time t
     """
+
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
@@ -106,17 +108,18 @@ def hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed, KSed, VpSed, w1Sed,
                   hk stacking
     :type stack: bool
 
+    
     Returns:
-    SequentialHKResult: Dictionary of results from the Sequential 
-    H-K stacking method
+        SequentialHKResult: Dictionary of results from the Sequential 
+        H-K stacking method
 
     Example
     -------
 
-    Initialize the hkSeq module:
+    >>> # Initialize the hkSeq module:
     >>> from rfsed.hkSeqYeck import hkSeq
-    Define input data and all the necessary parameters. The input data should 
-    be in the form of RFStream object from rf package
+    >>> # Define input data and all the necessary parameters. The input data should 
+    >>> # be in the form of RFStream object from rf package
     >>> import numpy as np
     >>> from rf.rfstream import read_rf
     >>> rfstreamSed = read_rf('path/to/SedimentRF')
@@ -132,11 +135,11 @@ def hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed, KSed, VpSed, w1Sed,
     >>> w1Moho, w2Moho, w3Moho = [0.6, 0.3, 0.1]
     >>> g = [75.,10., 15., 2.5]
     >>> stack = False
-    Call the hkSeq function
+    >>> # Call the hkSeq function
     >>> hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed, KSed, VpSed, w1Sed,
             w2Sed, w3Sed, HMoho, KMoho, VpMoho, w1Moho, w2Moho, w3Moho, g, stack)
-
     """
+
     if g is None: g = [75.,10., 15., 2.5]
     if VpSed is None: VpSed = 3.0
     if w1Sed is None: w1Sed = 0.6
@@ -304,16 +307,17 @@ def plotSeqhk(SequentialHKResult, savepath, g = [75.,10., 15., 2.5],
     :param savepath: Path to save the figure
     :type savepath: str
 
+    
     Returns:
-    Plot of the results from the Sequential H-K stacking method
+        Plot of the results from the Sequential H-K stacking method
 
     Example
     -------
 
-    Initialize the plotSeqhk module:
+    >>> # Initialize the plotSeqhk module:
     >>> from rfsed.hkSeqYeck import plotSeqhk
-    Define input data (which is the result from the hkSeq function) 
-    and other plotting parameters. 
+    >>> # Define input data (which is the result from the hkSeq function) 
+    >>> # and other plotting parameters. 
     >>> SequentialHKResult = hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed,
                                 KSed, VpSed, w1Sed, w2Sed, w3Sed, HMoho, KMoho,
                                 VpMoho, w1Moho, w2Moho, w3Moho, g, stack)
@@ -321,10 +325,10 @@ def plotSeqhk(SequentialHKResult, savepath, g = [75.,10., 15., 2.5],
     >>> g = [75.,10., 15., 2.5]
     >>> rmneg = True
     >>> format = 'pdf'
-    Call the plotSeqhk function
+    >>> # Call the plotSeqhk function
     >>> plotSeqhk(SequentialHKResult, savepath, g, rmneg, format)
-    
     """
+    
     if rmneg is None: rmneg = True
     if format is None: format = 'pdf'
     if g is None: g = [75.,10., 15., 2.5]

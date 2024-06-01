@@ -58,22 +58,23 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
     :param Request_window: Time window relative to first P arrival (in seconds)
     :type Request_window:list[start, end]
 
+    
     Returns:  
-    Extracted earthquake data in a new file
+        Extracted earthquake data in a new file
 
     Example
     -------
 
-    Initialize the ExtractEq module:
+    >>> # Initialize the ExtractEq module:
     >>> from rfsed.ExtractEq import ExtractEq
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> datapath = 'path/to/datafiles/'
     >>> filename = 'path/to/newfile'
     >>> catalog = 'path/to/catalog'
     >>> stalat = 52.22
     >>> stalon = 6.89
     >>> Request_window = [-50, 150]
-    Call the ExtractEq function
+    >>> # Call the ExtractEq function
     >>> ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window)
 
     """

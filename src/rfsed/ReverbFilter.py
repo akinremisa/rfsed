@@ -51,8 +51,9 @@ def getamp(rfdata, tarray, t):
     :param t: time to get the amplitude
     :type t: float
 
+    
     Returns: 
-    Amplitude of the receiver function at time t
+        Amplitude of the receiver function at time t
     """
 
     amp = rfdata[(np.abs(tarray - t).argmin())]
@@ -69,22 +70,22 @@ def ResonanceFilt(rfstream, preonset):
     :type preonset: integer
 
     Returns: 
-    A dictionary of stacked receiver function, Filtered receiver function, 
-    autocorrelation of the data, resonance filter, time lag (2 way travel time 
-    of the sediment reverbration), and the strength of the sediment 
-    reverbration (r)
+        A dictionary of stacked receiver function, Filtered receiver function, 
+        autocorrelation of the data, resonance filter, time lag (2 way travel time 
+        of the sediment reverbration), and the strength of the sediment 
+        reverbration (r)
 
     Example
     -------
 
-    Initialize the ResonanceFilt module:
+    >>> # Initialize the ResonanceFilt module:
     >>> from rfsed.ReverbFilter import ResonanceFilt
-    Define all the necessary parameters
-    The rfstream data is a RFSream object from rf
+    >>> # Define all the necessary parameters
+    >>> # The rfstream data is a RFSream object from rf
     >>> from rf.rfstream import read_rf
     >>> rfstream = read_rf('path/to/rfdata')
     >>> preonset = 10
-    Call the ResonanceFilt function
+    >>> # Call the ResonanceFilt function
     >>> ResonanceFilt(rfstream, preonset)
     """
 
@@ -152,22 +153,23 @@ def plotfiltrf(FilteredRF, savepath, format = 'jpg'):
     :param format: format of the plot (default: jpg)
     :type format: str
 
+    
     Returns:
-    Plots of the filtered receiver function, autocorrelation, and the 
-    resonance filter
+        Plots of the filtered receiver function, autocorrelation, and the 
+        resonance filter
 
     Example
     -------
 
-    Initialize the plotfiltrf module:
+    >>> # Initialize the plotfiltrf module:
     >>> from rfsed.ReverbFilter import plotfiltrf
-    Define all the necessary parameters
-    The FilteredRF data is a dictionary from the ResonanceFilt function
+    >>> # Define all the necessary parameters
+    >>> # The FilteredRF data is a dictionary from the ResonanceFilt function
     >>> from rfsed.ReverbFilter import ResonanceFilt
     >>> FilteredRF = ResonanceFilt(rfstream, preonset)
     >>> savepath = 'path/to/saveplots'
     >>> format = 'jpg'
-    Call the plotfiltrf function
+    >>> # Call the plotfiltrf function
     >>> plotfiltrf(FilteredRF, savepath, format)
     """
     

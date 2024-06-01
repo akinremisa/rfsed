@@ -70,3 +70,4 @@ the ``Jupyter`` notebooks accompanying this package.
    ReverbFilter
    WaveformFitting
    WaveformFittingMultiproc
+   synrf

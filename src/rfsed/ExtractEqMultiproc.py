@@ -57,26 +57,27 @@ def Add_sta_time_2cat(catalogfile, stalat, stalon, Request_window):
                            (time before P arrival, time after P arrival)
     :type Request_window: list [start, end]
 
+
     Returns:
-    Catalog of events with station latitude, longitude and request time 
-    window added to each event
+        Catalog of events with station latitude, longitude and request time 
+        window added to each event
 
     Example
     --------
 
-    Initialize the Add_sta_time_2cat function:
+    >>> # Initialize the Add_sta_time_2cat function:
     >>> from rfsed.ExtractEqMultiproc import Add_sta_time_2cat
-    Define the input parameters:
+    >>> # Define the input parameters:
     >>> catalogfile = 'path/to/catalogfile'
     >>> stalat = 52.0
     >>> stalon = 4.0
     >>> Request_window = [-50, 150]
-    Add the station latitude, longitude and request time window to the 
-    catalog using the Add_sta_time_2cat function:
+    >>> # Add the station latitude, longitude and request time window to the 
+    >>> # catalog using the Add_sta_time_2cat function:
     >>> catalog = Add_sta_time_2cat(catalogfile, stalat, stalon,
                                     Request_window)
-
     """
+
     catalog = read_events(catalogfile)
     for i in catalog:
         i.stalat = stalat
@@ -97,17 +98,18 @@ def Eq_times(catalog):
     :type catalog: obspy.core.event.catalog.Catalog
 
     Returns: 
-    Dictionary of Earthquake start and end time for the requested time window 
-    relative to the first P arrival
+        Dictionary of Earthquake start and end time for the requested time window 
+        relative to the first P arrival
 
     Example
     --------
-    Initialize the Eq_times function:
+
+    >>> # Initialize the Eq_times function:
     >>> from rfsed.ExtractEqMultiproc import Eq_times
-    Define the input parameters (output from the Add_cat_sta_time function):
+    >>> # Define the input parameters (output from the Add_cat_sta_time function):
     >>> catalog = Add_cat_sta_time(catalogfile, stalat, stalon, Request_window)
-    Get the earthquake start and end times for the requested time window 
-    relative to the first P arrival using the Eq_times function:
+    >>> # Get the earthquake start and end times for the requested time window 
+    >>> # relative to the first P arrival using the Eq_times function:
     >>> timewindow = Eq_times(catalog)
 
     """
@@ -146,22 +148,25 @@ def Get_Eqtimes_multiproc(catalog, nproc):
     :param nproc: Number of processors to use
     :type nproc: int
 
-    Returns: List of dictionaries of Earthquake start and end times 
-    (in obspy UTCDateTime) for the requested time window relative to the first P arrival
+    
+    Returns: 
+        List of dictionaries of Earthquake start and end times 
+        (in obspy UTCDateTime) for the requested time window relative to the first P arrival
 
     Example
     --------
 
-    Initialize the Get_Eqtimes_multiproc function:
+    >>> # Initialize the Get_Eqtimes_multiproc function:
     >>> from rfsed.ExtractEqMultiproc import Get_Eqtimes_multiproc
-    Define the input parameters catalog and nproc (number of processors to use)
-    The catalog is an output from the Add_cat_sta_time function
+    >>> # Define the input parameters catalog and nproc (number of processors to use)
+    >>> # he catalog is an output from the Add_cat_sta_time function
     >>> catalog = Add_cat_sta_time(catalogfile, stalat, stalon, Request_window)
     >>> nproc = 4
-    Get the earthquake start and end times for the requested time window 
-    relative to the first P arrival using the Get_Eqtimes_multiproc function:
+    >>> # Get the earthquake start and end times for the requested time window 
+    >>> # relative to the first P arrival using the Get_Eqtimes_multiproc function:
     >>> timewindow = Get_Eqtimes_multiproc(catalog, nproc)
     """
+
     nproc = nproc
     pool = multiprocessing.get_context('fork').Pool(nproc)
     timewindow = pool.map(Eq_times, catalog)
@@ -178,24 +183,25 @@ def Get_EqStream_multiproc(inputparams):
     :param inputparams: List of input parameters (datafiles, timewindow)
     :type inputparams: list
 
+    
     Returns:
-    Stream of earthquake data for the requested time window relative 
-    to the first P arrival
+        Stream of earthquake data for the requested time window relative 
+        to the first P arrival
 
     Example
     --------
 
-    Initialize the Get_EqStream_multiproc function:
+    >>> # Initialize the Get_EqStream_multiproc function:
     >>> from rfsed.ExtractEqMultiproc import Get_EqStream_multiproc
-    Define the input parameters datafiles and timewindow
+    >>> # Define the input parameters datafiles and timewindow
     >>> datafiles = ['path/to/datafiles']
     >>> timewindow = [{'eqstart':eqstart, 'eqend':eqend, 'onset':onset}]
     >>> inputparams = (datafiles, timewindow)
-    Get the earthquake waveform data for the requested time window relative 
-    to the first P arrival using the Get_EqStream_multiproc function:
+    >>> # Get the earthquake waveform data for the requested time window relative 
+    >>> # to the first P arrival using the Get_EqStream_multiproc function:
     >>> Datast = Get_EqStream_multiproc(inputparams)
-
     """
+
     datafiles, timewindow = inputparams
     Datast = Stream()
     Allstream = Stream()
@@ -227,26 +233,27 @@ def ExtractEq_Multiproc(datafiles, timewindow, nproc, filename):
     :param filename: Path to save the extracted earthquake data
     :type filename: str
 
+    
     Returns: 
-    Extracted earthquake data to the specified file path
+        Extracted earthquake data to the specified file path
 
     Example
     --------
 
-    Initialize the ExtractEq_Multiproc function:
+    >>> # Initialize the ExtractEq_Multiproc function:
     >>> from rfsed.ExtractEqMultiproc import ExtractEq_Multiproc
-    Define the input parameters datafiles, timewindow, nproc and filename
+    >>> # Define the input parameters datafiles, timewindow, nproc and filename
     >>> datafiles = ['path/to/datafiles']
-    time window is an output from the Eq_times or Get_Eqtimes_multiproc 
-    functions
+    >>> # time window is an output from the Eq_times or Get_Eqtimes_multiproc 
+    >>> # functions
     >>> timewindow = [{'eqstart':eqstart, 'eqend':eqend, 'onset':onset}]
     >>> nproc = 4
     >>> filename = 'path/to/newfile'
-    Extract the earthquake waveform data for the requested time window relative
-    to the first P arrival using the ExtractEq_Multiproc function:
+    >>> # Extract the earthquake waveform data for the requested time window relative
+    >>> # to the first P arrival using the ExtractEq_Multiproc function:
     >>> ExtractEq_Multiproc(datafiles, timewindow, nproc, filename)
-    
     """
+    
     nproc = nproc
     with multiprocessing.Pool(nproc) as pool:
         inputparams=((inputparams, timewindow) for inputparams in 

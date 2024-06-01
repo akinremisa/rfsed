@@ -54,8 +54,9 @@ def getamp(rfdata, tarray, t):
     :param tarray: time array
     :param t: time to get the amplitude
     
+
     Returns: 
-    Amplitude of the receiver function at time t
+        Amplitude of the receiver function at time t
     """
 
     amp = rfdata[(np.abs(tarray - t).argmin())]
@@ -87,18 +88,19 @@ def hk(rfstream, preonset, H, K, Vp, w1, w2, w3, layer, stack=False):
                     H-K stacking (default False)
     :type stack: bool
 
+    
     Returns: 
-    Dictionary of H-K stacking results
+        Dictionary of H-K stacking results
     
     Example
     -------
 
-    Initialize the hk module:
+    >>> # Initialize the hk module:
     >>> from rfsed.hkZhu import hk
-    Define input data and all the necessary parameters. The input data should 
-    be in the form of RFStream object from rf package
-    import numpy as np
-    from rf.rfstream import read_rf
+    >>> # Define input data and all the necessary parameters. The input data should 
+    >>> # be in the form of RFStream object from rf package
+    >>> import numpy as np
+    >>> from rf.rfstream import read_rf
     >>> rfstream = read_rf('path/to/rfdata')
     >>> preonset = 10
     >>> H = np.linspace(20,60,201)
@@ -107,7 +109,7 @@ def hk(rfstream, preonset, H, K, Vp, w1, w2, w3, layer, stack=False):
     >>> w1, w2, w3 =[0.6, 0.3, 0.1]
     >>> layer = 'Moho'
     >>> stack = False
-    Call the hk function
+    >>> # Call the hk function
     >>> hk(rfstream, preonset, H, K, Vp, w1, w2, w3, layer, stack)
     """
 
@@ -209,22 +211,23 @@ def plothk(HKResult, savepath, g = [75.,10., 15., 2.5], rmneg = True,
     :param format: format of the figure
     :type format: str
 
+    
     Returns:
-    Plot of the results from the Sequential H-K stacking method
+        Plot of the results from the Sequential H-K stacking method
 
     Example
     -------
 
-    Initialize the hk plotting module:
+    >>> # Initialize the hk plotting module:
     >>> from rfsed.hkZhu import plothk
-    Define input data (which is the result from the hk function) 
-    and other plotting parameters. 
+    >>> # Define input data (which is the result from the hk function) 
+    >>> # and other plotting parameters. 
     >>> HKResult=hk(rfstream, preonset, H, K, Vp, w1, w2, w3, layer, stack)
     >>> savepath = 'path/to/save/figure'
     >>> g = [75.,10., 15., 2.5]
     >>> rmneg = True
     >>> format = 'pdf'
-    Call the plothk function
+    >>> # Call the plothk function
     >>> plothk(HKResult, savepath, g, rmneg, format)
     """
     

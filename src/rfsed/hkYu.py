@@ -57,9 +57,11 @@ def getamp(rfdata, tarray, t):
     :param t: time to get the amplitude
     :type t: float
     
+
     Returns: 
-    Amplitude of the receiver function at time t
+        Amplitude of the receiver function at time t
     """
+
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
@@ -92,18 +94,19 @@ def hkYu(FltResult, rayp, HSubSed, KSubSed, VpMoho, VpSed, VsSed, w1SubSed,
                     arrival time
     :type w3SubSed: float
 
+    
     Returns:
-    HKYuResult: Dictionary of results from the mofified H-K stacking method
+        HKYuResult: Dictionary of results from the mofified H-K stacking method
 
     Example
     -------
 
-    Initialize the Modified H-K stacking method:
+    >>> # Initialize the Modified H-K stacking method:
     >>> from rfsed.hkYu import hkYu
     >>> import numpy as np
-    Define all the necessary parameters
-    The FltResult are results from the resonance filtering method 
-    (see ReverbFilter module)
+    >>> # Define all the necessary parameters
+    >>> # The FltResult are results from the resonance filtering method 
+    >>> # (see ReverbFilter module)
     >>> FltResult = {'filteredrf': filteredrf, 'time':time, 'tlag':tlag}
     >>> rayp = 0.04
     >>> HSubSed = np.linspace(20,60,201)
@@ -112,10 +115,9 @@ def hkYu(FltResult, rayp, HSubSed, KSubSed, VpMoho, VpSed, VsSed, w1SubSed,
     >>> VpSed = 2.5
     >>> VsSed = 1.4
     >>> w1SubSed, w2SubSed, w3SubSed = [0.6, 0.3, 0.2]
-    Call the hkYu function
+    >>> # Call the hkYu function
     >>> hkYuResult = hkYu(FltResult, rayp, HSubSed, KSubSed, VpMoho, VpSed, 
                             VsSed, w1SubSed, w2SubSed, w3SubSed)
-
     """
 
     if VpMoho is None: VpMoho = 6.5
@@ -214,24 +216,25 @@ def plothkYu(hkYuResult, savepath, g = [75.,10., 15., 2.5], rmneg = True,
     :param format: format of the plot (default: jpg)
     :type format: str   
 
+    
     Returns:
-    Plot of the results from the Modified H-K stacking method
+        Plot of the results from the Modified H-K stacking method
 
     Example
     -------
 
-    Initialize the Modified H-K stacking plotting method:
+    >>> # Initialize the Modified H-K stacking plotting method:
     >>> from rfsed.hkYu import plothkYu
-    Define all the necessary parameters
-    The hkYuResult are results from the Modified H-K stacking 
-    method (see hkYu function)
+    >>> # Define all the necessary parameters
+    >>> # The hkYuResult are results from the Modified H-K stacking 
+    >>> # method (see hkYu function)
     >>> hkYuResult = hkYu(FltResult, rayp, HSubSed, KSubSed, HSed, KSed,
                         VpMoho, VpSed, VsSed, w1SubSed, w2SubSed, w3SubSed)
     >>> savepath = 'path/to/saveplots'
     >>> g = [75.,10., 15., 2.5]
     >>> rmneg = True
     >>> format = 'jpg'
-    Call the plothkYu function
+    >>> # Call the plothkYu function
     >>> plothkYu(hkYuResult, savepath, g, rmneg, format)
     """
     
