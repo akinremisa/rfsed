@@ -1,1 +1,1 @@
-# Examples of usage of rfsed
+# Test outputs

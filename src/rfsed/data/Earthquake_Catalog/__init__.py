@@ -1,1 +1,5 @@
-# Examples of usage of rfsed
+# Copyright (c) 2023 Stephen Akinremi MIT license
+"""
+Data examples for testing.
+
+"""
