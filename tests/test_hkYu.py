@@ -23,14 +23,14 @@ class ReverbFilter(unittest.TestCase):
         hkYu(FltResult=FilteredRF, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspace(1.65,1.95,121), 
              VpMoho=6.9, VpSed= 2.5, VsSed=1.4, w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1)  
         # hkYu(FltResult=FilteredRF, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspace(1.65,1.95,121), 
-        #      VpMoho=6.9, VpSed= 2.5, w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1)  
+        #      VpMoho=6.9, VpSed= 2.5, VsSed=1.4, w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1)  
     def test_plothkYu(self):
         rfstream = rfMoho_example()
         preonset=10
         FilteredRF= ResonanceFilt(rfstream, preonset)
         savepath=save_tests()
         HKResults=hkYu(FltResult=FilteredRF, rayp=0.04, HSubSed=np.linspace(20,60,201), KSubSed=np.linspace(1.65,1.95,121), 
-                VpMoho=6.9, VpSed= 2.5, w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1)  
+                VpMoho=6.9, VpSed= 2.5, VsSed=1.4, w1SubSed=0.6, w2SubSed=0.3, w3SubSed=0.1)  
         plothkYu(hkYuResult=HKResults, savepath=savepath)
         
 def suite():
