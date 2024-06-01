@@ -80,6 +80,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     
     >>> # Initialize the WaveformPara module:
     >>> from rfsed.WaveformFittingMultiproc import WaveformPara
+    >>> import numpy as np
     >>> # Define all the necessary parameters
     >>> # rfstream is a RFStream object containing the receiver functions (based on rf)
     >>> rfstream = rfstream
@@ -95,6 +96,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, 
                                     VpCrust, rayp, KMoho, HMoho, gaussian)
     """
+
     VsSed=0.7858 - 1.2344*VpSed + 0.7949*VpSed**2 - 0.1238*VpSed**3 + 0.0064*VpSed**4
     SedDen=((1.6612*(VpSed)) - (0.4721 * ((VpSed)**2)) + (0.0671* ((VpSed)**3)) - 
             (0.0043* ((VpSed)**4)) + (0.000106* ((VpSed)**5)))
@@ -145,6 +147,7 @@ def WaveformFit_multiproc(inputparams):
     Returns: 
         List of Waveform Fitting Results
     """
+
     HMoho, OtherParams = inputparams
     HMoho=HMoho[0]
     OtherParams=OtherParams[0]

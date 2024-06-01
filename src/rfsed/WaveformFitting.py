@@ -273,7 +273,6 @@ def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format)
     >>> # Initialise the PlotWaveformFitting module
     >>> from rfsed.WaveformFitting import PlotWaveformFitting
     >>> # Define all the necessary parameters
-    >>> import numpy as np
     >>> # WaveformFitting parameter is an output from the WaveformFitting function, 
     >>> # a dictionary containing the Waveform Fitting Results 
     >>> # (see WaveformFitting function for details)

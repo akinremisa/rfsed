@@ -55,9 +55,11 @@ def getamp(rfdata, tarray, t):
     :param t: time to get the amplitude
     :type t: float
 
+    
     Returns: 
-    Amplitude of the receiver function at time t
+        Amplitude of the receiver function at time t
     """
+
     amp = rfdata[(np.abs(tarray - t).argmin())]
     return amp
 #----------------------------------------------------------
@@ -65,7 +67,7 @@ def getamp(rfdata, tarray, t):
 def hkSynth(Synthrf, time, rayp, H, K, Vp, w1, w2, w3, layer = None):
     """
     Calculate the H-K stacking for synthetic receiver function after 
-    Zhu and Kanamori (2000)
+    Zhu and Kanamori (2000).
     Zhu, L., & Kanamori, H. (2000). Moho depth variation in southern 
     california from teleseismic receiver functions. Journal of Geophysical 
     Research: Solid Earth, 105, 2969-2980. doi: 10.1029/1999jb900322
@@ -89,19 +91,20 @@ def hkSynth(Synthrf, time, rayp, H, K, Vp, w1, w2, w3, layer = None):
     :param layer: layer name 'Moho' or 'Sed'
     :type layer: string
 
+    
     Returns:
-    Dictionary of H-K stacking result for synthetic receiver function
+        Dictionary of H-K stacking result for synthetic receiver function
 
     Example
     -------
 
-    Initialize the hkSynth module:
+    >>> # Initialize the hkSynth module:
     >>> from rfsed.SynthAnalysis import hkSynth
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> import numpy as np
     >>> from rfsed.synrf import synrf
-    Synthetic receiver function data is a numpy array from synrf function 
-    (see synrf function for details)
+    >>> # Synthetic receiver function data is a numpy array from synrf function 
+    >>> # (see synrf function for details)
     >>> depth = np.array([35, 77.5])
     >>> vp = np.array([6.5, 8.045])
     >>> vs = np.array([3.75, 4.485])
@@ -126,10 +129,10 @@ def hkSynth(Synthrf, time, rayp, H, K, Vp, w1, w2, w3, layer = None):
     >>> Vp=6.9
     >>> w1, w2, w3 =[0.6, 0.3, 0.1]
     >>> layer = 'Moho'
-    Call the hkSynth function
+    >>> # Call the hkSynth function
     >>> hkSynth(trdata, time, rayp, H, K, Vp, w1, w2, w3, layer)
-
     """
+
     if Vp is None: Vp = 6.5
     if w1 is None: w1 = 0.6
     if w2 is None: w2 = 0.3
@@ -232,19 +235,20 @@ def hkSeqSynth(rfSynthSed, rfSynthMoho, time, rayp, HSed, KSed, VpSed, w1Sed,
     :param rmneg: remove negative values in the stack
     :type rmneg: boolean
 
+    
     Returns: 
-    Dictionary of Sequential H-K stacking result
+        Dictionary of Sequential H-K stacking result
 
     Example
     -------
 
-    Initialize the hkSeqSynth module:
+    >>> # Initialize the hkSeqSynth module:
     >>> from rfsed.SynthAnalysis import hkSeqSynth
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> import numpy as np
     >>> from rfsed.synrf import synrf
-    Synthetic receiver function data is a numpy array from synrf function 
-    (see synrf function for details)
+    >>> # Synthetic receiver function data is a numpy array from synrf function 
+    >>> # (see synrf function for details)
     >>> depth = np.array([2, 35, 77.5])
     >>> vp = np.array([2.0, 6.5, 8.045])
     >>> vs = np.array([1.36, 3.75, 4.485])
@@ -272,7 +276,7 @@ def hkSeqSynth(rfSynthSed, rfSynthMoho, time, rayp, HSed, KSed, VpSed, w1Sed,
     >>> KMoho=np.linspace(1.65,1.95,121)
     >>> VpMoho=6.9
     >>> w1Moho, w2Moho, w3Moho =[0.6, 0.3, 0.1]
-    Call the hkSeqSynth function
+    >>> # Call the hkSeqSynth function
     >>> hkSeqSynth(trdata, trdata, time, rayp, HSed, KSed, VpSed, w1Sed, w2Sed, 
                         w3Sed, HMoho, KMoho, VpMoho, w1Moho, w2Moho, w3Moho)
     """
@@ -410,22 +414,23 @@ def ResonanceFilt(Synthrf, time):
     :param time: time array
     :type time: numpy array
 
+    
     Returns: 
-    A dictionary of input synthetic receiver function, Filtered receiver 
-    function, autocorrelation of the data, resonance filter, time lag 
-    (2 way travel time of the sediment reverbration), and the strength of the
-    sediment reverbration (r)
+        A dictionary of input synthetic receiver function, Filtered receiver 
+        function, autocorrelation of the data, resonance filter, time lag 
+        (2 way travel time of the sediment reverbration), and the strength of the
+        sediment reverbration (r)
 
     Example
     -------
 
-    Initialize the ResonanceFilt module:
+    >>> # Initialize the ResonanceFilt module:
     >>> from rfsed.SynthAnalysis import ResonanceFilt
-    Define all the necessary parameters
+    >>> # Define all the necessary parameters
     >>> import numpy as np
     >>> from rfsed.synrf import synrf
-    Synthetic receiver function data is a numpy array from synrf function 
-    (see synrf function for details)
+    >>> # Synthetic receiver function data is a numpy array from synrf function 
+    >>> # (see synrf function for details)
     >>> depth = np.array([2, 35, 77.5])
     >>> vp = np.array([2.0, 6.5, 8.045])
     >>> vs = np.array([1.36, 3.75, 4.485])
@@ -445,7 +450,7 @@ def ResonanceFilt(Synthrf, time):
     >>> t = np.arange(0, l)
     >>> t = (delta *  t) - preonset
     >>> time=t
-    Call the ResonanceFilt function
+    >>> # Call the ResonanceFilt function
     >>> ResonanceFilt(trdata, time)
     """
     #----------------------------------------------------------
@@ -508,23 +513,24 @@ def plothkSynth(HKResultSynth, savepath, g = [75.,10., 15., 2.5], rmneg = None,
     :param savepath: path to save the figure
     :type savepath: string
 
+    
     Returns:
-    Plot of H-K stacking result for synthetic receiver function
+        Plot of H-K stacking result for synthetic receiver function
 
     Example
     -------
 
-    Initialize the plothkSynth module:
+    >>> # Initialize the plothkSynth module:
     >>> from rfsed.SynthAnalysis import plothkSynth
-    Define all the necessary parameters
-    HKResultSynth is a dictionary from hkSynth function 
-    (see hkSynth function for details)
+    >>> # Define all the necessary parameters
+    >>> # HKResultSynth is a dictionary from hkSynth function 
+    >>> # (see hkSynth function for details)
     >>> HKResultSynth= hkSynth(trdata, time, rayp, H, K, Vp, w1, w2, w3, layer)
     >>> savepath = 'path/to/save/figure'
     >>> g = [75.,10., 15., 2.5]
     >>> rmneg = True
     >>> format = 'pdf'
-    Call the plothkSynth function
+    >>> # Call the plothkSynth function
     >>> plothkSynth(HKResultSynth, savepath, g, rmneg, format)
     """
 
@@ -648,16 +654,18 @@ def plothkSeqSynth(SynthSeqHKResult, savepath, g = [75.,10., 15., 2.5],
     :param savepath: path to save the figure
     :type savepath: string
 
+    
     Returns:
-    Plot of Sequential H-K stacking result for synthetic receiver function
+        Plot of Sequential H-K stacking result for synthetic receiver function
 
     Example
     -------
-    Initialize the plothkSeqSynth module:
+
+    >>> # Initialize the plothkSeqSynth module:
     >>> from rfsed.SynthAnalysis import plothkSeqSynth
-    Define all the necessary parameters
-    SynthSeqHKResult is a dictionary from hkSeqSynth function 
-    (see hkSeqSynth function for details)
+    >>> # Define all the necessary parameters
+    >>> # SynthSeqHKResult is a dictionary from hkSeqSynth function 
+    >>> # (see hkSeqSynth function for details)
     >>> SynthSeqHKResult= hkSeqSynth(rfSynthSed, rfSynthMoho, time, rayp, HSed, 
                                     KSed, VpSed, w1Sed, w2Sed, w3Sed, HMoho, 
                                     KMoho, VpMoho, w1Moho, w2Moho, w3Moho)
@@ -665,7 +673,7 @@ def plothkSeqSynth(SynthSeqHKResult, savepath, g = [75.,10., 15., 2.5],
     >>> g = [75.,10., 15., 2.5]
     >>> rmneg = True
     >>> format = 'pdf'
-    Call the plothkSeqSynth function
+    >>> # Call the plothkSeqSynth function
     >>> plothkSeqSynth(SynthSeqHKResult, savepath, g, rmneg, format)
     """
 
@@ -848,22 +856,23 @@ def plotfiltSynthrf(FilteredRF, savepath, format = 'jpg'):
     :param format: format of the plot (default: jpg)
     :type format: str
 
+    
     Returns:
-    Plot of the filtered receiver function, autocorrelation, and the 
-    resonance filter
+        Plot of the filtered receiver function, autocorrelation, and the 
+        resonance filter
 
     Example
     -------
 
-    Initialize the plotfiltSynthrf module:
+    >>> # Initialize the plotfiltSynthrf module:
     >>> from rfsed.SynthAnalysis import plotfiltSynthrf
-    Define all the necessary parameters
-    FilteredRF is a dictionary from ResonanceFilt function 
-    (see ResonanceFilt function for details)
+    >>> # Define all the necessary parameters
+    >>> # FilteredRF is a dictionary from ResonanceFilt function 
+    >>> # (see ResonanceFilt function for details)
     >>> FilteredRF= ResonanceFilt(trdata, time)
     >>> savepath = 'path/to/save/figure'
     >>> format = 'pdf'
-    Call the plotfiltSynthrf function
+    >>> # Call the plotfiltSynthrf function
     >>> plotfiltSynthrf(FilteredRF, savepath, format)
     """
 

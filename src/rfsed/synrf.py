@@ -135,12 +135,12 @@ def deconv_iterative(uin, win, dt, nt=None, preonset=10, gaussian=2.0,
     :type minderr: float
 
     Returns:
-    RFI: receiver function
-    :type RFI: np.ndarray
-    rms: Root mean square error for predicting numerator after each iteration
-    :type rms: np.ndarray
-    it: number of iterations
-    :type it: int
+        RFI: receiver function
+        :type RFI: np.ndarray
+        rms: Root mean square error for predicting numerator after each iteration
+        :type rms: np.ndarray
+        it: number of iterations
+        :type it: int
     """
 
     # print('Iterative Decon (Ligorria & Ammon):\n')
@@ -232,9 +232,9 @@ def deconv_waterlevel(uin, win, dt, preonset=10., wlevel=0.05,
     :type normalize: bool, optional
 
     Returns: 
-    (rft, rms) receiver function and root mean square error for 
-    predicting numerator after each iteration
-    :type: (np.ndarray, float)
+        (rft, rms) receiver function and root mean square error for 
+        predicting numerator after each iteration
+        :type: (np.ndarray, float)
     """
     if uin.size != win.size:
         raise ValueError('The length of the \'uin\' must be same as the \'win\'')
@@ -310,10 +310,10 @@ def deconvolve(uin, win, dt, method='iter', **kwargs):
     :type method: str, optional
 
     Returns:
-    RFI: receiver function
-    :type RFI: np.ndarray
-    rms: Root mean square error for predicting numerator after each iteration
-    :type rms: np.ndarray
+        RFI: receiver function
+        :type RFI: np.ndarray
+        rms: Root mean square error for predicting numerator after each iteration
+        :type rms: np.ndarray
 
     """	
     if method.lower() == 'iter':
@@ -381,7 +381,7 @@ def e_inverse(omega, rho, alpha, beta, p):
 
 def propagator_sol(omega, rho, alpha, beta, p, z):
     """ 
-    propagator (Aki & Richards, pp. 398, Eq. (3) in Box 9.1)
+    Propagator (Aki & Richards, pp. 398, Eq. (3) in Box 9.1)
     
     """
     
@@ -515,7 +515,7 @@ class synrf():
         Forward modelling synthetic seismograms.
 
         Returns:
-        Radial and vertical Seismograms in ``Obspy.Stream`` type.
+            Radial and vertical Seismograms in ``Obspy.Stream`` type.
         """
 
         self.rstream = Stream()
@@ -544,8 +544,9 @@ class synrf():
         :param zerophase: whether use a zero-phase filter, by default True
         :type zerophase: bool
         
+
         Returns:
-        Filtered radial and vertical Seismograms in ``Obspy.Stream`` type.
+            Filtered radial and vertical Seismograms in ``Obspy.Stream`` type.
     
         """
         for st in [self.rstream, self.zstream]:

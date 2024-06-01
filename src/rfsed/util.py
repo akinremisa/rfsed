@@ -38,7 +38,7 @@ def rfMoho_example():
     Example
     -------
 
-    Initialize the rfMoho_example module:
+    >>> # Initialize the rfMoho_example module:
     >>> from rfsed.util import rfMoho_example
     >>> rfMoho=rfMoho_example()
     """
@@ -54,7 +54,7 @@ def rfSed_example():
     Example
     -------
 
-    Initialize the rfSed_example module:
+    >>> # Initialize the rfSed_example module:
     >>> from rfsed.util import rfSed_example
     >>> rfSed=rfSed_example()
     """
@@ -70,7 +70,7 @@ def raw_data_example():
     Example
     -------
 
-    Initialize the raw_data_example module:
+    >>> # Initialize the raw_data_example module:
     >>> from rfsed.util import raw_data_example
     >>> data_dir=raw_data_example()
     """
@@ -86,7 +86,7 @@ def catalog_example():
     Example
     -------
 
-    Initialize the catalog_example module:
+    >>> # Initialize the catalog_example module:
     >>> from rfsed.util import catalog_example
     >>> catalog_dir=catalog_example()
     """
@@ -101,7 +101,7 @@ def read_raw_waveform_data():
     Example
     -------
 
-    Initialize the read_raw_waveform_data module:
+    >>> # Initialize the read_raw_waveform_data module:
     >>> from rfsed.util import read_raw_waveform_data
     >>> rfstream=read_raw_waveform_data()
     """
@@ -117,7 +117,7 @@ def save_Eq_data():
     Example
     -------
 
-    Initialize the save_Eq_data module:
+    >>> # Initialize the save_Eq_data module:
     >>> from rfsed.util import save_Eq_data
     >>> savepath=save_Eq_data()
     """
@@ -134,7 +134,7 @@ def save_IRIS_waveform():
     Example
     -------
 
-    Initialize the save_IRIS_waveform module:
+    >>> # Initialize the save_IRIS_waveform module:
     >>> from rfsed.util import save_IRIS_waveform
     >>> savepath=save_IRIS_waveform()
     """
@@ -151,7 +151,7 @@ def save_calculated_RF():
     Example
     -------
 
-    Initialize the save_calculated_RF module:
+    >>> # Initialize the save_calculated_RF module:
     >>> from rfsed.util import save_calculated_RF
     >>> savepath=save_calculated_RF()
     """
@@ -168,7 +168,7 @@ def save_catalog():
     Example
     -------
 
-    Initialize the save_catalog module:
+    >>> # Initialize the save_catalog module:
     >>> from rfsed.util import save_catalog
     >>> savepath=save_catalog()
     """
@@ -185,7 +185,7 @@ def save_plot():
     Example
     -------
 
-    Initialize the save_plot module:
+    >>> # Initialize the save_plot module:
     >>> from rfsed.util import save_plot
     >>> savepath=save_plot()
     """
@@ -202,7 +202,7 @@ def save_tests():
     Example
     -------
 
-    Initialize the save_tests module:
+    >>> # Initialize the save_tests module:
     >>> from rfsed.util import save_tests
     >>> savepath=save_tests()
     """
@@ -225,7 +225,7 @@ def install_examples(path="./rfsed_examples"):
     Example
     -------
 
-    Initialize the install_examples module:
+    >>> # Initialize the install_examples module:
     >>> from rfsed.util import install_examples
     >>> install_examples(path='rfsed_examples')
     """
