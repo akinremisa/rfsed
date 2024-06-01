@@ -62,12 +62,13 @@ the ``Jupyter`` notebooks accompanying this package.
    :maxdepth: 1
    :caption: Module
 
-   ExtractEq
-   ExtractEqMultiproc
-   hkSeqYeck
-   hkYu
    hkZhu
+   hkSeqYeck
    ReverbFilter
+   hkYu
+   synrf
    WaveformFitting
    WaveformFittingMultiproc
-   synrf
+   ExtractEq
+   ExtractEqMultiproc
+   
