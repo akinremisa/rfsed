@@ -13,7 +13,7 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
         rfstream= rfMoho_example()
         preonset=10
         VpSed=3.3
-        Sedthick=1.8
+        HSed=1.8
         VpCrust = 6.9
         gaussian=1.25
         savepath=save_tests()
@@ -24,14 +24,14 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
         KMoho= np.linspace(1.65,1.95,5)
         HMoho=np.linspace(25,50,5)
         wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
-        WaveformPara(rfstream=rfstream, preonset=preonset, Sedthick=Sedthick, VpSed=VpSed, VpCrust=VpCrust, 
+        WaveformPara(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, 
                                      rayp=rayp, KMoho=KMoho, HMoho=HMoho, gaussian=gaussian)
 
     def test_run_waveformfitting(self):
             rfstream= rfMoho_example()
             preonset=10
             VpSed=3.3
-            Sedthick=1.8
+            HSed=1.8
             VpCrust = 6.9
             gaussian=1.25
             savepath=save_tests()
@@ -43,7 +43,7 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             HMoho=np.linspace(25,50,5)
             nproc=25
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
-            ModelParams=WaveformPara(rfstream=rfstream, preonset=preonset, Sedthick=Sedthick, VpSed=VpSed, VpCrust=VpCrust, 
+            ModelParams=WaveformPara(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, 
                                      rayp=rayp, KMoho=KMoho, HMoho=HMoho, gaussian=gaussian)
             run_waveformfitting(nproc, HMoho, ModelParams)
 
@@ -51,7 +51,7 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             rfstream= rfMoho_example()
             preonset=10
             VpSed=3.3
-            Sedthick=1.8
+            HSed=1.8
             VpCrust = 6.9
             gaussian=1.25
             savepath=save_tests()
@@ -64,7 +64,7 @@ class TestWaveformFittingMultiproc(unittest.TestCase):
             nproc=25
             format='pdf'
             wtCorr, wtRMSE, wtPG = [0.5, 0.3, 0.2] #wtCorr+wtRMSE+wtPG=1.0
-            ModelParams=WaveformPara(rfstream=rfstream, preonset=preonset, Sedthick=Sedthick, VpSed=VpSed, VpCrust=VpCrust, 
+            ModelParams=WaveformPara(rfstream=rfstream, preonset=preonset, HSed=HSed, VpSed=VpSed, VpCrust=VpCrust, 
                                      rayp=rayp, KMoho=KMoho, HMoho=HMoho, gaussian=gaussian)
             Results=run_waveformfitting(nproc, HMoho, ModelParams)
             plotbestmodel(Results, ModelParams, wtCorr, wtRMSE, wtPG, savepath, format)

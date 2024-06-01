@@ -45,7 +45,7 @@ import multiprocessing
 import itertools
 
 #----------------------------------------------------------
-def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho, 
+def WaveformPara(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho, 
                  HMoho, gaussian):
     """
     Calculate the Model Parameters for the Waveform Fitting
@@ -54,8 +54,8 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     :type rfstream: RFStream
     :param preonset: time in seconds before the P-arrival
     :type preonset: integer
-    :param Sedthick: Sediment Layer Thickness
-    :type Sedthick: float
+    :param HSed: Sediment Layer Thickness
+    :type HSed: float
     :param VpSed: P-wave velocity in the Sediment
     :type VpSed: float
     :param VpCrust: P-wave velocity in the Crust
@@ -85,7 +85,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     >>> # rfstream is a RFStream object containing the receiver functions (based on rf)
     >>> rfstream = rfstream
     >>> preonset = 10
-    >>> Sedthick = 0.8
+    >>> HSed = 0.8
     >>> VpSed = 2.5
     >>> VpCrust = 6.5
     >>> rayp = 0.06
@@ -93,7 +93,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     >>> HMoho = np.arange(20, 50, 201)
     >>> gaussian = 1.25
     >>> # Call the WaveformPara function
-    >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, 
+    >>> ModelParams = WaveformPara(rfstream, preonset, HSed, VpSed, 
                                     VpCrust, rayp, KMoho, HMoho, gaussian)
     """
 
@@ -126,7 +126,7 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     end=tzero + int(end)
     #----------------------------------------------------------
     parameters=[{'rfstream':rfstream, 'rayp': rayp, 'gaussian':gaussian, 
-                 'Sedthick':Sedthick,  'VpSed':VpSed, 'VpCrust':VpCrust, 
+                 'HSed':HSed,  'VpSed':VpSed, 'VpCrust':VpCrust, 
                  'VsSed':VsSed, 'SedDen':SedDen, 'VsCrust':VsCrust, 
                  'CrustDen':CrustDen, 'HMoho': HMoho, 'KMoho': KMoho, 
                  'delta':delta, 'time':t, 'staname':staname, 
@@ -151,7 +151,7 @@ def WaveformFit_multiproc(inputparams):
     HMoho, OtherParams = inputparams
     HMoho=HMoho[0]
     OtherParams=OtherParams[0]
-    Sedthick=OtherParams['Sedthick']
+    HSed=OtherParams['HSed']
     VpSed=OtherParams['VpSed']
     VsSed=OtherParams['VsSed']
     SedDen=OtherParams['SedDen']
@@ -175,7 +175,7 @@ def WaveformFit_multiproc(inputparams):
         #----------------------------------------------------------
         # Calculate the model parameters
         #----------------------------------------------------------
-        depth = np.array([Sedthick, Htemp, 77.5])
+        depth = np.array([HSed, Htemp, 77.5])
         vp = np.array([VpSed, VpCrust, 8.045])
         vs = np.array([VsSed, (VpCrust/Ktemp), 4.49])
         rho = np.array([SedDen, CrustDen, 3.299])
@@ -252,7 +252,7 @@ def run_waveformfitting(nproc, HMoho, ModelParams):
     >>> HMoho = np.arange(20, 50, 201)
     >>> # ModelParams is a dictionary of model parameters which is an output from the 
     >>> # WaveformPara function (see WaveformPara function for more details)
-    >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, 
+    >>> ModelParams = WaveformPara(rfstream, preonset, HSed, VpSed, 
                                     VpCrust, rayp, KMoho, HMoho, gaussian)
     >>> # Call the run_waveformfitting function
     >>> WaveformFitResults = run_waveformfitting(nproc, HMoho, ModelParams)
@@ -306,7 +306,7 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG,
     >>> WaveformResults = run_waveformfitting(nproc, HMoho, ModelParams)
     >>> # ModelParams is a dictionary of model parameters which is an output from 
     >>> # the WaveformPara function (see WaveformPara function for more details)
-    >>> ModelParams = WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, 
+    >>> ModelParams = WaveformPara(rfstream, preonset, HSed, VpSed, VpCrust, 
                                     rayp, KMoho, HMoho, gaussian)
     >>> wtCorr, wtRMSE, wtPG = [0.4, 0.4, 0.2]
     >>> savepath = 'path/to/save/plot'
@@ -316,7 +316,7 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG,
                       savepath, format)
     """
     
-    HSed=ModelParams[0]['Sedthick']
+    HSed=ModelParams[0]['HSed']
     VpSed=ModelParams[0]['VpSed']
     VsSed=ModelParams[0]['VsSed']
     SedDen=ModelParams[0]['SedDen']
