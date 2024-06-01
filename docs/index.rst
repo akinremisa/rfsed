@@ -27,8 +27,7 @@ Beside these receiver function methods, rfsed has the following features:
 
 * Extracting earthquake data from local seismic record files.
 
-* Multiprocessing options for waveform fitting and extracting earthquake data from 
-local seismic record files.
+* Multiprocessing options for waveform fitting and extracting earthquake data from local seismic record files.
 
 * Creating publication quality figures for the results of the analysis.
 

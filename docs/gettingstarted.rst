@@ -138,6 +138,7 @@ To run the notebooks, you need to install ``jupyter``. Install from the terminal
 Then, run the following command in the terminal:    
 
 .. code-block:: bash
+    
     cd rfsed_examples
 
     jupyter notebook	
