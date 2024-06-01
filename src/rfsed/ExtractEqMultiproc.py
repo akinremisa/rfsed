@@ -226,7 +226,7 @@ def ExtractEq_Multiproc(datafiles, timewindow, nproc, filename):
     :param datafiles: List of data files
     :type datafiles: list
     :param timewindow: Dictionary of Earthquake start and end time for the 
-    requested time window relative to the first P arrival
+                        requested time window relative to the first P arrival
     :type timewindow: dict
     :param nproc: Number of processors to use
     :type nproc: int

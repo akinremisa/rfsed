@@ -69,7 +69,7 @@ def hk(rfstream, preonset, H, K, Vp, w1, w2, w3, layer, stack=False):
     Zhu and Kanamori (2000)
 
     :param rfstream: receiver function stream
-    :type rfstream: obspy.core.stream.Stream
+    :type rfstream: RFStream
     :param preonset: time in seconds before the P-arrival
     :type preonset: integer
     :param H: array of Depth values

@@ -43,20 +43,21 @@ from obspy.taup import TauPyModel
 #------------------------------------------------------------------------------
 def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
     """
-    Extract the earthquake waveform data from the local data files and writes the extracted data to a new file
+    Extract the earthquake waveform data from the local data files and writes 
+    the extracted data to a new file
 
     :param datapath: Path to the local data files directory
-    :type datapath:str
+    :type datapath: str
     :param filename: Path to the new file
-    :type filename:str
+    :type filename: str
     :param catalog: Path to the catalog file
-    :type catalog:str
+    :type catalog: str
     :param stalat: Latitude of the station
-    :type stalat:float
+    :type stalat: float
     :param stalon: Longitude of the station
-    :type stalon:float
+    :type stalon: float
     :param Request_window: Time window relative to first P arrival (in seconds)
-    :type Request_window:list[start, end]
+    :type Request_window: list[start, end]
 
     
     Returns:  

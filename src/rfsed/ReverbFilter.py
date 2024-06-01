@@ -62,7 +62,7 @@ def getamp(rfdata, tarray, t):
 def ResonanceFilt(rfstream, preonset):
     """
     Resonance Filter for receiver function data 
-    (Removes sediment reverberation effect)
+    (Removes sediment reverberation signal)
 
     :param rfstream: receiver function data
     :type rfstream: obspy stream

@@ -45,15 +45,15 @@ def WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho,
                     HMoho, gaussian, wtCorr, wtRMSE, wtPG, savepath, format):
     """
     This function performs waveform fitting for the Moho depth and Vp/Vs ratio
-    Returns the best model based on the Correlation Coefficient(CC), 
-    Root-mean-squared error(RMSE), Phase-goodness-of-fit(PG) and 
+    Returns the best model based on the Correlation Coefficient (CC), 
+    Root-mean-squared error (RMSE), Phase-goodness-of-fit (PG) and 
     Overall Goodness-of-fit that combines CC, RMSE, and PG. 
     Weights of CC, RMSE and PG (wtCorr,wtRMSE, wtPG) are given as input and can 
     be modified before plotting.
-    At all times, wtCorr + wtRMSE + wtPG = 1.0
+    At all times, (wtCorr + wtRMSE + wtPG) = 1.0
 
-    :param rfstream: Obspy RFStream object containing the receiver functions
-    :type rfstream: Obspy RFStream object
+    :param rfstream: RFStream object containing the receiver functions
+    :type rfstream: RFStream
     :param preonset: time in seconds before the P-arrival
     :type preonset: integer
     :param HSed: Sediment thickness in km
@@ -244,9 +244,8 @@ def WaveformFitting(rfstream, preonset, HSed, VpSed, VpCrust, rayp, KMoho,
 def PlotWaveformFitting(WaveformFitting, wtCorr, wtRMSE, wtPG, savepath, format):
     """
     This function plots the waveform fitting results for the Moho depth and 
-    Vp/Vs ratio
-    Plots the Waveform Fitting Results for CC, RMSE, PG and GoF
-    Weights of CC, RMSE and PG are given as input and can be modified before plotting
+    Vp/Vs ratio. Plots the Waveform Fitting Results for CC, RMSE, PG and GoF.
+    Weights of CC, RMSE and PG are given as input and can be modified before plotting. 
     At all times, wtCorr + wtRMSE + wtPG = 1.0
 
     :param WaveformFitting: Dictionary containing the Waveform Fitting Results 

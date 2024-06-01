@@ -74,10 +74,10 @@ def hkSeq(rfstreamSed, rfstreamMoho, preonset, HSed, KSed, VpSed, w1Sed,
     
     :param rfstreamSed: Stream object of receiver function for sediment layer
                         (high frequency)
-    :type rfstreamSed: obspy.core.stream.Stream
+    :type rfstreamSed: RFStream
     :param rfstreamMoho: Stream object of receiver function for Moho layer
                         (lower frequency)
-    :type rfstreamMoho: obspy.core.stream.Stream
+    :type rfstreamMoho: RFStream
     :param preonset: time in seconds before the P-arrival
     :type preonset: integer
     :param HSed: Depth range for sediment layer

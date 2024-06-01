@@ -50,8 +50,8 @@ def WaveformPara(rfstream, preonset, Sedthick, VpSed, VpCrust, rayp, KMoho,
     """
     Calculate the Model Parameters for the Waveform Fitting
 
-    :param rfstream: Stream of Receiver Functions
-    :type rfstream: obspy Stream
+    :param rfstream: RFStream object containing the receiver functions
+    :type rfstream: RFStream
     :param preonset: time in seconds before the P-arrival
     :type preonset: integer
     :param Sedthick: Sediment Layer Thickness
@@ -300,7 +300,8 @@ def plotbestmodel(WaveformResults, ModelParams, wtCorr, wtRMSE, wtPG,
     >>> # Initialize the plotbestmodel module:
     >>> from rfsed.WaveformFittingMultiproc import plotbestmodel
     >>> # Define all the necessary parameters
-    >>> # WaveformResults is a list of Waveform Fitting Results, which is an output of the run_waveformfitting function 
+    >>> # WaveformResults is a list of Waveform Fitting Results,  
+    >>> # which is an output of the run_waveformfitting function 
     >>> # (see run_waveformfitting function for more details)
     >>> WaveformResults = run_waveformfitting(nproc, HMoho, ModelParams)
     >>> # ModelParams is a dictionary of model parameters which is an output from 
