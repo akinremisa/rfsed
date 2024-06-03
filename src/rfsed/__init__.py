@@ -31,3 +31,5 @@ data from local seismic records, read and write support for necessary metadata i
 provided for SAC, SeismicHanlder and HDF5 formats based on 
 [ObsPy](https://github.com/obspy/obspy).
 """
+
+from .__version__ import __version__
