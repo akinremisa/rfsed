@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module ExtractEq &mdash; rfsed 0.1.9 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8618f531"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module ExtractEqMultiproc" href="ExtractEqMultiproc" />
+    <link rel="prev" title="Module WaveformFittingMultiproc" href="WaveformFittingMultiproc" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            rfsed
+              <img src="_static/rfsed_logo_name.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.1.9
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="links">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted#usage">Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Module</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hkZhu">Module hkZhu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkSeqYeck">Module hkSeqYeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ReverbFilter">Module ReverbFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkYu">Module hkYu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synrf">Module synrf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WaveformFitting">Module WaveformFitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WaveformFittingMultiproc">Module WaveformFittingMultiproc</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module ExtractEq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.ExtractEq.ExtractEq"><code class="docutils literal notranslate"><span class="pre">ExtractEq()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEqMultiproc">Module ExtractEqMultiproc</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jupyter Notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example1_Download_Waveform_Data_from_IRIS.ipynb">Example 1: Downloading Earthquake Waveform Data from IRIS</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example2_Calculate_Receiver_Functions.ipynb">Example 2: Calculation of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example3_example_Get_Catalog.ipynb">Example 3: Download Catalog of earthquake events</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example4_Extract_Earthquake_Waveform_from_Local_Data.ipynb">Example 4: Example of Extracting Earthquake Waveform Data from seismic data from local drive</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example5_Extract_Earthquake_Waveform%28Multiprocessing%29_from_Local_Data.ipynb">Example 5: Example of Extracting Earthquake Waveform Data from seismic data from local drive - Using Multiple Processors</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example6_One_layer_H-K_Stacking_hkZhu.ipynb">Example 6: H-K Stacking of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example7_Sequential_H-K_Stacking_hkYeck_Sequential.ipynb">Example 7: Sequential H-K Stacking of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example8_Resonance_Filtering_and_Modified_H-K_Stacking_hkYu.ipynb">Example 8: Resonance Filtering and Modified H-K Stacking of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example9_Calculating_Synthetic_Receiver_Functions.ipynb">Example 9: Calculating Synthetic Reciever Function</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example10_Synthethic_Receiver_Function_Analysis.ipynb">Example 10: Calculation and Analysis of Synthetic Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example11_Waveform_Fitting_of_Receiver_Functions.ipynb">Example 11: Waveform Fitting of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example12_Waveform_Fitting%28Multiprocessing%29_of_Receiver_Functions.ipynb.ipynb">Example 12: Waveform Fitting of Receiver Functions - Using Multiple Processors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">rfsed</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module ExtractEq</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ExtractEq.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <figure class="align-center">
+<img alt="_images/rfsed_logo_horizontal.png" src="_images/rfsed_logo_horizontal.png" />
+</figure>
+<section id="module-rfsed.ExtractEq">
+<span id="module-extracteq"></span><h1>Module ExtractEq<a class="headerlink" href="#module-rfsed.ExtractEq" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.ExtractEq.ExtractEq">
+<span class="sig-prename descclassname"><span class="pre">rfsed.ExtractEq.</span></span><span class="sig-name descname"><span class="pre">ExtractEq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datapath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">catalog</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stalat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stalon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Request_window</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.ExtractEq.ExtractEq" title="Link to this definition"></a></dt>
+<dd><p>Extract the earthquake waveform data from the local data files and writes
+the extracted data to a new file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datapath</strong> (<em>str</em>) – Path to the local data files directory</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the new file</p></li>
+<li><p><strong>catalog</strong> (<em>str</em>) – Path to the catalog file</p></li>
+<li><p><strong>stalat</strong> (<em>float</em>) – Latitude of the station</p></li>
+<li><p><strong>stalon</strong> (<em>float</em>) – Longitude of the station</p></li>
+<li><p><strong>Request_window</strong> (<em>list</em><em>[</em><em>start</em><em>, </em><em>end</em><em>]</em>) – Time window relative to first P arrival (in seconds)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Extracted earthquake data in a new file</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Initialize the ExtractEq module:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rfsed.ExtractEq</span> <span class="kn">import</span> <span class="n">ExtractEq</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define all the necessary parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datapath</span> <span class="o">=</span> <span class="s1">&#39;path/to/datafiles/&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;path/to/newfile&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">catalog</span> <span class="o">=</span> <span class="s1">&#39;path/to/catalog&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stalat</span> <span class="o">=</span> <span class="mf">52.22</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stalon</span> <span class="o">=</span> <span class="mf">6.89</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Request_window</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Call the ExtractEq function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ExtractEq</span><span class="p">(</span><span class="n">datapath</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">catalog</span><span class="p">,</span> <span class="n">stalat</span><span class="p">,</span> <span class="n">stalon</span><span class="p">,</span> <span class="n">Request_window</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="WaveformFittingMultiproc" class="btn btn-neutral float-left" title="Module WaveformFittingMultiproc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ExtractEqMultiproc" class="btn btn-neutral float-right" title="Module ExtractEqMultiproc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stephen Akinremi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
