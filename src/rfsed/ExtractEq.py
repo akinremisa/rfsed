@@ -33,8 +33,8 @@
 #                Islam Fadel <i.e.a.m.fadel@utwente.nl> (October 2023)
 # 
 
-from obspy import read, read_inventory, Stream, read_events, UTCDateTime as UTC
-import numpy as np
+from obspy import read, Stream, read_events, UTCDateTime as UTC
+import os
 from obspy.core.event.catalog import read_events
 from glob import glob
 from obspy.geodetics.base import locations2degrees, gps2dist_azimuth
@@ -79,7 +79,8 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
     >>> ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window)
 
     """
-    datafiles = sorted(glob("%s*.dat"%(datapath)))
+    # datafiles = sorted(glob("%s"%(datapath)))
+    datafiles = sorted(glob("%s*"%(datapath)))
     len_datafiles = len(datafiles)
     firstfile = read(datafiles[0])
     lastfile = read(datafiles[len_datafiles - 1])
@@ -125,16 +126,9 @@ def ExtractEq(datapath, filename, catalog, stalat, stalon, Request_window):
                 if UTC(t[0]) >= filestart and UTC(t[1]) <= fileend:
                         Eqdata=read(i, starttime=UTC(t[0]), 
                                         endtime = UTC(t[1]))
-                        tr=len(Eqdata)
                         Eqdata[0].stats.onset=onset
-                        try:
-                                Eqdata[1].stats.onset=onset
-                                Eqdata[2].stats.onset=onset
-                                Eqdata[3].stats.onset=onset
-                                Eqdata[4].stats.onset=onset
-                                Eqdata[5].stats.onset=onset
-                        except:
-                                continue
+                        for j in range(len(Eqdata)):
+                            Eqdata[j].stats.onset=onset
                         Datast += Eqdata
     Datast.write(filename)  
 #--------------------------------------------------------------------------------
