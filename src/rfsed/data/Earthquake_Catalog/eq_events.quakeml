@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<q:quakeml xmlns:q="http://quakeml.org/xmlns/quakeml/1.2" xmlns:iris="http://service.iris.edu/fdsnws/event/1/" xmlns="http://quakeml.org/xmlns/bed/1.2" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://quakeml.org/schema/xsd http://quakeml.org/schema/xsd/QuakeML-1.2.xsd">
+<eventParameters publicID="smi:service.iris.edu/fdsnws/event/1/query">
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11235811">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="51">
+<type>Flinn-Engdahl region</type>
+<text>OFF COAST OF CENTRAL MEXICO</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=199614348</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42791040</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42791040" iris:contributorOriginId="us70009n5p" iris:contributor="us" iris:contributorEventId="pt20143000,at00qaq5ow,us70009n5p" iris:catalog="NEIC PDE">
+<time>
+<value>2020-05-22T08:46:06.973</value>
+</time>
+<creationInfo>
+<author>us,at,pt</author>
+</creationInfo>
+<latitude>
+<value>22.4152</value>
+</latitude>
+<longitude>
+<value>-108.1275</value>
+</longitude>
+<depth>
+<value>10000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=199614348">
+<mag>
+<value>6.1</value>
+</mag>
+<type>Mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11230644">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="37">
+<type>Flinn-Engdahl region</type>
+<text>NEVADA</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=199777508</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42723886</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42723886" iris:contributorOriginId="nn00725272" iris:contributor="nn" iris:contributorEventId="us70009gj8,nn00725272,pt20136000" iris:catalog="NEIC PDE">
+<time>
+<value>2020-05-15T11:03:27.176</value>
+</time>
+<creationInfo>
+<author>nn,us,pt</author>
+</creationInfo>
+<latitude>
+<value>38.1689</value>
+</latitude>
+<longitude>
+<value>-117.8497</value>
+</longitude>
+<depth>
+<value>2700.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=199777508">
+<mag>
+<value>6.5</value>
+</mag>
+<type>Mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11217521">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="228">
+<type>Flinn-Engdahl region</type>
+<text>NEAR EAST COAST OF HONSHU, JAPAN</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=199271008</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42535436</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42535436" iris:contributorOriginId="us7000903m" iris:contributor="us" iris:contributorEventId="at00q91yp4,us7000903m,pt20110001" iris:catalog="NEIC PDE">
+<time>
+<value>2020-04-19T20:39:05.625</value>
+</time>
+<creationInfo>
+<author>us,pt,at</author>
+</creationInfo>
+<latitude>
+<value>38.8962</value>
+</latitude>
+<longitude>
+<value>142.0319</value>
+</longitude>
+<depth>
+<value>38000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=199271008">
+<mag>
+<value>6.3</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11215586">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="731">
+<type>Flinn-Engdahl region</type>
+<text>NORTH OF HONDURAS</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=198894798</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42511736</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42511736" iris:contributorOriginId="pt20107000" iris:contributor="us" iris:contributorEventId="us70008xeb,at00q8vfrr,pt20107000" iris:catalog="NEIC PDE">
+<time>
+<value>2020-04-16T08:04:37.597</value>
+</time>
+<creationInfo>
+<author>at,pt,us</author>
+</creationInfo>
+<latitude>
+<value>16.9332</value>
+</latitude>
+<longitude>
+<value>-85.7099</value>
+</longitude>
+<depth>
+<value>10000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=198894798">
+<mag>
+<value>6.0</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11205716">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="33">
+<type>Flinn-Engdahl region</type>
+<text>WESTERN IDAHO</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=198978692</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42417637</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42417637" iris:contributorOriginId="us70008jr5" iris:contributor="us" iris:contributorEventId="mb80387294,us70008jr5,at00q830zi,pt20091001,uu60371877" iris:catalog="NEIC PDE">
+<time>
+<value>2020-03-31T23:52:31.094</value>
+</time>
+<creationInfo>
+<author>us,mb,pt,at,uu</author>
+</creationInfo>
+<latitude>
+<value>44.4603</value>
+</latitude>
+<longitude>
+<value>-115.1356</value>
+</longitude>
+<depth>
+<value>14530.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=198978692">
+<mag>
+<value>6.78</value>
+</mag>
+<type>Ml</type><creationInfo>
+<author>MB</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11202357">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="222">
+<type>Flinn-Engdahl region</type>
+<text>EAST OF KURIL ISLANDS</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=198610339</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42368836</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42368836" iris:contributorOriginId="pt20085000" iris:contributor="us" iris:contributorEventId="us70008fi4,at00q7qai7,pt20085000" iris:catalog="NEIC PDE">
+<time>
+<value>2020-03-25T02:49:20.896</value>
+</time>
+<creationInfo>
+<author>at,pt,us</author>
+</creationInfo>
+<latitude>
+<value>48.9688</value>
+</latitude>
+<longitude>
+<value>157.6914</value>
+</longitude>
+<depth>
+<value>55390.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=198610339">
+<mag>
+<value>7.5</value>
+</mag>
+<type>Mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11184094">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="221">
+<type>Flinn-Engdahl region</type>
+<text>KURIL ISLANDS</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197907211</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42134736</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42134736" iris:contributorOriginId="pt20044002" iris:contributor="us" iris:contributorEventId="at00q5mcj0,at00q5myo9,us70007pa9,pt20044002" iris:catalog="NEIC PDE">
+<time>
+<value>2020-02-13T10:33:44.492</value>
+</time>
+<creationInfo>
+<author>us,at,at,pt</author>
+</creationInfo>
+<latitude>
+<value>45.6313</value>
+</latitude>
+<longitude>
+<value>148.9293</value>
+</longitude>
+<depth>
+<value>144000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197907211">
+<mag>
+<value>7.0</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11176878">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="731">
+<type>Flinn-Engdahl region</type>
+<text>NORTH OF HONDURAS</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197675608</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42046179</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42046179" iris:contributorOriginId="us60007iig" iris:contributor="us" iris:contributorEventId="us60007iig,pt20028002,at00q4u7k4" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-28T21:55:16.420</value>
+</time>
+<creationInfo>
+<author>at,pt,us</author>
+</creationInfo>
+<latitude>
+<value>18.9437</value>
+</latitude>
+<longitude>
+<value>-80.742</value>
+</longitude>
+<depth>
+<value>10000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197675608">
+<mag>
+<value>6.1</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11176800">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="85">
+<type>Flinn-Engdahl region</type>
+<text>CUBA REGION</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197809042</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42045636</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42045636" iris:contributorOriginId="pt20028001" iris:contributor="us" iris:contributorEventId="at00q4ttp1,us60007idc,pt20028001" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-28T19:10:24.963</value>
+</time>
+<creationInfo>
+<author>pt,us,at</author>
+</creationInfo>
+<latitude>
+<value>19.418</value>
+</latitude>
+<longitude>
+<value>-78.7582</value>
+</longitude>
+<depth>
+<value>15180.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197809042">
+<mag>
+<value>7.7</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11175703">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="7">
+<type>Flinn-Engdahl region</type>
+<text>ANDREANOF ISLANDS, ALEUTIAN IS.</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197812499</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42034286</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42034286" iris:contributorOriginId="at00q4pbh7" iris:contributor="us" iris:contributorEventId="pt20026001,ak020173qdzt,us60007g8m,at00q4pbh7" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-26T06:31:55.398</value>
+</time>
+<creationInfo>
+<author>at,us,ak,pt</author>
+</creationInfo>
+<latitude>
+<value>51.1338</value>
+</latitude>
+<longitude>
+<value>-179.8892</value>
+</longitude>
+<depth>
+<value>17000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197812499">
+<mag>
+<value>6.1</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11174227">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="7">
+<type>Flinn-Engdahl region</type>
+<text>ANDREANOF ISLANDS, ALEUTIAN IS.</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197779384</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42024636</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42024636" iris:contributorOriginId="us60007djn" iris:contributor="us" iris:contributorEventId="pt20023000,av62127141,us60007djn,ak020124nifl" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-23T05:53:02.618</value>
+</time>
+<creationInfo>
+<author>us,av,ak,pt</author>
+</creationInfo>
+<latitude>
+<value>51.9836</value>
+</latitude>
+<longitude>
+<value>-177.855</value>
+</longitude>
+<depth>
+<value>10000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197779384">
+<mag>
+<value>6.2</value>
+</mag>
+<type>Mw</type><creationInfo>
+<author>AV</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11173056">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="321">
+<type>Flinn-Engdahl region</type>
+<text>SOUTHERN XINJIANG, CHINA</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197593274</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=42000887</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=42000887" iris:contributorOriginId="us60007anp" iris:contributor="us" iris:contributorEventId="us60007anp" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-19T13:27:56.633</value>
+</time>
+<creationInfo>
+<author>us</author>
+</creationInfo>
+<latitude>
+<value>39.8353</value>
+</latitude>
+<longitude>
+<value>77.1097</value>
+</longitude>
+<depth>
+<value>5570.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197593274">
+<mag>
+<value>6.0</value>
+</mag>
+<type>Mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11168477">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="671">
+<type>Flinn-Engdahl region</type>
+<text>EASTERN SIBERIA, RUSSIA</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197529723</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=41926786</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=41926786" iris:contributorOriginId="us70006wuf" iris:contributor="us" iris:contributorEventId="us70006wuf" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-09T08:38:08.278</value>
+</time>
+<creationInfo>
+<author>us</author>
+</creationInfo>
+<latitude>
+<value>62.358</value>
+</latitude>
+<longitude>
+<value>171.0611</value>
+</longitude>
+<depth>
+<value>10000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197529723">
+<mag>
+<value>6.4</value>
+</mag>
+<type>Mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11167230">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="90">
+<type>Flinn-Engdahl region</type>
+<text>PUERTO RICO REGION</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197636951</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=41910639</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=41910639" iris:contributorOriginId="pt20007001" iris:contributor="us" iris:contributorEventId="pr2020007007,pt20007009,us70006vll,at00q3qa0q,pt20007001" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-07T08:24:25.143</value>
+</time>
+<creationInfo>
+<author>us,pt,at,pt,pr</author>
+</creationInfo>
+<latitude>
+<value>17.8672</value>
+</latitude>
+<longitude>
+<value>-66.828</value>
+</longitude>
+<depth>
+<value>8070.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197636951">
+<mag>
+<value>6.4</value>
+</mag>
+<type>mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+<event publicID="smi:service.iris.edu/fdsnws/event/1/query?eventid=11167210">
+<type>earthquake</type>
+<description xmlns:iris="http://service.iris.edu/fdsnws/event/1/" iris:FEcode="706">
+<type>Flinn-Engdahl region</type>
+<text>NORTHERN SUMATRA, INDONESIA</text>
+</description><preferredMagnitudeID>smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197625354</preferredMagnitudeID>
+<preferredOriginID>smi:service.iris.edu/fdsnws/event/1/query?originid=41910138</preferredOriginID>
+<origin xmlns:iris="http://service.iris.edu/fdsnws/event/1/" publicID="smi:service.iris.edu/fdsnws/event/1/query?originid=41910138" iris:contributorOriginId="us70006vkq" iris:contributor="us" iris:contributorEventId="us70006vkq" iris:catalog="NEIC PDE">
+<time>
+<value>2020-01-07T06:05:19.759</value>
+</time>
+<creationInfo>
+<author>us</author>
+</creationInfo>
+<latitude>
+<value>2.3481</value>
+</latitude>
+<longitude>
+<value>96.3575</value>
+</longitude>
+<depth>
+<value>17000.0</value>
+</depth>
+</origin>
+<magnitude publicID="smi:service.iris.edu/fdsnws/event/1/query?magnitudeid=197625354">
+<mag>
+<value>6.3</value>
+</mag>
+<type>Mww</type><creationInfo>
+<author>us</author>
+</creationInfo>
+</magnitude>
+</event>
+</eventParameters>
+</q:quakeml>
