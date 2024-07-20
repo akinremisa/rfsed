@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.2">
+  <Source>SeisComP</Source>
+  <Sender>ODC</Sender>
+  <Module/>
+  <ModuleURI/>
+  <Created>2024-07-08T19:33:40.784671Z</Created>
+  <Network code="NL" startDate="1993-01-01T00:00:00.000000Z" restrictedStatus="open">
+    <Description>Netherlands Seismic and Acoustic Network</Description>
+    <Identifier type="DOI">10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5</Identifier>
+    <Station code="OPLO" startDate="1998-09-03T00:00:00.000000Z" restrictedStatus="open">
+      <Identifier type="contractor">KNMI</Identifier>
+      <Latitude unit="DEGREES">51.5888</Latitude>
+      <Longitude unit="DEGREES">5.8121</Longitude>
+      <Elevation>0.0</Elevation>
+      <Site>
+        <Name>Oploo</Name>
+      </Site>
+      <CreationDate>1998-09-03T00:00:00.000000Z</CreationDate>
+      <Channel code="BHE" startDate="1998-09-03T00:00:00.000000Z" endDate="2009-10-28T00:00:00.000000Z" restrictedStatus="open" locationCode="">
+        <Latitude unit="DEGREES">51.5888</Latitude>
+        <Longitude unit="DEGREES">5.8121</Longitude>
+        <Elevation>0.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth unit="DEGREES">90.0</Azimuth>
+        <Dip unit="DEGREES">0.0</Dip>
+        <SampleRate unit="SAMPLES/S">40.0</SampleRate>
+        <SampleRateRatio>
+          <NumberSamples>40</NumberSamples>
+          <NumberSeconds>1</NumberSeconds>
+        </SampleRateRatio>
+        <ClockDrift unit="SECONDS/SAMPLE">0.0</ClockDrift>
+        <Sensor resourceId="Sensor#20210305132920.551842.9">
+          <Type>STS-2</Type>
+          <Description>STS-2</Description>
+          <Model>STS-2</Model>
+        </Sensor>
+        <DataLogger resourceId="Datalogger#20210305132920.55024.5">
+          <Description>OPLO.1998.246.BHE</Description>
+        </DataLogger>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>600525000.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>M/S</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name></Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+        </Response>
+      </Channel>
+      <Channel code="BHN" startDate="1998-09-03T00:00:00.000000Z" endDate="2009-10-28T00:00:00.000000Z" restrictedStatus="open" locationCode="">
+        <Latitude unit="DEGREES">51.5888</Latitude>
+        <Longitude unit="DEGREES">5.8121</Longitude>
+        <Elevation>0.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth unit="DEGREES">0.0</Azimuth>
+        <Dip unit="DEGREES">0.0</Dip>
+        <SampleRate unit="SAMPLES/S">40.0</SampleRate>
+        <SampleRateRatio>
+          <NumberSamples>40</NumberSamples>
+          <NumberSeconds>1</NumberSeconds>
+        </SampleRateRatio>
+        <ClockDrift unit="SECONDS/SAMPLE">0.0</ClockDrift>
+        <Sensor resourceId="Sensor#20210305132920.553485.15">
+          <Type>STS-2</Type>
+          <Description>STS-2</Description>
+          <Model>STS-2</Model>
+        </Sensor>
+        <DataLogger resourceId="Datalogger#20210305132920.552826.11">
+          <Description>OPLO.1998.246.BHN</Description>
+        </DataLogger>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>636487000.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>M/S</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name></Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+        </Response>
+      </Channel>
+      <Channel code="BHZ" startDate="1998-09-03T00:00:00.000000Z" endDate="2009-10-28T00:00:00.000000Z" restrictedStatus="open" locationCode="">
+        <Latitude unit="DEGREES">51.5888</Latitude>
+        <Longitude unit="DEGREES">5.8121</Longitude>
+        <Elevation>0.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth unit="DEGREES">0.0</Azimuth>
+        <Dip unit="DEGREES">-90.0</Dip>
+        <SampleRate unit="SAMPLES/S">40.0</SampleRate>
+        <SampleRateRatio>
+          <NumberSamples>40</NumberSamples>
+          <NumberSeconds>1</NumberSeconds>
+        </SampleRateRatio>
+        <ClockDrift unit="SECONDS/SAMPLE">0.0</ClockDrift>
+        <Sensor resourceId="Sensor#20210305132920.554689.21">
+          <Type>STS-2</Type>
+          <Description>STS-2</Description>
+          <Model>STS-2</Model>
+        </Sensor>
+        <DataLogger resourceId="Datalogger#20210305132920.554041.17">
+          <Description>OPLO.1998.246.BHZ</Description>
+        </DataLogger>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>609007000.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>M/S</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name></Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+        </Response>
+      </Channel>
+      <Channel code="BHE" startDate="2009-10-29T00:00:00.000000Z" restrictedStatus="open" locationCode="01">
+        <Latitude unit="DEGREES">51.5888</Latitude>
+        <Longitude unit="DEGREES">5.8121</Longitude>
+        <Elevation>0.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth unit="DEGREES">90.0</Azimuth>
+        <Dip unit="DEGREES">0.0</Dip>
+        <SampleRate unit="SAMPLES/S">40.0</SampleRate>
+        <SampleRateRatio>
+          <NumberSamples>40</NumberSamples>
+          <NumberSeconds>1</NumberSeconds>
+        </SampleRateRatio>
+        <ClockDrift unit="SECONDS/SAMPLE">0.0</ClockDrift>
+        <Sensor resourceId="Sensor#20210305132920.565519.57">
+          <Type>STS-2</Type>
+          <Description>STS-2</Description>
+          <Model>STS-2</Model>
+        </Sensor>
+        <DataLogger resourceId="Datalogger#20210305132920.565277.55">
+          <Description>OPLO.2009.302.BHE01</Description>
+        </DataLogger>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>2516580000.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>M/S</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name></Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+        </Response>
+      </Channel>
+      <Channel code="BHN" startDate="2009-10-29T00:00:00.000000Z" restrictedStatus="open" locationCode="01">
+        <Latitude unit="DEGREES">51.5888</Latitude>
+        <Longitude unit="DEGREES">5.8121</Longitude>
+        <Elevation>0.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth unit="DEGREES">0.0</Azimuth>
+        <Dip unit="DEGREES">0.0</Dip>
+        <SampleRate unit="SAMPLES/S">40.0</SampleRate>
+        <SampleRateRatio>
+          <NumberSamples>40</NumberSamples>
+          <NumberSeconds>1</NumberSeconds>
+        </SampleRateRatio>
+        <ClockDrift unit="SECONDS/SAMPLE">0.0</ClockDrift>
+        <Sensor resourceId="Sensor#20210305132920.56603.61">
+          <Type>STS-2</Type>
+          <Description>STS-2</Description>
+          <Model>STS-2</Model>
+        </Sensor>
+        <DataLogger resourceId="Datalogger#20210305132920.565827.59">
+          <Description>OPLO.2009.302.BHN01</Description>
+        </DataLogger>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>2516580000.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>M/S</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name></Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+        </Response>
+      </Channel>
+      <Channel code="BHZ" startDate="2009-10-29T00:00:00.000000Z" restrictedStatus="open" locationCode="01">
+        <Latitude unit="DEGREES">51.5888</Latitude>
+        <Longitude unit="DEGREES">5.8121</Longitude>
+        <Elevation>0.0</Elevation>
+        <Depth>0.0</Depth>
+        <Azimuth unit="DEGREES">0.0</Azimuth>
+        <Dip unit="DEGREES">-90.0</Dip>
+        <SampleRate unit="SAMPLES/S">40.0</SampleRate>
+        <SampleRateRatio>
+          <NumberSamples>40</NumberSamples>
+          <NumberSeconds>1</NumberSeconds>
+        </SampleRateRatio>
+        <ClockDrift unit="SECONDS/SAMPLE">0.0</ClockDrift>
+        <Sensor resourceId="Sensor#20210305132920.566586.65">
+          <Type>STS-2</Type>
+          <Description>STS-2</Description>
+          <Model>STS-2</Model>
+        </Sensor>
+        <DataLogger resourceId="Datalogger#20210305132920.566337.63">
+          <Description>OPLO.2009.302.BHZ01</Description>
+        </DataLogger>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>2516580000.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>M/S</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name></Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+        </Response>
+      </Channel>
+    </Station>
+  </Network>
+</FDSNStationXML>
