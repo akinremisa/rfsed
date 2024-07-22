@@ -228,7 +228,7 @@ def install_examples(path="./rfsed_examples"):
 
     >>> # Initialize the install_examples module:
     >>> from rfsed.util import install_examples
-    >>> install_examples(path='rfsed_examples')
+    >>> install_examples(path='./rfsed_examples')
     """
 
     subpath_example = os.path.join(path, "examples")
@@ -259,3 +259,34 @@ def install_examples(path="./rfsed_examples"):
         update=0,
         verbose=1,
         dry_run=0)
+
+def install_rfsed_tests(path="./rfsed_tests"):
+    """
+    Install the automated test files for rfsed in the given location.
+    WARNING: If the path exists, the files will be written into the path
+    and will overwrite any existing files with which they collide.
+
+    :param path: The path to install the automated test files.
+    :type path: str
+
+    Example
+    -------
+
+    >>> # Initialize the install_examples module:
+    >>> from rfsed.util import install_rfsed_tests
+    >>> install_examples(path='./rfsed_tests')
+    """
+
+    examples_path = _pkg_resources.resource_filename(
+        "rfsed", "examples/rfsed_tests")
+
+    _dir_util.copy_tree(
+        examples_path,
+        path,
+        preserve_mode=1,
+        preserve_times=1,
+        preserve_symlinks=1,
+        update=0,
+        verbose=1,
+        dry_run=0)
+    
