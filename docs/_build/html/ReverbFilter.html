@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module ReverbFilter &mdash; rfsed 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module hkYu" href="hkYu.html" />
+    <link rel="prev" title="Module hkSeqYeck" href="hkSeqYeck.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            rfsed
+              <img src="_static/rfsed_logo_name.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="links.html">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html#references">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html#usage">Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Module</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hkZhu.html">Module hkZhu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hkSeqYeck.html">Module hkSeqYeck</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module ReverbFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.ReverbFilter.getamp"><code class="docutils literal notranslate"><span class="pre">getamp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.ReverbFilter.ResonanceFilt"><code class="docutils literal notranslate"><span class="pre">ResonanceFilt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rfsed.ReverbFilter.plotfiltrf"><code class="docutils literal notranslate"><span class="pre">plotfiltrf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hkYu.html">Module hkYu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synrf.html">Module synrf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WaveformFitting.html">Module WaveformFitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WaveformFittingMultiproc.html">Module WaveformFittingMultiproc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEq.html">Module ExtractEq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractEqMultiproc.html">Module ExtractEqMultiproc</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jupyter Notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example1_Download_Waveform_Data_from_IRIS.ipynb">Example 1: Downloading Earthquake Waveform Data from IRIS</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example2_Calculate_Receiver_Functions.ipynb">Example 2: Calculation of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example3_example_Get_Catalog.ipynb">Example 3: Download Catalog of earthquake events</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example4_Extract_Earthquake_Waveform_from_Local_Data.ipynb">Example 4: Example of Extracting Earthquake Waveform Data from seismic data from local drive</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example5_Extract_Earthquake_Waveform%28Multiprocessing%29_from_Local_Data.ipynb">Example 5: Example of Extracting Earthquake Waveform Data from seismic data from local drive - Using Multiple Processors</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example6_One_layer_H-K_Stacking_hkZhu.ipynb">Example 6: H-K Stacking of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example7_Sequential_H-K_Stacking_hkYeck_Sequential.ipynb">Example 7: Sequential H-K Stacking of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example8_Resonance_Filtering_and_Modified_H-K_Stacking_hkYu.ipynb">Example 8: Resonance Filtering and Modified H-K Stacking of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example9_Calculating_Synthetic_Receiver_Functions.ipynb">Example 9: Calculating Synthetic Reciever Function</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example10_Synthethic_Receiver_Function_Analysis.ipynb">Example 10: Calculation and Analysis of Synthetic Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example11_Waveform_Fitting_of_Receiver_Functions.ipynb">Example 11: Waveform Fitting of Receiver Functions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://nbviewer.org/github/akinremisa/rfsed/blob/main/src/rfsed/examples/notebooks/Example12_Waveform_Fitting%28Multiprocessing%29_of_Receiver_Functions.ipynb.ipynb">Example 12: Waveform Fitting of Receiver Functions - Using Multiple Processors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">rfsed</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module ReverbFilter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ReverbFilter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <figure class="align-center">
+<img alt="_images/rfsed_logo_horizontal.png" src="_images/rfsed_logo_horizontal.png" />
+</figure>
+<section id="module-rfsed.ReverbFilter">
+<span id="module-reverbfilter"></span><h1>Module ReverbFilter<a class="headerlink" href="#module-rfsed.ReverbFilter" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.ReverbFilter.getamp">
+<span class="sig-prename descclassname"><span class="pre">rfsed.ReverbFilter.</span></span><span class="sig-name descname"><span class="pre">getamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.ReverbFilter.getamp" title="Link to this definition"></a></dt>
+<dd><p>Get the amplitude of the receiver function at a specific time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rfdata</strong> (<em>numpy array</em>) – receiver function data</p></li>
+<li><p><strong>tarray</strong> (<em>numpy array</em>) – time array</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to get the amplitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Amplitude of the receiver function at time t</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.ReverbFilter.ResonanceFilt">
+<span class="sig-prename descclassname"><span class="pre">rfsed.ReverbFilter.</span></span><span class="sig-name descname"><span class="pre">ResonanceFilt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfstream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preonset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.ReverbFilter.ResonanceFilt" title="Link to this definition"></a></dt>
+<dd><p>Resonance Filter for receiver function data
+(Removes sediment reverberation signal)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rfstream</strong> (<em>obspy stream</em>) – receiver function data</p></li>
+<li><p><strong>preonset</strong> (<em>integer</em>) – time in seconds before the P-arrival</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary of stacked receiver function, Filtered receiver function,
+autocorrelation of the data, resonance filter, time lag (2 way travel time
+of the sediment reverbration), and the strength of the sediment
+reverbration (r)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Initialize the ResonanceFilt module:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rfsed.ReverbFilter</span> <span class="kn">import</span> <span class="n">ResonanceFilt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define all the necessary parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The rfstream data is a RFSream object from rf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rf.rfstream</span> <span class="kn">import</span> <span class="n">read_rf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rfstream</span> <span class="o">=</span> <span class="n">read_rf</span><span class="p">(</span><span class="s1">&#39;path/to/rfdata&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">preonset</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Call the ResonanceFilt function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ResonanceFilt</span><span class="p">(</span><span class="n">rfstream</span><span class="p">,</span> <span class="n">preonset</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rfsed.ReverbFilter.plotfiltrf">
+<span class="sig-prename descclassname"><span class="pre">rfsed.ReverbFilter.</span></span><span class="sig-name descname"><span class="pre">plotfiltrf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">FilteredRF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jpg'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rfsed.ReverbFilter.plotfiltrf" title="Link to this definition"></a></dt>
+<dd><p>Plot the filtered receiver function, autocorrelation, and the
+resonance filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FilteredRF</strong> (<em>dict</em>) – Dictionary of results from the resonance filtering
+method (function: Resonance_Filt)</p></li>
+<li><p><strong>savepath</strong> (<em>str</em>) – path to save the plots</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – format of the plot (default: jpg)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Plots of the filtered receiver function, autocorrelation, and the
+resonance filter</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Initialize the plotfiltrf module:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rfsed.ReverbFilter</span> <span class="kn">import</span> <span class="n">plotfiltrf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Define all the necessary parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The FilteredRF data is a dictionary from the ResonanceFilt function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rfsed.ReverbFilter</span> <span class="kn">import</span> <span class="n">ResonanceFilt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FilteredRF</span> <span class="o">=</span> <span class="n">ResonanceFilt</span><span class="p">(</span><span class="n">rfstream</span><span class="p">,</span> <span class="n">preonset</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">savepath</span> <span class="o">=</span> <span class="s1">&#39;path/to/saveplots&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;jpg&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Call the plotfiltrf function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plotfiltrf</span><span class="p">(</span><span class="n">FilteredRF</span><span class="p">,</span> <span class="n">savepath</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hkSeqYeck.html" class="btn btn-neutral float-left" title="Module hkSeqYeck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hkYu.html" class="btn btn-neutral float-right" title="Module hkYu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stephen Akinremi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
