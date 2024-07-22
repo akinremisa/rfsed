@@ -75,8 +75,8 @@ def raw_data_example():
     >>> data_dir=raw_data_example()
     """
 
-    data_dir = resource_filename('rfsed', 'data/Raw_Data_DeepNL_Groningen/')
-    # data_dir = resource_filename('rfsed', 'data/Local_Raw_Data/')
+    #data_dir = resource_filename('rfsed', 'data/Raw_Data_DeepNL_Groningen/')
+    data_dir = resource_filename('rfsed', 'data/Local_Raw_Data/')
 
     return data_dir
 
