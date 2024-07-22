@@ -5,9 +5,9 @@ from rfsed.util import raw_data_example, save_tests, catalog_example
 class TestExtractEq(unittest.TestCase):
     def test_ExtractEq(self):
         datapath=raw_data_example()
-        staname='NE301'
-        stalat=6.183432
-        stalon=53.48334
+        staname='OPLO'
+        stalat=51.5888 
+        stalon=5.8121
         savepath=save_tests()
         Request_window=[-50, 150]
         filename = savepath + 'eq_data.h5'

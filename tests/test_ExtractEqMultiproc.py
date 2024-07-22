@@ -23,12 +23,12 @@ class ExtractEqMultiproc(unittest.TestCase):
 
     def test_ExtractEq_Multiproc(self):
         datapath=raw_data_example()
-        datafiles=datafiles = sorted(glob("%s*.dat"%(datapath)))
-        staname='NE301'
+        datafiles=sorted(glob("%s*"%(datapath)))
+        staname='OPLO'
         catalog = catalog_example()
         Request_window=[-50, 150]
-        stalat=6.183432
-        stalon=53.48334
+        stalat=51.5888 
+        stalon=5.8121
         nproc=25
         savepath=save_tests()
         filename = savepath + 'eq_data_multiproc.h5'
