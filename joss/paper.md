@@ -35,11 +35,11 @@ The receiver function technique is a well-established technique to image velocit
 # Key Functionality
 ``rfsed`` contains modules to carry out H-k stacking [@Zhu2000], sequential H-k stacking [@Yeck2013], resonance filtering and modified H-k stacking [@Yu2015], and waveform fitting [@Akinremi2024] with possible synthetic waveform generation for 1D earth models to test the different methods. It comes with tools to create high-quality figures, which include result plots for H-k stacking, sequential H-k stacking (e.g., Figure 1), resonance filtering, and waveform fitting methods (e.g., Figure 2). Besides these methods, ``rfsed`` has modules for extracting earthquake waveforms from local seismic record files. There are multiprocessing options for waveform fitting and extracting earthquake data from local seismic record files for higher efficiency.
 
-![Example of a sequential H-k stacking plot for receiver functions obtained from station ROLD (Network: NL) (a) sediment layer (b) Moho layer, generated using ``rfsed``](paper_figures/Figure1.png)
+![Example of a sequential H-k stacking plot for receiver functions obtained from station ROLD (Network: NL) (a) sediment layer (b) Moho layer, generated using ``rfsed``](paper_figures/Figure1.jpg)
 
 ``rfsed`` is adaptable, efficient, and easy-to-use by both researchers and students. Receiver function streams in ``rfsed`` are handled by the 'RFStream' class of ``rf`` [@Eulenfeld2020]. ``rfsed`` can be installed from [PyPI](https://pypi.org/project/rfsed/). Online documentation and tutorials are available on the [project site](https://akinremisa.github.io/rfsed/).
 
-![Example of a waveform-fitting result plot generated using ``rfsed``](paper_figures/Figure2.png)
+![Example of a waveform-fitting result plot generated using ``rfsed``](paper_figures/Figure2.jpg)
 
 # Availability
 
