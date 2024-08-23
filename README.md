@@ -94,9 +94,7 @@ All contributions are welcome ... e.g. report bugs, discuss or add new features.
 
 ## Citing rfsed
 If you use **rfsed** in your work, please consider citing the following paper.
-+ Akinremi S., van der Meijde, M., Thomas, C., Afonso, J. C., Ruigrok, E., & Fadel, I. (2024). 
-Waveform fitting of receiver functions for enhanced retrieval of crustal structure in the 
-presence of sediments. Journal of Geophysical Research: Solid Earth, 5(129). https://doi.org/10.1029/2023JB028393
++ Akinremi S., Fadel, I., & van der Meijde, M, (2024). rfsed: Receiver function analysis and dealing with sediment effects. Journal of Open Source Software, 9(100), 6612, https://doi.org/10.21105/joss.06612
 
 #### References
 + Akinremi, S., van der Meijde, M., Thomas, C., Afonso J. C., Ruigrok E., Fadel, I. (2024). 
