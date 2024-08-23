@@ -4,6 +4,9 @@
 ## A software for receiver functions analysis and dealing with sediment effects 
 
 [![python version](https://img.shields.io/pypi/pyversions/rf.svg)](https://python.org)
+[![pypi version](https://img.shields.io/pypi/v/rfsed.svg)](https://pypi.python.org/pypi/rfsed)
+[![JOSS](https://joss.theoj.org/papers/10.21105/joss.06612/status.svg)](https://doi.org/10.21105/joss.06612)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13348322.svg)](https://doi.org/10.5281/zenodo.13348322)
 
 
 **rfsed** is developed specifically to implement different techniques of 
